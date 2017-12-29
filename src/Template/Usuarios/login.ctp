@@ -86,7 +86,7 @@
 
                         <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
                             <div class="card card-hidden">
-                                <div class="header text-center">Login</div>
+                                <div class="header text-center">Login huuuuuuu</div>
                                 <div class="content">
                                     <div class="form-group">
                                         <label>Usuario</label>
