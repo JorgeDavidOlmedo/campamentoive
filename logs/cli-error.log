@@ -1,0 +1,22 @@
+2017-11-24 16:05:19 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'restorapp.detalle_ventas' doesn't exist
+Stack Trace:
+#0 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Database/Schema/Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'detalle_ventas', Array, Object(Cake\Database\Schema\Table))
+#1 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Database/Schema/CachedCollection.php(63): Cake\Database\Schema\Collection->describe('detalle_ventas', Array)
+#2 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/ORM/Table.php(440): Cake\Database\Schema\CachedCollection->describe('detalle_ventas')
+#3 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/ORM/Table.php(518): Cake\ORM\Table->schema()
+#4 /Library/WebServer/Documents/restorapp/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(210): Cake\ORM\Table->primaryKey()
+#5 /Library/WebServer/Documents/restorapp/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 /Library/WebServer/Documents/restorapp/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'detalle_ventas', 'DetalleVentas')
+#7 /Library/WebServer/Documents/restorapp/vendor/cakephp/bake/src/Shell/Task/ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('DetalleVentas')
+#8 /Library/WebServer/Documents/restorapp/vendor/cakephp/bake/src/Shell/BakeShell.php(257): Bake\Shell\Task\ModelTask->main('DetalleVentas')
+#9 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Collection/CollectionTrait.php(52): Bake\Shell\BakeShell->Bake\Shell\{closure}('DetalleVentas', 0)
+#10 /Library/WebServer/Documents/restorapp/vendor/cakephp/bake/src/Shell/BakeShell.php(260): Cake\Collection\Collection->each(Object(Closure))
+#11 [internal function]: Bake\Shell\BakeShell->all('detalle_ventas')
+#12 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Console/Shell.php(452): call_user_func_array(Array, Array)
+#13 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(227): Cake\Console\Shell->runCommand(Array, true, Array)
+#14 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#15 /Library/WebServer/Documents/restorapp/vendor/cakephp/cakephp/src/Console/ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#16 /Library/WebServer/Documents/restorapp/bin/cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#17 {main}
+
+

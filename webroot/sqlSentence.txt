@@ -1,0 +1,1 @@
+UPDATE ventas SET estado_pago='pagado' WHERE id=0 and id_empresa=2
