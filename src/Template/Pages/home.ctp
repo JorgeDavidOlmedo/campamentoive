@@ -37,7 +37,98 @@
                                 ['escape' => false])?>  
                             </div>
                             <div class="content">
-                                <div id="ventasForTime" class="ct-chart ct-perfect-fourth"></div>
+                            <div class="content all-icons">
+                           
+                           <div class="row">
+
+                                 <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
+                                        <a><div class="font-icon-detail rojo">
+                                                <div class="pedido">
+                                                <h5> <strong>Varones Grandes: 50</strong></h5>
+                                                <h5> <strong>Varones Menores: 50</strong></h5>
+                                                <hr>
+                                                <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                                <hr>
+                                                <h5> <strong>Mujeres Grandes: 50</strong></h5>
+                                                <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                                <hr>
+                                                <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                                <hr>
+                                                <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                                <hr>
+                                                </div>
+                                                
+                                                
+                                            </div></a>
+                                      </div>
+
+                                      <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
+                                      <a><div class="font-icon-detail azul">
+                                              <div class="pedido">
+                                              <h5> <strong>Varones Grandes: 50</strong></h5>
+                                              <h5> <strong>Varones Menores: 50</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Mujeres Grandes: 50</strong></h5>
+                                              <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                              <hr>
+                                              </div>
+                                              
+                                              
+                                          </div></a>
+                                      </div>
+
+                                      <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
+                                      <a><div class="font-icon-detail verde">
+                                              <div class="pedido">
+                                              <h5> <strong>Varones Grandes: 50</strong></h5>
+                                              <h5> <strong>Varones Menores: 50</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Mujeres Grandes: 50</strong></h5>
+                                              <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                              <hr>
+                                              </div>
+                                              
+                                              
+                                          </div></a>
+                                      </div>
+
+                                      <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
+                                      <a><div class="font-icon-detail naranja">
+                                              <div class="pedido">
+                                              <h5> <strong>Varones Grandes: 50</strong></h5>
+                                              <h5> <strong>Varones Menores: 50</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Mujeres Grandes: 50</strong></h5>
+                                              <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                              <hr>
+                                              <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                              <hr>
+                                              </div>
+                                              
+                                              
+                                          </div></a>
+                                      </div>
+                                 </div>
+
+                                 
+                                 
+        </div>
                               
                                
                             </div>
@@ -61,6 +152,32 @@
 
 
 </body>
+
+
+<style>
+.rojo{
+    background-color: red;
+}
+
+.azul{
+
+    background-color: blue;
+}
+
+.verde{
+
+background-color: #11b911;;
+}
+
+.naranja{
+
+background-color: orange;
+}
+
+h5{
+    color:white;
+}
+</style>
 
 	<script type="text/javascript">
     	$(document).ready(function(){

@@ -17,7 +17,7 @@
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-car']).$this->Html->tag('p','Colectivos',['class' => '']).'', 
-					['controller' => 'Colectivos', 'action' => 'verMesas'],
+					['controller' => 'Colectivos', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
 
