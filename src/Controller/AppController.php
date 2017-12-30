@@ -100,51 +100,14 @@ class AppController extends Controller
        if($this->Auth->user()!=null){
 
           $this->set('current_user',$this->Auth->user());
-
-           $this->loadModel('UsuariosEmpresas');
-           $empresas_for_usuario = $this->UsuariosEmpresas->find('all',array('group'=>'Empresas.id','contain'=>'Empresas'));
-           $this->response->header('Access-Control-Allow-Methods','X-DEBUGKIT-ID');
-           $this->verificar_business_for_user();
-          $this->set(compact('empresas_for_usuario'));
+          $this->response->header('Access-Control-Allow-Methods','X-DEBUGKIT-ID');
+          // $this->set(compact(''));
 
        }
 
 
     }
 
-    public function verificar_business_for_user(){
-
-        $month = date('m');
-        $year = date('Y');
-        $fecha_inicio = date('Y-m-d', mktime(0,0,0, $month, 1, $year));
-
-        $month = date('m');
-        $year = date('Y');
-        $day = date("d", mktime(0,0,0, $month+1, 0, $year));
-
-        $fecha_final = date('Y-m-d', mktime(0,0,0, $month, $day, $year));
-
-        $this->loadModel('UsuariosEmpresas');
-        $empresas_for_usuario = $this->UsuariosEmpresas->find('all',array('group'=>'Empresas.id','contain'=>'Empresas'));
-
-        $id_empresa = $this->request->session()->read('id_empresa');
-        $empresa = $this->request->session()->read('empresa');
-        $inicial = $this->request->session()->read("fecha_ini");
-        $final = $this->request->session()->read("fecha_fin");
-
-        foreach ($empresas_for_usuario as $value){
-            if($id_empresa == '' || $id_empresa == null || $empresa == '' || $empresa == null){
-                if($value->id_usuario==$this->request->session()->read('Auth.User.id')){
-                    $this->request->session()->write('id_empresa', $value->empresa->id);
-                    $this->request->session()->write('empresa',$value->empresa->descripcion);
-                    $this->request->session()->write('fecha_ini',$fecha_inicio);
-                    $this->request->session()->write('fecha_fin',$fecha_final);
-
-                }
-
-            }
-        }
-    }
 
 
     public function isAuthorized($user=null)

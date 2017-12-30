@@ -40,7 +40,7 @@
 				</li>
 
 				<li>
-					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-check']).$this->Html->tag('p','Concluir-Inscripcion',['class' => '']).'', 
+					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-check']).$this->Html->tag('p','Inscripcion',['class' => '']).'', 
 					['controller' => 'Lugares', 'action' => 'index-venta-rapida/'],
 					['escape' => false])?>
 				</li>
