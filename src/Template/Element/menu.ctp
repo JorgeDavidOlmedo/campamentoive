@@ -122,9 +122,7 @@ $rol_usuario= $this->request->session()->read('Auth.User.rol');
                             <span id="username"><strong>Hola&nbsp;<?= $this->request->session()->read('Auth.User')['nombre']?> </strong></span>&nbsp;
                            </a>
 
-                           <div id="edificio">
-                             <span id="build" class="build"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Empresa: <?php echo $empresa;?> </strong></span>&nbsp;
-                           </div>
+
 
                         <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
 
@@ -133,28 +131,7 @@ $rol_usuario= $this->request->session()->read('Auth.User.rol');
                             $id_usuario = $this->request->session()->read('Auth.User.id');
                             ?>
 
-                            <?php if($rol_usuario=='admin'):?>
-                               <?php foreach ($empresas_for_usuario as $value):?>
-                                    <?php $array = json_decode($value->empresa);?>
 
-                                    <li role="presentation" class="view-as"><?php echo $this->Html->link($this->Html->tag('span','').$array->{'descripcion'},array('controller'=>'Usuarios', 'action'=>'setIdEmpresa',$array->{'id'},$array->{'descripcion'}) ,['escape' => false]);?></li>
-
-                                <?php endforeach;?>
-
-                            <?php else:?>
-
-                                <?php foreach ($empresas_for_usuario as $value):?>
-                                 <?php $array = json_decode($value->empresa);?>
-
-                                      <?php if($value->id_usuario == $id_usuario):?>
-
-                                        <li role="presentation" class="view-as"><?php echo $this->Html->link($this->Html->tag('span','').$array->{'descripcion'},array('controller'=>'Usuarios', 'action'=>'setIdEmpresa',$array->{'id'},$array->{'descripcion'}) ,['escape' => false]);?></li>
-
-                                      <?php endif;?>
-
-                                <?php endforeach;?>
-
-                            <?php endif;?>
                             <li role="presentation" class="view-as"><?php echo $this->Html->link($this->Html->tag('span','',['class' => 'glyphicon glyphicon-user']).' Mis datos',array('controller'=>'Usuarios', 'action'=>'datos') ,['escape' => false]);?></li>
                             <li role="presentation" style="  border-top: 1px solid #ccc;
                             padding-top: 10px;"><?php echo $this->Html->link($this->Html->tag('span','',['class' => 'glyphicon glyphicon-off']).' Salir',array('controller'=>'usuarios', 'action'=>'logout'), ['escape' => false]);?></li>

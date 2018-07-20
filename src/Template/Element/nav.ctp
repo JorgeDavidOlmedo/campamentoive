@@ -40,24 +40,10 @@
                               </a>
                               <ul class="dropdown-menu">
                               <?php $id_usuario = $this->request->session()->read('Auth.User.id');?>
-                                                          
-                              
-                              <?php if($rol_usuario=='admin'):?>
-                                        <?php foreach ($empresas_for_usuario as $value):?>
-                                              <?php $array = json_decode($value->empresa);?>
-                                                   <li><?php echo $this->Html->link($this->Html->tag('span','').$array->{'descripcion'},array('controller'=>'Usuarios', 'action'=>'setIdEmpresa',$array->{'id'},$array->{'descripcion'}) ,['escape' => false]);?></li>
-                                         <?php endforeach;?>
-                              
-                              <?php else:?>
-                              
-                                         <?php foreach ($empresas_for_usuario as $value):?>
-                                              <?php $array = json_decode($value->empresa);?>
-                                              <?php if($value->id_usuario == $id_usuario):?>
-                                                      <li><?php echo $this->Html->link($this->Html->tag('span','').$array->{'descripcion'},array('controller'=>'Usuarios', 'action'=>'setIdEmpresa',$array->{'id'},$array->{'descripcion'}) ,['escape' => false]);?></li>
-                                               <?php endif;?>
-                                           <?php endforeach;?>
-                              <?php endif;?>
-                             
+
+                                  <li><?php echo $this->Html->link($this->Html->tag('span','').'Datos del Usuario',array('controller'=>'Usuarios', 'action'=>'setIdEmpresa') ,['escape' => false]);?></li>
+
+
                               </ul>
                         </li>
                         <li>

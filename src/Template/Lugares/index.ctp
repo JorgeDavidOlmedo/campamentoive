@@ -1,41 +1,89 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Lugare'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="lugares index large-9 medium-8 columns content">
-    <h3><?= __('Lugares') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('descripcion') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('estado') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($lugares as $lugare): ?>
-            <tr>
-                <td><?= $this->Number->format($lugare->id) ?></td>
-                <td><?= h($lugare->descripcion) ?></td>
-                <td><?= $this->Number->format($lugare->estado) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $lugare->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $lugare->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $lugare->id], ['confirm' => __('Are you sure you want to delete # {0}?', $lugare->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-        </ul>
-        <p><?= $this->Paginator->counter() ?></p>
+<?php echo $this->element('head');?>
+<?= $this->Html->script('controladores/lugares/controller');?>
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="../img/sidebar-5.jpg">
+        <?php echo $this->element('portrait');?>
+        <div class="main-panel" >
+            <?php echo $this->element('nav');?>
+            <div class="content" ng-controller="lugarIndex">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h4 class="title">Lugares</h4>
+                                    <p class="category">Lista de Lugares</p><br>
+                                    <?= $this->Html->link($this->Html->tag('p','Agregar Nuevo Lugar',['class' => '']).'',
+                                        ['controller' => 'Lugares', 'action' => 'add'],
+                                        ['escape' => false])?>
+                                </div>
+                                <div class="row">
+
+                                </div>
+                                <div class="content table-responsive table-full-width">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <th>ID</th>
+                                        <th>Descripcion</th>
+                                        <th>Config.</th>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach ($lugares as $value):?>
+                                            <tr>
+
+
+                                                    <td><?= $this->Number->format($value->id) ?></td>
+                                                    <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Lugares', 'action' => 'view', $value->id]) : '' ?></td>
+
+                                                    <td class="actions">
+                                                        <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
+                                                        <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $value->id;?>)"></a>
+                                                    </td>
+
+
+
+                                            </tr>
+                                        <?php endforeach;?>
+
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+                                <div class="paginator">
+                                    <ul class="pagination">
+                                        <?= $this->Paginator->prev('< ' . __('previous')) ?>
+                                        <?= $this->Paginator->numbers() ?>
+                                        <?= $this->Paginator->next(__('next') . ' >') ?>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <?php echo $this->element('footer');?>
+
+        </div>
     </div>
 </div>
+
+</body>
+
+</html>
+
+<style>
+
+    td.datacellone {
+        background-color: #e80a33ba; color: black;
+    }
+
+
+

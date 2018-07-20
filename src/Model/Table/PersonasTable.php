@@ -33,6 +33,10 @@ class PersonasTable extends Table
         $this->table('personas');
         $this->displayField('id');
         $this->primaryKey('id');
+
+        $this->belongsTo('Lugares', [
+            'foreignKey' => 'id_lugar'
+        ]);
     }
 
     /**
@@ -47,7 +51,7 @@ class PersonasTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
+        /*$validator
             ->requirePresence('descripcion', 'create')
             ->notEmpty('descripcion');
 
@@ -76,7 +80,7 @@ class PersonasTable extends Table
         $validator
             ->integer('estado')
             ->requirePresence('estado', 'create')
-            ->notEmpty('estado');
+            ->notEmpty('estado');*/
 
         return $validator;
     }

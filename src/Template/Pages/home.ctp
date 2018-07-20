@@ -149,29 +149,29 @@
 
     </div>
 </div>
-
+</div>
 
 </body>
 
 
 <style>
 .rojo{
-    background-color: red;
+    background-color: #ff000096;
 }
 
 .azul{
 
-    background-color: blue;
+    background-color: #2e2ef5cf;
 }
 
 .verde{
 
-background-color: #11b911;;
+background-color: #11b9119c;
 }
 
 .naranja{
 
-background-color: orange;
+background-color: #ffa500ad;
 }
 
 h5{

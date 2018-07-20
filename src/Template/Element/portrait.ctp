@@ -22,20 +22,20 @@
 				</li>
 
 				<li>
-					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-users']).$this->Html->tag('p','Personas',['class' => '']).'', 
-					['controller' => 'Personas', 'action' => 'index-venta-rapida/'],
+					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-users']).$this->Html->tag('p','Participantes',['class' => '']).'',
+					['controller' => 'Personas', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-ribbon']).$this->Html->tag('p','Lugares',['class' => '']).'', 
-					['controller' => 'Lugares', 'action' => 'index-venta-rapida/'],
+					['controller' => 'Lugares', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-note']).$this->Html->tag('p','Pre-Inscripcion',['class' => '']).'', 
-					['controller' => 'Lugares', 'action' => 'index-venta-rapida/'],
+					['controller' => 'Lugares', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
 
