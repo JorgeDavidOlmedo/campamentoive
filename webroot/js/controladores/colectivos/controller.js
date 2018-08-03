@@ -127,6 +127,7 @@ app.controller('colectivoAdd',function($scope,kConstant,$http,$window){
         if($scope.verificar_campos()){
            $scope.colectivo.estado=1;
            $scope.colectivo.ocupado=0;
+           $scope.colectivo.categoria=$("#categoria").val();
            console.log($scope.colectivo);
            $http.post(kConstant.url+"colectivos/addEntity/",$scope.colectivo).
            then(function(response){
@@ -173,12 +174,14 @@ app.controller('colectivoEdit',function ($scope,$http,kConstant,$window) {
         $http.get(kConstant.url+"/colectivos/getEntity/"+id)
             .then(function(data){
                 $scope.colectivo=data.data.colectivo[0];
+                $("#categoria").val(data.data.colectivo[0].categoria);
         
             });
 
       }
 
       $scope.modificar = function (id) {
+          $scope.colectivo.categoria=$("#categoria").val();
          if($scope.verificar_campos()){
               $http.post(kConstant.url+"colectivos/editEntity/"+id,$scope.colectivo).
               then(function(response){

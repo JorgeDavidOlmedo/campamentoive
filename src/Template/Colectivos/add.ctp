@@ -22,7 +22,18 @@
                     <?=$this->Form->input('descripcion',array('class' => 'form-control',
                     'label'=>'Descripcion','ng-model'=>'colectivo.descripcion'))?>
                 </div>
-           </div>    
+           </div>
+
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <?=$this->Form->input('categoria',["id"=>"categoria", 'type'=>'select',
+                    'label'=>'Categoria',
+                    'options'=>["ninguno"=>"Ninguno", "masculino" => "Masculino","femenino"=>"Femenino"],
+                    'class'=>'input'])?>
+            </div>
+        </div>
 
            
 

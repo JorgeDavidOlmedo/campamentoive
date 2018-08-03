@@ -16,7 +16,7 @@
 				</li>
 
 				<li>
-					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-car']).$this->Html->tag('p','Colectivos',['class' => '']).'', 
+					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-car']).$this->Html->tag('p','Colectivos',['class' => '']).'',
 					['controller' => 'Colectivos', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
@@ -35,15 +35,21 @@
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-note']).$this->Html->tag('p','Pre-Inscripcion',['class' => '']).'', 
-					['controller' => 'Lugares', 'action' => 'index/'],
+					['controller' => 'Inscripciones/index', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-check']).$this->Html->tag('p','Inscripcion',['class' => '']).'', 
-					['controller' => 'Lugares', 'action' => 'index-venta-rapida/'],
+					['controller' => 'Inscripciones/index', 'action' => 'index'],
 					['escape' => false])?>
 				</li>
+
+                <li>
+                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-check']).$this->Html->tag('p','Usuarios',['class' => '']).'',
+                        ['controller' => 'Usuarios/index', 'action' => 'index'],
+                        ['escape' => false])?>
+                </li>
 		
 				
 				<li>

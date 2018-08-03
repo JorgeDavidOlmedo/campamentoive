@@ -60,7 +60,7 @@
 
                                         <div class="col-xs-12 col-sm-4 col-md-4">
                                             <?=$this->Form->input('sexo',["id"=>"sexo", 'type'=>'select',
-                                                'label'=>'Genero',
+                                                'label'=>'Sexo',
                                                 'options'=>["masculino" => "Masculino","femenino"=>"Femenino"],
                                                 'class'=>'input'])?>
                                         </div>

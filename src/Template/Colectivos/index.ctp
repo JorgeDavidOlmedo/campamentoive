@@ -25,6 +25,7 @@
                             <thead>
                             <th>ID</th>
                             <th>Descripcion</th>
+                            <th>Categoria</th>
                             <th>Lugares</th>
                             <th>Utilizados</th>
                             <th>Disponible</th>
@@ -36,7 +37,9 @@
                                     <?php if(($value->lugar-$value->ocupado)>0):?>
 
                                     <td><?= $this->Number->format($value->id) ?></td>
+
                                     <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Colectivos', 'action' => 'view', $value->id]) : '' ?></td>
+                                    <td><?= $value->categoria ?></td>
                                     <td><?= $value->lugar; ?></td>
                                     <td><?= $value->ocupado; ?></td>
                                     <td><?= ($value->lugar-$value->ocupado); ?></td>
@@ -49,6 +52,7 @@
 
                                     <td class="datacellone"><?= $this->Number->format($value->id) ?></td>
                                     <td class="datacellone"><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Colectivos', 'action' => 'view', $value->id]) : '' ?></td>
+                                    <td class="datacellone"><?= $value->categoria ?></td>
                                     <td class="datacellone"><?= $value->lugar; ?></td>
                                     <td class="datacellone"><?= $value->ocupado; ?></td>
                                     <td class="datacellone"><?= ($value->lugar-$value->ocupado); ?> - LLENO</td>
