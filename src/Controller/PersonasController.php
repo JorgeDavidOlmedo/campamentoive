@@ -267,6 +267,77 @@ class PersonasController extends AppController
 
     }
 
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     */
+    public function getEntityAllByTerm($term = null)
+    {
+
+        $results=null;
+        $connection = ConnectionManager::get('default');
+
+        $results = $connection->execute(
+            "SELECT a.id as id,
+             a.descripcion as descripcion,
+             a.dni as dni,
+             YEAR(CURDATE())-YEAR(a.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(a.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+             ,a.sexo as sexo,
+             a.correo as correo,
+             b.descripcion as descrip_lugar,
+             b.id as id_lugar
+             FROM personas a, lugares b
+             WHERE 
+             a.id_lugar = b.id AND
+             a.estado=1 AND
+            (a.descripcion like '%".$term."%' OR 
+             a.dni like '%".$term."%')");
+
+        $resultado = array();
+        $categoria = "colaborador";
+        foreach ($results as $value){
+
+            if($value['edad']>=14 && $value['edad']<=18){
+                $categoria = "participante";
+            }
+
+            if($value['edad']>19){
+                $categoria = "voluntario";
+            }
+
+
+            $resultado[] = array("id"=>$value['id'],
+                "descripcion"=> $value['descripcion'],
+                "dni" => $value['dni'],
+                "edad"=>$value['edad'],
+                "sexo"=>$value['sexo'],
+                "correo"=>$value['correo'],
+                "categoria"=>$categoria,
+                "lugar"=>array(
+                    "id"=>$value['id_lugar'],
+                    "descripcion"=>$value['descrip_lugar']
+                ));
+
+        }
+
+        $des = "No existe";
+        if( count($results)<=0 ) {
+            $resultado[] = array("id"=>"00",
+                "descripcion"=> "Agregar Participante");
+        }
+
+        $personas = $resultado;
+        $this->set([
+            'personas' => $personas,
+            '_serialize' => ['personas']
+        ]);
+        $this->viewClass = 'Json';
+        $this->render();
+
+    }
+
+
 
 }
 

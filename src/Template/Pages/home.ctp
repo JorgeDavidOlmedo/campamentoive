@@ -33,7 +33,7 @@
                                 <h4 class="title">Inscripciones</h4>
                                 
                                 <?= $this->Html->link($this->Html->tag('p','Lista de Inscripciones',['class' => '']).'', 
-                                ['controller' => 'Ventas', 'action' => 'index'],
+                                ['controller' => 'pages', 'action' => 'home'],
                                 ['escape' => false])?>  
                             </div>
                             <div class="content">
@@ -84,25 +84,25 @@
                                       </div>
 
                                       <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
-                                      <a><div class="font-icon-detail verde">
-                                              <div class="pedido">
-                                              <h5> <strong>Varones Grandes: 50</strong></h5>
-                                              <h5> <strong>Varones Menores: 50</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Subtotal Varones: 100</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Mujeres Grandes: 50</strong></h5>
-                                              <h5> <strong>Mujeres Menores: 50</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Subtotal Mujeres: 100</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Total Por Equipo: 200</strong></h5>
-                                              <hr>
-                                              </div>
-                                              
-                                              
-                                          </div></a>
-                                      </div>
+                                   <a><div class="font-icon-detail verde">
+                                           <div class="pedido">
+                                               <h5> <strong>Varones Grandes: 50</strong></h5>
+                                               <h5> <strong>Varones Menores: 50</strong></h5>
+                                               <hr>
+                                               <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                               <hr>
+                                               <h5> <strong>Mujeres Grandes: 50</strong></h5>
+                                               <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                               <hr>
+                                               <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                               <hr>
+                                               <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                               <hr>
+                                           </div>
+
+
+                                       </div></a>
+                               </div>
 
                                       <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
                                       <a><div class="font-icon-detail naranja">

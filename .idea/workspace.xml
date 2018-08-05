@@ -2,43 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28b29f15-21aa-4bd0-b1bb-9175d98c746c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InscripcionesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InscripcionesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PersonasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/Element/portrait.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Element/portrait.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Personas/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Usuarios/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Usuarios/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Controller-controller-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-add-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-delete-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-edit-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-index-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-Controller-view-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Element-form-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Layout-default-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Model-entity-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-Model-table-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-tests-fixture-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/Bake-tests-test-case-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/add-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/edit-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/index-ctp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bake/view-ctp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Pages/home.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Pages/home.ctp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_colectivos" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_colectivos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_detalle_perfil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_lugares" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_perfil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_personas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_inscripciones" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_inscripciones" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_lugares" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_lugares" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_personas" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_personas" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_usuarios" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_usuarios" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_cake_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_cake_en__u_s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/debug_kit.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/debug_kit.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/js/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/angular.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,29 +63,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="portrait.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/Element/portrait.ctp">
+      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/add.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="48" column="124" selection-start-line="48" selection-start-column="124" selection-end-line="48" selection-end-column="124" />
+            <state relative-caret-position="363">
+              <caret line="402" selection-start-line="402" selection-end-line="402" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/Personas/add.ctp">
+      <file leaf-file-name="menu.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Element/menu.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+            <state relative-caret-position="1237">
+              <caret line="133" selection-start-line="133" selection-end-line="133" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.ctp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/add.ctp">
+      <file leaf-file-name="home.ctp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Template/Pages/home.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="35" column="14" selection-start-line="27" selection-start-column="7" selection-end-line="35" selection-end-column="14" />
+            <state relative-caret-position="382">
+              <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -107,26 +93,59 @@
       <file leaf-file-name="edit.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/edit.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+            <state relative-caret-position="105">
+              <caret line="7" column="107" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="107" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js">
+        <entry file="file://$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="176" column="68" selection-start-line="176" selection-start-column="68" selection-end-line="176" selection-end-column="68" />
+            <state relative-caret-position="434">
+              <caret line="222" column="22" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/index.ctp">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webroot/js/controladores/personas/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+            <state relative-caret-position="125">
+              <caret line="188" column="37" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonasController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/PersonasController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="131" column="25" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="25" />
+              <folding>
+                <element signature="e#33#66#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/index.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="50" column="84" selection-start-line="50" selection-start-column="84" selection-end-line="50" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InscripcionesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/InscripcionesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="88" column="21" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="21" />
+              <folding>
+                <element signature="e#33#66#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getComprasByfecha</find>
-      <find>var c</find>
       <find>comprasc</find>
       <find>total</find>
       <find>payables</find>
@@ -172,6 +189,8 @@
       <find>getEn</find>
       <find>rojo</find>
       <find>genero</find>
+      <find>addEn</find>
+      <find>color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,8 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webroot/class/setting.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/src/Template/Compras/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Proveedores/add.ctp" />
         <option value="$PROJECT_DIR$/src/Model/Table/ProveedoresTable.php" />
@@ -214,23 +231,25 @@
         <option value="$PROJECT_DIR$/webroot/js/controladores/lugares/controller.js" />
         <option value="$PROJECT_DIR$/src/Model/Table/PersonasTable.php" />
         <option value="$PROJECT_DIR$/src/Template/Personas/index.ctp" />
-        <option value="$PROJECT_DIR$/webroot/js/angular.js" />
         <option value="$PROJECT_DIR$/src/Controller/LugaresController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/PersonasController.php" />
         <option value="$PROJECT_DIR$/src/Template/Personas/edit.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" />
-        <option value="$PROJECT_DIR$/src/Template/Pages/home.ctp" />
         <option value="$PROJECT_DIR$/src/Model/Table/InscripcionesTable.php" />
-        <option value="$PROJECT_DIR$/src/Controller/InscripcionesController.php" />
-        <option value="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" />
-        <option value="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Usuarios/add.ctp" />
-        <option value="$PROJECT_DIR$/src/Template/Element/portrait.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Personas/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js" />
         <option value="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Element/portrait.ctp" />
+        <option value="$PROJECT_DIR$/webroot/js/angular.js" />
+        <option value="$PROJECT_DIR$/src/Controller/PersonasController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/InscripcionesController.php" />
+        <option value="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" />
+        <option value="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js" />
+        <option value="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Pages/home.ctp" />
       </list>
     </option>
   </component>
@@ -290,7 +309,7 @@
               <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
               <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
@@ -310,7 +329,7 @@
               <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Template" type="462c0819:PsiDirectoryNode" />
-              <item name="Personas" type="462c0819:PsiDirectoryNode" />
+              <item name="Pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
@@ -336,15 +355,7 @@
               <item name="webroot" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="controladores" type="462c0819:PsiDirectoryNode" />
-              <item name="colectivos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
-              <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
-              <item name="webroot" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="controladores" type="462c0819:PsiDirectoryNode" />
-              <item name="lugares" type="462c0819:PsiDirectoryNode" />
+              <item name="personas" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,15 +373,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webroot/js/controladores" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webroot/js/controladores/inscripciones" />
       <recent name="$PROJECT_DIR$/webroot/js/controladores/personas" />
       <recent name="$PROJECT_DIR$/webroot/js/controladores/lugares" />
       <recent name="$PROJECT_DIR$/src/Template/Ventas" />
       <recent name="$PROJECT_DIR$/src/Template/Layout" />
-      <recent name="$PROJECT_DIR$/webroot/ajax" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/webroot/js/controladores" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -570,12 +581,13 @@
       <workItem from="1532048972384" duration="4432000" />
       <workItem from="1532103036727" duration="1453000" />
       <workItem from="1533302888293" duration="352000" />
-      <workItem from="1533310390340" duration="1483000" />
+      <workItem from="1533310390340" duration="5840000" />
+      <workItem from="1533418510080" duration="9612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="793810000" />
+    <option name="totallyTimeSpent" value="807779000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -590,7 +602,7 @@
     <frame x="0" y="23" width="1440" height="787" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28040057" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28397712" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20418848" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.08202443" />
@@ -602,14 +614,14 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32984293" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2625" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3291592" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2625" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -650,8 +662,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/PagosController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/CobrosController.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/ClientesController.php" />
     <entry file="file://$PROJECT_DIR$/webroot/js/controladores/compras/controller.js" />
     <entry file="file://$PROJECT_DIR$/src/Template/Compras/add.ctp" />
@@ -711,32 +721,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Element/menu.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Element/navbar.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Personas/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="103" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webroot/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Lugares/add.ctp">
       <provider selected="true" editor-type-id="text-editor">
@@ -759,27 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/personas/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="289" column="79" selection-start-line="289" selection-start-column="79" selection-end-line="289" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PersonasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3285">
-          <caret line="219" column="41" selection-start-line="219" selection-start-column="41" selection-end-line="219" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Pages/home.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="151" column="6" selection-start-line="151" selection-start-column="6" selection-end-line="151" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Lugares/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -797,44 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Table/InscripcionesTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LugaresController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="32" column="10" selection-start-line="28" selection-start-column="7" selection-end-line="32" selection-end-column="10" />
-          <folding>
-            <element signature="e#33#66#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/InscripcionesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="106" selection-start-line="24" selection-start-column="106" selection-end-line="24" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Usuarios/add.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -842,31 +772,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Element/portrait.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="48" column="124" selection-start-line="48" selection-start-column="124" selection-end-line="48" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Personas/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/add.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
           <caret line="35" column="14" selection-start-line="27" selection-start-column="7" selection-end-line="35" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/edit.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -879,8 +788,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+        <state relative-caret-position="335">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Element/portrait.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Personas/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="39" column="58" selection-start-line="39" selection-start-column="58" selection-end-line="39" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/LugaresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="83" column="53" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Table/InscripcionesTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="50" column="84" selection-start-line="50" selection-start-column="84" selection-end-line="50" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Colectivos/edit.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="107" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="64" selection-start-line="14" selection-start-column="64" selection-end-line="14" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/personas/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="188" column="37" selection-start-line="188" selection-start-column="37" selection-end-line="188" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PersonasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="131" column="25" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="25" />
+          <folding>
+            <element signature="e#33#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Personas/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/InscripcionesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="88" column="21" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="21" />
+          <folding>
+            <element signature="e#33#66#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="222" column="22" selection-start-line="222" selection-start-column="22" selection-end-line="222" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Element/menu.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1237">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="402" selection-start-line="402" selection-end-line="402" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Pages/home.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
         </state>
       </provider>
     </entry>
