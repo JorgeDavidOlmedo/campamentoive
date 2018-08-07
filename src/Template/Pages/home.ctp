@@ -44,17 +44,17 @@
                                  <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
                                         <a><div class="font-icon-detail rojo">
                                                 <div class="pedido">
-                                                <h5> <strong>Varones Grandes: 50</strong></h5>
-                                                <h5> <strong>Varones Menores: 50</strong></h5>
+                                                <h5> <strong>Varones Grandes: {{rojo_mayor}}</strong></h5>
+                                                <h5> <strong>Varones Menores: {{rojo_menor}}</strong></h5>
                                                 <hr>
-                                                <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                                <h5> <strong>Subtotal Varones: {{rojo_mayor + rojo_menor}}</strong></h5>
                                                 <hr>
-                                                <h5> <strong>Mujeres Grandes: 50</strong></h5>
-                                                <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                                <h5> <strong>Mujeres Grandes: {{ rojo_mayor_fem }}</strong></h5>
+                                                <h5> <strong>Mujeres Menores: {{ rojo_menor_fem}}</strong></h5>
                                                 <hr>
-                                                <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                                <h5> <strong>Subtotal Mujeres: {{rojo_mayor_fem + rojo_menor_fem}}</strong></h5>
                                                 <hr>
-                                                <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                                <h5> <strong>Total Por Equipo: {{rojo_mayor + rojo_menor + rojo_mayor_fem + rojo_menor_fem}}</strong></h5>
                                                 <hr>
                                                 </div>
                                                 
@@ -65,18 +65,19 @@
                                       <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
                                       <a><div class="font-icon-detail azul">
                                               <div class="pedido">
-                                              <h5> <strong>Varones Grandes: 50</strong></h5>
-                                              <h5> <strong>Varones Menores: 50</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Subtotal Varones: 100</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Mujeres Grandes: 50</strong></h5>
-                                              <h5> <strong>Mujeres Menores: 50</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Subtotal Mujeres: 100</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Total Por Equipo: 200</strong></h5>
-                                              <hr>
+                                                  <h5> <strong>Varones Grandes: {{azul_mayor}}</strong></h5>
+                                                  <h5> <strong>Varones Menores: {{azul_menor}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Subtotal Varones: {{azul_mayor + azul_menor}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Mujeres Grandes: {{ azul_mayor_fem }}</strong></h5>
+                                                  <h5> <strong>Mujeres Menores: {{azul_menor_fem}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Subtotal Mujeres: {{azul_mayor_fem + azul_menor_fem}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Total Por Equipo: {{azul_mayor + azul_menor + azul_mayor_fem + azul_menor_fem}}</strong></h5>
+
+                                                  <hr>
                                               </div>
                                               
                                               
@@ -86,17 +87,18 @@
                                       <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
                                    <a><div class="font-icon-detail verde">
                                            <div class="pedido">
-                                               <h5> <strong>Varones Grandes: 50</strong></h5>
-                                               <h5> <strong>Varones Menores: 50</strong></h5>
+                                               <h5> <strong>Varones Grandes: {{verde_mayor}}</strong></h5>
+                                               <h5> <strong>Varones Menores: {{verde_menor}}</strong></h5>
                                                <hr>
-                                               <h5> <strong>Subtotal Varones: 100</strong></h5>
+                                               <h5> <strong>Subtotal Varones: {{verde_mayor + verde_menor}}</strong></h5>
                                                <hr>
-                                               <h5> <strong>Mujeres Grandes: 50</strong></h5>
-                                               <h5> <strong>Mujeres Menores: 50</strong></h5>
+                                               <h5> <strong>Mujeres Grandes: {{ verde_mayor_fem }}</strong></h5>
+                                               <h5> <strong>Mujeres Menores: {{ verde_menor_fem}}</strong></h5>
                                                <hr>
-                                               <h5> <strong>Subtotal Mujeres: 100</strong></h5>
+                                               <h5> <strong>Subtotal Mujeres: {{verde_mayor_fem + verde_menor_fem}}</strong></h5>
                                                <hr>
-                                               <h5> <strong>Total Por Equipo: 200</strong></h5>
+                                               <h5> <strong>Total Por Equipo: {{verde_mayor + verde_menor + verde_mayor_fem + verde_menor_fem}}</strong></h5>
+
                                                <hr>
                                            </div>
 
@@ -107,18 +109,19 @@
                                       <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
                                       <a><div class="font-icon-detail naranja">
                                               <div class="pedido">
-                                              <h5> <strong>Varones Grandes: 50</strong></h5>
-                                              <h5> <strong>Varones Menores: 50</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Subtotal Varones: 100</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Mujeres Grandes: 50</strong></h5>
-                                              <h5> <strong>Mujeres Menores: 50</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Subtotal Mujeres: 100</strong></h5>
-                                              <hr>
-                                              <h5> <strong>Total Por Equipo: 200</strong></h5>
-                                              <hr>
+                                                  <h5> <strong>Varones Grandes: {{amarillo_mayor}}</strong></h5>
+                                                  <h5> <strong>Varones Menores: {{amarillo_menor}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Subtotal Varones: {{amarillo_mayor + amarillo_menor}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Mujeres Grandes: {{ amarillo_mayor_fem }}</strong></h5>
+                                                  <h5> <strong>Mujeres Menores: {{ amarillo_menor_fem}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Subtotal Mujeres: {{amarillo_mayor_fem + amarillo_menor_fem}}</strong></h5>
+                                                  <hr>
+                                                  <h5> <strong>Total Por Equipo: {{amarillo_mayor + amarillo_menor + amarillo_mayor_fem + amarillo_menor_fem}}</strong></h5>
+
+                                                  <hr>
                                               </div>
                                               
                                               

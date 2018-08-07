@@ -306,6 +306,170 @@ class InscripcionesController extends AppController
     }
 
 
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     */
+    public function getInscriptos()
+    {
+
+        $results=null;
+        $connection = ConnectionManager::get('default');
+        $anho = date("Y");
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                year(a.fecha)=".$anho."
+                GROUP BY a.color,b.sexo,edad;";
+
+        $results = $connection->execute($sql);
+
+        $resultado= array();
+
+        $amarillo_menor = 0;
+        $rojo_menor = 0;
+        $azul_menor = 0;
+        $verde_menor = 0;
+
+        $amarillo_menor_fem = 0;
+        $rojo_menor_fem = 0;
+        $azul_menor_fem = 0;
+        $verde_menor_fem = 0;
+
+        $amarillo_mayor = 0;
+        $rojo_mayor = 0;
+        $azul_mayor = 0;
+        $verde_mayor = 0;
+
+        $amarillo_mayor_fem = 0;
+        $rojo_mayor_fem = 0;
+        $azul_mayor_fem = 0;
+        $verde_mayor_fem = 0;
+
+        foreach ($results as $value){
+
+            //MENOR DE EDAD
+            if($value['edad']==14 || $value['edad']==15){
+
+                //MASCULINO
+                if($value['sexo']=="masculino"){
+
+                    if($value['color']=="naranja"){
+                        $amarillo_menor = $amarillo_menor + $value['contador'];
+                    }
+
+                    if($value['color']=="rojo"){
+                        $rojo_menor = $rojo_menor + $value['contador'];
+                    }
+
+                    if($value['color']=="verde"){
+                        $verde_menor = $verde_menor + $value['contador'];
+                    }
+
+                    if($value['color']=="azul"){
+                        $azul_menor = $azul_menor + $value['contador'];
+                    }
+
+                }else{
+                    //FEMENINO
+                    if($value['color']=="naranja"){
+                        $amarillo_menor_fem = $amarillo_menor_fem + $value['contador'];
+                    }
+
+                    if($value['color']=="rojo"){
+                        $rojo_menor_fem = $rojo_menor_fem + $value['contador'];
+                    }
+
+                    if($value['color']=="verde"){
+                        $verde_menor_fem = $verde_menor_fem + $value['contador'];
+                    }
+
+                    if($value['color']=="azul"){
+                        $azul_menor_fem = $azul_menor_fem + $value['contador'];
+                    }
+
+                }
+
+
+
+            }
+
+            //MAYOR DE EDAD
+            if($value['edad']>=16){
+
+                //MASCULINO
+                if($value['sexo']=="masculino"){
+
+                    if($value['color']=="naranja"){
+                        $amarillo_mayor = $amarillo_mayor + $value['contador'];
+                    }
+
+                    if($value['color']=="rojo"){
+                        $rojo_mayor = $rojo_mayor + $value['contador'];
+                    }
+
+                    if($value['color']=="verde"){
+                        $verde_mayor = $verde_mayor + $value['contador'];
+                    }
+
+                    if($value['color']=="azul"){
+                        $azul_mayor = $azul_mayor + $value['contador'];
+                    }
+
+                }else{
+                    //FEMENINO
+                    if($value['color']=="naranja"){
+                        $amarillo_mayor_fem = $amarillo_mayor_fem + $value['contador'];
+                    }
+
+                    if($value['color']=="rojo"){
+                        $rojo_mayor_fem = $rojo_mayor_fem + $value['contador'];
+                    }
+
+                    if($value['color']=="verde"){
+                        $verde_mayor_fem = $verde_mayor_fem + $value['contador'];
+                    }
+
+                    if($value['color']=="azul"){
+                        $azul_mayor_fem = $azul_mayor_fem + $value['contador'];
+                    }
+
+                }
+
+
+            }
+
+
+        }
+
+        $resultado[] = array("amarillo"=>
+                                        array("masculino"=>array("mayor"=>$amarillo_mayor,"menor"=>$amarillo_menor),
+                                              "femenino"=>array("mayor"=>$amarillo_mayor_fem, "menor"=>$amarillo_menor_fem)),
+                             "azul"=>
+                                        array("masculino"=>array("mayor"=>$azul_mayor,"menor"=>$azul_menor),
+                                             "femenino"=>array("mayor"=>$azul_mayor_fem, "menor"=>$azul_menor_fem)),
+                             "verde"=>
+                                        array("masculino"=>array("mayor"=>$verde_mayor,"menor"=>$verde_menor),
+                                            "femenino"=>array("mayor"=>$verde_mayor_fem, "menor"=>$verde_menor_fem)),
+                             "rojo"=>
+                                        array("masculino"=>array("mayor"=>$rojo_mayor,"menor"=>$rojo_menor),
+                                            "femenino"=>array("mayor"=>$rojo_mayor_fem, "menor"=>$rojo_menor_fem)));
+
+        $this->set([
+            'resultado' => $resultado,
+            '_serialize' => ['resultado']
+        ]);
+        $this->viewClass = 'Json';
+        $this->render();
+
+    }
+
+
 
 }
 

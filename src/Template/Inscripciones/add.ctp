@@ -104,7 +104,7 @@
                                             <div class="col-xs-12 col-sm-2 col-md-2">
                                                 <?=$this->Form->input('color',["id"=>"color", 'type'=>'select',
                                                     'label'=>'Color',
-                                                    'options'=>["amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","verde"=>"Verde"],
+                                                    'options'=>["sin_definir"=>"Sin Definir", "amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","verde"=>"Verde"],
                                                     'class'=>'input'])?>
                                             </div>
 
@@ -141,7 +141,8 @@
                                                     'onkeyup'=>'format(this)','onchange'=>'format(this)',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear Pago'))?>
+                                                    'placeholder'=>'Tipear Pago',
+                                                    'ng-blur'=>'calcularDeuda()'))?>
                                          </div>
 
                                           <div class="col-xs-12 col-sm4 col-md-4">
@@ -150,7 +151,7 @@
                                                     'onkeyup'=>'format(this)','onchange'=>'format(this)',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'0'))?>
+                                                    'placeholder'=>'0','readonly'))?>
                                          </div>
 
 

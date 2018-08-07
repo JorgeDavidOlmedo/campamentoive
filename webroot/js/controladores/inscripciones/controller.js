@@ -121,6 +121,10 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
 
 app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personasByTerm,lugaresByTerm,$timeout){
 
+    String.prototype.replaceAll = function(str1, str2, ignore)
+    {
+        return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
+    }
 
     $scope.inscripcion = {
         pago:0,
@@ -180,6 +184,25 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
        }
     }
 
+    $scope.calcularDeuda = function(){
+          var pago = $scope.inscripcion.pago;
+          pago = pago.replaceAll(".","");
+          var deuda = $scope.inscripcion.deuda;
+          deuda = deuda.replaceAll(".","");
+
+          if(pago>deuda){
+              toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
+              setTimeout(function(){ $( "#pago" ).focus(); }, 500);
+              return;
+          }
+
+          var resultado = deuda - pago;
+          $scope.inscripcion.deuda = numeral(resultado).format('0,0.[00]');
+          $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
+          $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
+          $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
+    }
+
 
 
     $scope.persona='';
@@ -201,6 +224,15 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         $("#sexo").val($model.sexo);
         $scope.lugar = $model.lugar;
         setTimeout(function(){ $( "#pago" ).focus(); }, 500);
+
+        $http.get(kConstant.url + "eventos/getDeuda/"+$model.categoria).then(function (response) {
+            console.log(response.data.deuda);
+            $scope.inscripcion.deuda = response.data.deuda;
+
+        }, function (response) {
+
+        });
+
     }
 
     $scope.lugar='';

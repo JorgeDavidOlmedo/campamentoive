@@ -46,7 +46,13 @@
 				</li>
 
                 <li>
-                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-check']).$this->Html->tag('p','Usuarios',['class' => '']).'',
+                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-notebook']).$this->Html->tag('p','Eventos',['class' => '']).'',
+                        ['controller' => 'Eventos/index', 'action' => 'index'],
+                        ['escape' => false])?>
+                </li>
+
+                <li>
+                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-add-user']).$this->Html->tag('p','Usuarios',['class' => '']).'',
                         ['controller' => 'Usuarios/index', 'action' => 'index'],
                         ['escape' => false])?>
                 </li>

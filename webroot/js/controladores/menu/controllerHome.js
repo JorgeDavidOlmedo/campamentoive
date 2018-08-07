@@ -10,7 +10,61 @@ app.controller('homeIndex',function ($scope,kConstant,$http,$window,$filter) {
         console.log(data);
     }
 
+    $scope.amarillo_menor = 0;
+    $scope.amarillo_menor_fem = 0;
+    $scope.amarillo_mayor = 0;
+    $scope.amarillo_masculino_total = 0;
+    $scope.rojo_masculino_total = 0;
+    $scope.verde_masculino_total = 0;
+    $scope.azul_masculino_total = 0;
 
+    $scope.amarillo_fem_total = 0;
+    $scope.rojo_fem_total = 0;
+    $scope.verde_fem_total = 0;
+    $scope.azul_fem_total = 0;
+
+    $scope.amarillo_mayor_fem = 0;
+    $scope.rojo_menor = 0;
+    $scope.rojo_menor_fem = 0;
+    $scope.rojo_mayor = 0;
+    $scope.rojo_mayor_fem = 0;
+    $scope.verde_menor = 0;
+    $scope.verde_menor_fem = 0;
+    $scope.verde_mayor = 0;
+    $scope.verde_mayor_fem = 0;
+    $scope.azul_menor = 0;
+    $scope.azul_menor_fem = 0;
+    $scope.azul_mayor = 0;
+    $scope.azul_mayor_fem = 0;
+    $scope.verInscripciones = function(){
+        $http.get(kConstant.url + "inscripciones/getInscriptos/").then(function (response) {
+
+           $scope.amarillo_mayor = response.data.resultado[0].amarillo.masculino.mayor;
+           $scope.amarillo_menor = response.data.resultado[0].amarillo.masculino.menor;
+           $scope.amarillo_menor_fem = response.data.resultado[0].amarillo.femenino.menor;
+           $scope.amarillo_mayor_fem = response.data.resultado[0].amarillo.femenino.mayor;
+
+           $scope.azul_mayor = response.data.resultado[0].azul.masculino.mayor;
+           $scope.azul_menor = response.data.resultado[0].azul.masculino.menor;
+           $scope.azul_menor_fem = response.data.resultado[0].azul.femenino.menor;
+           $scope.azul_mayor_fem = response.data.resultado[0].azul.femenino.mayor;
+
+           $scope.verde_mayor = response.data.resultado[0].verde.masculino.mayor;
+           $scope.verde_menor = response.data.resultado[0].verde.masculino.menor;
+           $scope.verde_menor_fem = response.data.resultado[0].verde.femenino.menor;
+           $scope.verde_mayor_fem = response.data.resultado[0].verde.femenino.mayor;
+
+            $scope.rojo_mayor = response.data.resultado[0].rojo.masculino.mayor;
+            $scope.rojo_menor = response.data.resultado[0].rojo.masculino.menor;
+            $scope.rojo_menor_fem = response.data.resultado[0].rojo.femenino.menor;
+            $scope.rojo_mayor_fem = response.data.resultado[0].rojo.femenino.mayor;
+
+        }, function (response) {
+
+        });
+    }
+
+    $scope.verInscripciones();
 
     $scope.formatDate = function(date) {
 
