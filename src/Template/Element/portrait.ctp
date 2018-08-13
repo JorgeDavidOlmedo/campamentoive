@@ -35,13 +35,13 @@
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-note']).$this->Html->tag('p','Pre-Inscripcion',['class' => '']).'', 
-					['controller' => 'Inscripciones', 'action' => 'index/'],
+					['controller' => 'Inscripciones', 'action' => 'index-pre'],
 					['escape' => false])?>
 				</li>
 
 				<li>
 					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-check']).$this->Html->tag('p','Inscripcion',['class' => '']).'', 
-					['controller' => 'Inscripciones', 'action' => 'index'],
+					['controller' => 'Inscripciones', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
 
@@ -56,6 +56,12 @@
                         ['controller' => 'Usuarios/index', 'action' => 'index'],
                         ['escape' => false])?>
                 </li>
+
+                <li>
+                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-print']).$this->Html->tag('p','Reporte Incripciones',['class' => '']).'',
+                        ['controller' => 'inscripciones', 'action' => 'reporte'],
+                        ['escape' => false])?>
+                </li>
 		
 				
 				<li>
@@ -63,6 +69,8 @@
 					['controller' => 'usuarios', 'action' => 'logout'],
 					['escape' => false])?>
 				</li>
+
+
 			</ul>
     	</div>
     </div>

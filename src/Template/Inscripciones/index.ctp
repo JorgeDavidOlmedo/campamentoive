@@ -1,5 +1,5 @@
 <?php echo $this->element('head');?>
-<?= $this->Html->script('controladores/inscripciones/controller');?>
+<?= $this->Html->script('controladores/inscripciones/controllerfin');?>
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="../img/sidebar-5.jpg">
         <?php echo $this->element('portrait');?>
@@ -11,11 +11,8 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">Pre-Inscripciones</h4>
-                                    <p class="category">Lista de Pre-Inscripciones</p><br>
-                                    <?= $this->Html->link($this->Html->tag('p','Agregar Pre-Inscripcion',['class' => '']).'',
-                                        ['controller' => 'Inscripciones', 'action' => 'add'],
-                                        ['escape' => false])?>
+                                    <h4 class="title">Inscripciones</h4>
+
                                 </div>
                                 <div class="row">
 
@@ -29,16 +26,16 @@
                                         <th>DNI</th>
                                         <th>Procedencia</th>
                                         <th>Ficha Medida</th>
-                                        <th>Moneda</th>
                                         <th>Pago</th>
                                         <th>Deuda</th>
                                         <th>Correo</th>
+                                        <th>Colectivo</th>
+                                        <th>Estado</th>
                                         <th>Config.</th>
                                         </thead>
                                         <tbody>
                                         <?php foreach ($inscripciones as $value):?>
                                             <tr>
-
 
                                                 <td><?= $this->Number->format($value->id) ?></td>
                                                 <td><?= date('d/m/Y',strtotime($value->fecha)) ?></td>
@@ -46,10 +43,16 @@
                                                 <td><?= $value->persona->dni ?></td>
                                                 <td><?= $value->persona->lugare->descripcion ?></td>
                                                 <td><?= $value->ficha_medica ?></td>
-                                                <td><?= $value->moneda ?></td>
                                                 <td><?= number_format($value->pago) ?></td>
                                                 <td><?= number_format($value->deuda) ?></td>
                                                 <td><?= $value->persona->correo ?></td>
+                                                <?php if($value->colectivo==null):?>
+                                                <td>Sin asignar</td>
+                                                <?php else:?>
+                                                    <td><?= $value->colectivo->descripcion ?></td>
+                                                <?php endif;?>
+
+                                                <td><?= $value->estado_inscripcion ?></td>
                                                 <td class="actions">
                                                     <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
                                                     <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $value->id;?>)"></a>
@@ -102,4 +105,3 @@
 
 
 
-</style>

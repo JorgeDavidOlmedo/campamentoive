@@ -22,8 +22,7 @@ class InscripcionesController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
-    {
+    public function indexPre(){
 
         $this->paginate = [
             'contain'=>array('Personas','Colectivos','Personas.Lugares'),
@@ -36,6 +35,58 @@ class InscripcionesController extends AppController
 
         $this->set(compact('inscripciones'));
         $this->set('_serialize', ['inscripciones']);
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function index(){
+
+        $this->paginate = [
+            'contain'=>array('Personas','Colectivos','Personas.Lugares'),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'order'=>['Inscripciones.id DESC'],
+            'limit'=>25
+        ];
+
+        $inscripciones = $this->paginate($this->Inscripciones);
+
+        $this->set(compact('inscripciones'));
+        $this->set('_serialize', ['inscripciones']);
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function reporte(){
+
+        $this->paginate = [
+            'contain'=>array('Personas','Colectivos','Personas.Lugares'),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'order'=>['Inscripciones.id DESC'],
+            'limit'=>25
+        ];
+
+        $inscripciones = $this->paginate($this->Inscripciones);
+
+        $this->set(compact('inscripciones'));
+        $this->set('_serialize', ['inscripciones']);
+    }
+
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function printInscripcion(){
+
+       echo "NECESITO EL FORMATO DE IMPRESION EN EXCEL...";
+       die();
     }
 
     /**
@@ -52,6 +103,28 @@ class InscripcionesController extends AppController
         ]);
 
         $this->set('inscripcione', $inscripcione);
+        $this->set('_serialize', ['inscripcione']);
+    }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     */
+    public function addPre()
+    {
+        $inscripcione = $this->Inscripciones->newEntity();
+        if ($this->request->is('post')) {
+            $inscripcione = $this->Inscripciones->patchEntity($inscripcione, $this->request->data);
+            if ($this->Inscripciones->save($inscripcione)) {
+                $this->Flash->success(__('The inscripcione has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('The inscripcione could not be saved. Please, try again.'));
+            }
+        }
+        $this->set(compact('inscripcione'));
         $this->set('_serialize', ['inscripcione']);
     }
 
@@ -85,6 +158,33 @@ class InscripcionesController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)
+    {
+        $inscripcione = $this->Inscripciones->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $inscripcione = $this->Inscripciones->patchEntity($inscripcione, $this->request->data);
+            if ($this->Inscripciones->save($inscripcione)) {
+                $this->Flash->success(__('The inscripcione has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error(__('The inscripcione could not be saved. Please, try again.'));
+            }
+        }
+        $this->set(compact('inscripcione'));
+        $this->set('_serialize', ['inscripcione']);
+    }
+
+
+    /**
+     * Edit method
+     *
+     * @param string|null $id Inscripcione id.
+     * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function editPre($id = null)
     {
         $inscripcione = $this->Inscripciones->get($id, [
             'contain' => []
@@ -175,14 +275,15 @@ class InscripcionesController extends AppController
     public function editEntity($id = null)
     {
 
-        $lugar =$this->Lugares->get($id);
+        $inscripcion =$this->Inscripciones->get($id);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
 
             try{
-
-                $colectivo = $this->Lugares->patchEntity($lugar, $this->request->data);
-                if ($this->Lugares->save($lugar)) {
+                $this->request->data['pago'] = str_replace('.','',$this->request->data['pago']);
+                $this->request->data['deuda'] = str_replace('.','',$this->request->data['deuda']);
+                $inscripcion = $this->Inscripciones->patchEntity($inscripcion, $this->request->data);
+                if ($this->Inscripciones->save($inscripcion)) {
                     $mensaje = "ok.";
                 } else {
                     $mensaje = "error";
@@ -200,8 +301,8 @@ class InscripcionesController extends AppController
 
         $this->set([
             'mensaje' => $mensaje,
-            'lugar' => $lugar,
-            '_serialize' => ['mensaje', 'lugar']
+            'inscripcion' => $inscripcion,
+            '_serialize' => ['mensaje', 'inscripcion']
         ]);
         $this->viewClass = 'Json';
         $this->render();
@@ -215,12 +316,21 @@ class InscripcionesController extends AppController
     public function getEntity($id = null)
     {
 
-        $lugar = $this->Lugares->find('all',
-            array('conditions'=>array('Lugares.id'=>$id)));
+        $inscripcion = $this->Inscripciones->find('all',
+            array('conditions'=>array('Inscripciones.id'=>$id),
+                  'contain'=>array('Personas.Lugares')));
 
+        $row = $inscripcion->first();
+        $fecha_naci = date('Y-m-d',strtotime($row->persona->fecha_nacimiento));
+        $hoy = date('Y-m-d');
+        $datetime1 = date_create($hoy);
+        $datetime2 = date_create($fecha_naci);
+        $interval = date_diff($datetime1, $datetime2);
+        $anhos = $interval->y;
         $this->set([
-            'lugar' => $lugar,
-            '_serialize' => ['lugar']
+            'inscripcion' => $inscripcion,
+            'anhos' =>$anhos,
+            '_serialize' => ['inscripcion','anhos']
         ]);
         $this->viewClass = 'Json';
         $this->render();
@@ -237,8 +347,8 @@ class InscripcionesController extends AppController
         $message = "";
         try{
 
-            $lugar = TableRegistry::get('Lugares');
-            $query = $lugar->query();
+            $inscrip = TableRegistry::get('Inscripciones');
+            $query = $inscrip->query();
             $query->update()
                 ->set(['estado' => 0])
                 ->where(['id' => $id])

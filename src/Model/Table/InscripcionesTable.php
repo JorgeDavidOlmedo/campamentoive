@@ -39,6 +39,7 @@ class InscripcionesTable extends Table
             'foreignKey' => 'id_persona'
         ]);
 
+
         $this->belongsTo('Colectivos', [
             'foreignKey' => 'id_colectivo'
         ]);
