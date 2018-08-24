@@ -137,7 +137,7 @@
                             <th>Utilizados</th>
                             <th>Disponible</th>
                             </thead>
-                            <tbody class="buscar">
+                            <tbody>
                             <?php foreach ($bondis as $value):?>
                                 <tr>
                                     <?php if(($value->lugar-$value->ocupado)>0):?>

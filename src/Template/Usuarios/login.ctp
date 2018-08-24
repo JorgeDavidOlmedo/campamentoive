@@ -254,7 +254,7 @@ body {
 }
 
 .logo {
-   
+
     background-repeat: no-repeat;
     background-size: 50% 80%;
     background-position: 47% 0%;

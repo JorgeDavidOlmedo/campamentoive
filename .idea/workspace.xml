@@ -2,60 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28b29f15-21aa-4bd0-b1bb-9175d98c746c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ColectivosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ColectivosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EventosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EventosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/InscripcionesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InscripcionesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UsuariosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UsuariosController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Table/PersonasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/PersonasTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Table/UsuariosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/UsuariosTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/view.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Element/nav.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Element/nav.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/index.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/add_pre.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/add_pre.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/edit_pre.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/edit_pre.ctp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/index_pre.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/index_pre.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/view.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Personas/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Personas/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Personas/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/index.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Personas/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/view.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Usuarios/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Usuarios/add.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Usuarios/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Usuarios/edit.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Template/Usuarios/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Usuarios/index.ctp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/Usuarios/login.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Usuarios/login.ctp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_colectivos" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_detalle_perfil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_eventos" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_eventos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_inscripciones" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_lugares" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_perfil" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_personas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_usuarios" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_cake_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_cake_en__u_s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/debug_kit.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/debug_kit.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/eventos/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/eventos/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webroot/js/controladores/usuarios/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/usuarios/controller.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,11 +42,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.ctp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="angular.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webroot/js/angular.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="607">
+              <caret line="92" column="3" selection-start-line="86" selection-start-column="2" selection-end-line="92" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ctp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/index.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ctp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Template/Usuarios/login.ctp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="256" column="3" selection-start-line="256" selection-start-column="3" selection-end-line="256" selection-end-column="3" />
+              <caret line="256" selection-start-line="256" selection-end-line="256" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webroot/js/bootstrap.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/Template/Inscripciones/reporte.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/angular.js" />
         <option value="$PROJECT_DIR$/src/Template/Inscripciones/index_pre.ctp" />
-        <option value="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" />
         <option value="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/controladores/colectivos/controller.js" />
@@ -203,6 +179,7 @@
         <option value="$PROJECT_DIR$/src/Controller/ColectivosController.php" />
         <option value="$PROJECT_DIR$/src/Template/Element/nav.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Usuarios/login.ctp" />
+        <option value="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" />
       </list>
     </option>
   </component>
@@ -269,12 +246,18 @@
               <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Template" type="462c0819:PsiDirectoryNode" />
-              <item name="Usuarios" type="462c0819:PsiDirectoryNode" />
+              <item name="Inscripciones" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
               <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
               <item name="webroot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
+              <item name="webroot" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -505,12 +488,12 @@
       <workItem from="1533576780161" duration="11640000" />
       <workItem from="1534121990620" duration="2463000" />
       <workItem from="1534170215145" duration="6162000" />
-      <workItem from="1534967243725" duration="22758000" />
+      <workItem from="1534967243725" duration="23098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="851002000" />
+    <option name="totallyTimeSpent" value="851342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -630,9 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-258" />
@@ -642,13 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
           <caret line="153" column="81" selection-start-line="153" selection-start-column="70" selection-end-line="153" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/angular.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="86" column="28" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -691,13 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/index.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="116" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="116" />
         </state>
       </provider>
     </entry>
@@ -939,7 +905,30 @@
     <entry file="file://$PROJECT_DIR$/src/Template/Usuarios/login.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="256" column="3" selection-start-line="256" selection-start-column="3" selection-end-line="256" selection-end-column="3" />
+          <caret line="256" selection-start-line="256" selection-end-line="256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="92" column="3" selection-start-line="86" selection-start-column="2" selection-end-line="92" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/index.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="139" column="34" selection-start-line="139" selection-start-column="34" selection-end-line="139" selection-end-column="34" />
         </state>
       </provider>
     </entry>
