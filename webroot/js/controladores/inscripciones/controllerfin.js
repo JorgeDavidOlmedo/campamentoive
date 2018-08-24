@@ -41,7 +41,28 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
         $window.location.href = kConstant.url+"pages/home";
     }
 
+    $scope.buscar = function(valor) {
+        var rex = new RegExp(valor, 'i');
+        $('.buscar tr').hide();
+        $('.buscar tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+    }
 
+    $('#filtrar').keyup(function () {
+        $scope.buscar($('#filtrar').val());
+
+    });
+
+
+    $scope.openBondi = function(){
+        $("#form-bondi").modal();
+    }
+
+
+    $scope.openColectivo = function(){
+        $scope.openBondi();
+    }
 
     $scope.borrar_entity = function (id) {
 
@@ -117,6 +138,7 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
     },true);
     /**********************************************************/
 
+    $('#filtrar').focus();
 });
 
 app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personasByTerm,lugaresByTerm,$timeout){
@@ -382,7 +404,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
     $("#persona").focus();
 });
 
-app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,personasByTerm,lugaresByTerm,$timeout){
+app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,personasByTerm,lugaresByTerm,colectivosByTerm,$timeout){
 
 
     String.prototype.replaceAll = function(str1, str2, ignore)
@@ -394,6 +416,21 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         pago:0,
         deuda:0
     }
+
+    $scope.buscar = function(valor) {
+        var rex = new RegExp(valor, 'i');
+        $('.buscar tr').hide();
+        $('.buscar tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+    }
+
+    $scope.buscar($("#sexo").val());
+
+    $( "#sexo" ).change(function() {
+        $scope.buscar($("#sexo").val());
+    });
+
     $scope.formatDate = function(date) {
         var d = new Date(date || Date.now()),
             month = '' + (d.getMonth() + 1),
@@ -405,6 +442,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
         return [year,month,day].join('-');
     }
+
     $scope.formatDateDMY = function(date) {
         var d = new Date(date || Date.now()),
             month = '' + (d.getMonth() + 1),
@@ -487,6 +525,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 console.log(data.data);
                 $scope.inscripcion=data.data.inscripcion[0];
                 $scope.persona = data.data.inscripcion[0].persona;
+                $scope.colectivo = data.data.inscripcion[0].colectivo;
                 $scope.persona.edad = data.data.anhos;
                 $scope.lugar = data.data.inscripcion[0].persona.lugare;
                 $("#categoria").val($scope.inscripcion.categoria);
@@ -513,6 +552,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
     $scope.modificar = function (id) {
         delete $scope.inscripcion.persona;
+        delete $scope.inscripcion.colectivo;
         $scope.inscripcion.estado=1;
         $scope.inscripcion.id_persona = $scope.persona.id;
         var fecha = $("#fecha").val();
@@ -525,10 +565,11 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $scope.inscripcion.ficha_medica = $("#ficha").val();
         $scope.inscripcion.color = $("#color").val();
         $scope.inscripcion.estado_inscripcion = $("#confirmacion").val();
+        $scope.inscripcion.id_colectivo = $scope.colectivo.id;
 
         console.log($scope.inscripcion);
         if($scope.verificar_campos()){
-            $http.post(kConstant.url+"inscripciones/editEntity/"+id,$scope.inscripcion).
+            $http.post(kConstant.url+"inscripciones/editEntityLastInscripcion/"+id,$scope.inscripcion).
             then(function(response){
                 console.log(response.data);
                 $window.location.href = kConstant.url+"inscripciones/index";
@@ -541,8 +582,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
     $scope.calcularDeuda = function(){
         var pago = $scope.inscripcion.pago;
         pago = pago.replaceAll(".","");
-        var deuda = $scope.inscripcion.deuda;
-        deuda = deuda.replaceAll(".","");
+        var deuda =  $scope.deuda;
 
         if(pago>deuda){
             toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
@@ -567,6 +607,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         });
     };
 
+    $scope.deuda = 0;
     $scope.onSelect = function ($item,$model,$label) {
         console.log($model);
         if($model.id=="00"){
@@ -576,12 +617,14 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         }
         $("#categoria").val($model.categoria);
         $("#sexo").val($model.sexo);
+        $scope.buscar($("#sexo").val());
         $scope.lugar = $model.lugar;
         setTimeout(function(){ $( "#pago" ).focus(); }, 500);
 
         $http.get(kConstant.url + "eventos/getDeuda/"+$model.categoria).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
+            $scope.deuda = response.data.deuda;
 
         }, function (response) {
 
@@ -605,8 +648,26 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         }
     }
 
+
+
+    $scope.colectivo='';
+    $scope.colectivos = function(value){
+        var future = colectivosByTerm.async(value);
+        return future.then(function (response){
+            return response.data.colectivos;
+        });
+    };
+
+    $scope.onSelectColectivo = function ($item,$model,$label) {
+
+    }
+
     $scope.openColor = function(){
         $("#form-color").modal();
+    }
+
+    $scope.openBondi = function(){
+        $("#form-bondi").modal();
     }
 
     $scope.guardarParticipante = function(){
@@ -669,6 +730,18 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         if($("#fecha").val()==null || $("#fecha").val()==""){
             toastr.error('Debes completar la fecha.','Notificación!');
             $( "#fecha" ).focus();
+            return false;
+        };
+
+        if($scope.colectivo==null || $scope.colectivo==""){
+            toastr.error('Debes completar correctamente los datos.','Notificación!');
+            $( "#colectivo" ).focus();
+            return false;
+        };
+
+        if($scope.colectivo.descripcion==null || $scope.colectivo.descripcion==""){
+            toastr.error('Debes completar correctamente los datos.','Notificación!');
+            $( "#colectivo" ).focus();
             return false;
         };
 

@@ -127,7 +127,6 @@ app.controller('usuarioAdd',function($scope,kConstant,$http,$window){
         if($scope.verificar_campos()){
            $scope.usuario.estado=1;
            //$scope.usuario.created=hoy;
-           $scope.usuario.id_perfil=$('#perfil').val();
            $http.post(kConstant.url+"usuarios/addEntity",$scope.usuario).
            then(function(response){
                //
@@ -168,26 +167,12 @@ app.controller('usuarioAdd',function($scope,kConstant,$http,$window){
             $( "#rol" ).focus();
             return false;
         };
-        if($('#perfil').val()==null || $('#perfil').val()==""){
-            toastr.error('Debes definir el perfil.','Notificación!');
-            $( "#perfil" ).focus();
-            return false;
-        };
-        if($scope.usuario.nombre==null || $scope.usuario.nombre==""){
-            toastr.error('El campo nombre no puede estar vacio.','Notificación!');
-            $( "#nombre" ).focus();
-            return false;
-        };
-        if($scope.usuario.telefono==null || $scope.usuario.telefono==""){
-            toastr.error('El campo telefono no puede estar vacio..','Notificación!');
-            $( "#telefono" ).focus();
-            return false;
-        };
+
 
         return true;
     }
 
-
+  $("#email").focus();
 });
 
 app.controller('usuarioEdit',function ($scope,$http,kConstant,$window) {
@@ -205,7 +190,6 @@ app.controller('usuarioEdit',function ($scope,$http,kConstant,$window) {
 
       $scope.modificar = function (id) {
          if($scope.verificar_campos()){
-             $scope.usuario.id_perfil=$("#perfil").val();
               $http.post(kConstant.url+"usuarios/editEntity/"+id,$scope.usuario).
               then(function(response){
                   $window.location.href = kConstant.url+"usuarios/index";
@@ -239,16 +223,7 @@ app.controller('usuarioEdit',function ($scope,$http,kConstant,$window) {
             $( "#rol" ).focus();
             return false;
         };
-        if($scope.usuario.nombre==null || $scope.usuario.nombre==""){
-            toastr.error('El campo nombre no puede estar vacio.','Notificación!');
-            $( "#nombre" ).focus();
-            return false;
-        };
-        if($scope.usuario.telefono==null || $scope.usuario.telefono==""){
-            toastr.error('El campo telefono no puede estar vacio..','Notificación!');
-            $( "#telefono" ).focus();
-            return false;
-        };
+
 
         return true;
     }

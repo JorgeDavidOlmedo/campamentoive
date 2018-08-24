@@ -42,6 +42,19 @@ app.controller('colectivoIndex',function ($scope,kConstant,$http,$window,$filter
     }
 
 
+    $scope.buscar = function(valor) {
+        var rex = new RegExp(valor, 'i');
+        $('.buscar tr').hide();
+        $('.buscar tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+    }
+
+    $('#filtrar').keyup(function () {
+        $scope.buscar($('#filtrar').val());
+
+    });
+
 
     $scope.borrar_entity = function (id) {
 
@@ -117,6 +130,8 @@ app.controller('colectivoIndex',function ($scope,kConstant,$http,$window,$filter
     },true);
     /**********************************************************/
 
+    $('#filtrar').focus();
+
 });
 
 app.controller('colectivoAdd',function($scope,kConstant,$http,$window){
@@ -133,7 +148,7 @@ app.controller('colectivoAdd',function($scope,kConstant,$http,$window){
            then(function(response){
        
               console.log(response);
-              $window.location.href = kConstant.url+"colectivos/index";
+             // $window.location.href = kConstant.url+"colectivos/index";
            },function (response) {
 
            });

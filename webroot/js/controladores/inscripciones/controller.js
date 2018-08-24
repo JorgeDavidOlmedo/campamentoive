@@ -42,6 +42,19 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
     }
 
 
+    $scope.buscar = function(valor) {
+        var rex = new RegExp(valor, 'i');
+        $('.buscar tr').hide();
+        $('.buscar tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+    }
+
+    $('#filtrar').keyup(function () {
+        $scope.buscar($('#filtrar').val());
+
+    });
+
 
     $scope.borrar_entity = function (id) {
 
@@ -116,6 +129,8 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
         }
     },true);
     /**********************************************************/
+
+    $('#filtrar').focus();
 
 });
 
@@ -230,6 +245,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
            $scope.inscripcion.moneda = $("#moneda").val();
            $scope.inscripcion.ficha_medica = $("#ficha").val();
            $scope.inscripcion.color = $("#color").val();
+            $scope.inscripcion.autorizacion = $("#aut").val();
            console.log($scope.inscripcion);
            $http.post(kConstant.url+"inscripciones/addEntity/",$scope.inscripcion).
            then(function(response){
@@ -243,8 +259,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
     $scope.calcularDeuda = function(){
           var pago = $scope.inscripcion.pago;
           pago = pago.replaceAll(".","");
-          var deuda = $scope.inscripcion.deuda;
-          deuda = deuda.replaceAll(".","");
+          var deuda = $scope.deuda;
 
           if(pago>deuda){
               toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
@@ -269,6 +284,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         });
     };
 
+    $scope.deuda = 0;
     $scope.onSelect = function ($item,$model,$label) {
         console.log($model);
         if($model.id=="00"){
@@ -284,6 +300,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         $http.get(kConstant.url + "eventos/getDeuda/"+$model.categoria).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
+            $scope.deuda = response.data.deuda;
 
         }, function (response) {
 
@@ -487,12 +504,14 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 console.log(data.data);
                 $scope.inscripcion=data.data.inscripcion[0];
                 $scope.persona = data.data.inscripcion[0].persona;
+                $scope.persona.pais = data.data.inscripcion[0].persona.country.name;
                 $scope.persona.edad = data.data.anhos;
                 $scope.lugar = data.data.inscripcion[0].persona.lugare;
                 $("#categoria").val($scope.inscripcion.categoria);
                 $("#ficha").val($scope.inscripcion.ficha_medica);
                 $("#color").val($scope.inscripcion.color);
                 $("#moneda").val($scope.inscripcion.moneda);
+                $("#aut").val($scope.inscripcion.autorizacion);
                 var fecha = data.data.inscripcion[0].fecha;
                 fecha = fecha.substring(0,10);
                 fecha = fecha.split('-');
@@ -501,7 +520,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 $scope.inscripcion.pago = $scope.inscripcion.pago.replaceAll(".","_");
                 $scope.inscripcion.pago = $scope.inscripcion.pago.replaceAll(",",".");
                 $scope.inscripcion.pago = $scope.inscripcion.pago.replaceAll("_",",");
-
+                $scope.deuda = $scope.inscripcion.deuda;
                 $scope.inscripcion.deuda = numeral($scope.inscripcion.deuda).format('0,0.[00]');
                 $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
                 $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
@@ -523,12 +542,13 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
           $scope.inscripcion.moneda = $("#moneda").val();
           $scope.inscripcion.ficha_medica = $("#ficha").val();
           $scope.inscripcion.color = $("#color").val();
+          $scope.inscripcion.autorizacion = $("#aut").val();
           console.log($scope.inscripcion);
          if($scope.verificar_campos()){
               $http.post(kConstant.url+"inscripciones/editEntity/"+id,$scope.inscripcion).
               then(function(response){
                   console.log(response.data);
-                  //$window.location.href = kConstant.url+"inscripciones/index-pre";
+                  $window.location.href = kConstant.url+"inscripciones/index-pre";
               },function (response) {
 
               });
@@ -538,9 +558,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
     $scope.calcularDeuda = function(){
         var pago = $scope.inscripcion.pago;
         pago = pago.replaceAll(".","");
-        var deuda = $scope.inscripcion.deuda;
-        deuda = deuda.replaceAll(".","");
-
+        var deuda =  $scope.deuda;
         if(pago>deuda){
             toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
             setTimeout(function(){ $( "#pago" ).focus(); }, 500);
@@ -564,6 +582,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         });
     };
 
+    $scope.deuda = 0;
     $scope.onSelect = function ($item,$model,$label) {
         console.log($model);
         if($model.id=="00"){
@@ -579,6 +598,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $http.get(kConstant.url + "eventos/getDeuda/"+$model.categoria).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
+            $scope.deuda = response.data.deuda;
 
         }, function (response) {
 

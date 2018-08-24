@@ -196,14 +196,26 @@ class UsuariosController extends AppController
         {
 
           $user  = $this->Auth->identify();
-
+          $evento = $this->request->data;
+          $id_evento = $evento['evento'];
            if($user){
 
              $this->Auth->setUser($user);
              $this->request->session()->write("aplicacion","RestorApp");
+             $this->request->session()->write("id_evento",$id_evento);
+               $connection = ConnectionManager::get('default');
+               $sql = "SELECT descripcion as nombre FROM eventos WHERE estado=1 AND id=".$id_evento;
+               $results = $connection->execute($sql);
+               $nombre_evento = "";
+               foreach ($results as $valor){
+                   $nombre_evento = $valor['nombre'];
+               }
+
+             $this->request->session()->write("nombre_evento",$nombre_evento);
              return $this->redirect($this->Auth->redirectUrl());
 
            }else{
+             $this->request->session()->write("id_evento",0);
              $this->Flash->error('Datos incorrectos',['key'=>'auth']);
            }
         }
@@ -215,6 +227,12 @@ class UsuariosController extends AppController
             return $this->redirect($this->Auth->redirectUrl());
 
         }
+
+        $this->loadModel("Eventos");
+        $eventos = $this->Eventos->find('list',['keyField' => 'id','valueField' => 'descripcion'])->where(['estado'=>1]);
+
+        $this->set(compact('eventos'));
+        $this->set('_serialize', ['eventos']);
 
     }
 
@@ -238,7 +256,7 @@ class UsuariosController extends AppController
         $id_empresa = $this->request->session()->read('id_empresa');
 
                $this->paginate = [
-                   'contain'=>['Perfil'],
+                   'contain'=>[],
                    'conditions'=>array('and'=>array('Usuarios.estado'=>1)),
                     'order'=>['Usuarios.id DESC'],
                     'limit'=>25];
@@ -287,9 +305,7 @@ class UsuariosController extends AppController
 
         }
 
-        $perfiles = $this->Usuarios->Perfil->find('list',['keyField' => 'id','valueField' => 'descripcion'])->where(['estado'=>1]);
-
-        $this->set(compact('usuario','perfiles'));
+        $this->set(compact('usuario'));
         $this->set('_serialize', ['usuario']);
 
     }
@@ -316,9 +332,7 @@ class UsuariosController extends AppController
                 $this->Flash->error(__('The usuario could not be saved. Please, try again.'));
             }
         }
-        $perfiles = $this->Usuarios->Perfil->find('list',['keyField' => 'id','valueField' => 'descripcion'])->where(['estado'=>1]);
-        
-        $this->set(compact('usuario','perfiles'));
+         $this->set(compact('usuario'));
         $this->set('_serialize', ['usuario']);
     }
 

@@ -24,11 +24,20 @@ class InscripcionesController extends AppController
      */
     public function indexPre(){
 
+        $id_evento = $id_empresa = $this->request->session()->read('id_evento');
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT count(*) as total FROM inscripciones WHERE estado=1 AND id_evento=".$id_evento;
+        $results = $connection->execute($sql);
+        $limit = 1;
+        foreach ($results as $valor){
+            $limit = $valor['total'];
+        }
+
         $this->paginate = [
             'contain'=>array('Personas','Colectivos','Personas.Lugares'),
-            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1,'Inscripciones.id_evento'=>$id_evento)),
             'order'=>['Inscripciones.id DESC'],
-            'limit'=>25
+            'limit'=>$limit
         ];
 
         $inscripciones = $this->paginate($this->Inscripciones);
@@ -44,16 +53,50 @@ class InscripcionesController extends AppController
      */
     public function index(){
 
+        $id_evento = $id_empresa = $this->request->session()->read('id_evento');
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT count(*) as total FROM inscripciones WHERE estado=1 AND id_evento=".$id_evento;
+        $results = $connection->execute($sql);
+        $limit = 1;
+        foreach ($results as $valor){
+            $limit = $valor['total'];
+        }
+
         $this->paginate = [
             'contain'=>array('Personas','Colectivos','Personas.Lugares'),
-            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1,'Inscripciones.id_evento'=>$id_evento)),
             'order'=>['Inscripciones.id DESC'],
-            'limit'=>25
+            'limit'=>$limit
         ];
 
         $inscripciones = $this->paginate($this->Inscripciones);
 
-        $this->set(compact('inscripciones'));
+        $connection = ConnectionManager::get('default');
+
+        $connection->execute("UPDATE colectivos SET ocupado=0 WHERE id_evento=".$id_evento);
+
+        $sql = "SELECT count(*) as total,
+                a.id_colectivo as id 
+                FROM cargar_colectivos a 
+                WHERE 
+                a.estado=1 AND 
+                a.id_evento=".$id_evento." AND
+                a.vaciar IS NULL 
+                GROUP BY a.id_colectivo";
+
+        $resultado = $connection->execute($sql);
+
+        foreach ($resultado as $valor){
+            $sql_update = "UPDATE colectivos SET ocupado=".$valor['total']." WHERE id=".$valor['id'];
+            $connection->execute($sql_update);
+        }
+
+        $this->loadModel("Colectivos");
+        $bondis = $this->Colectivos->find("all")
+            ->where(['estado'=>1,'id_evento'=>$id_evento]);
+
+
+        $this->set(compact('inscripciones','bondis'));
         $this->set('_serialize', ['inscripciones']);
     }
 
@@ -159,8 +202,10 @@ class InscripcionesController extends AppController
      */
     public function edit($id = null)
     {
+        $id_evento = $this->request->session()->read('id_evento');
         $inscripcione = $this->Inscripciones->get($id, [
-            'contain' => []
+            'contain' => [],
+            'condition'=>["id_event"=>$id_evento]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $inscripcione = $this->Inscripciones->patchEntity($inscripcione, $this->request->data);
@@ -172,7 +217,33 @@ class InscripcionesController extends AppController
                 $this->Flash->error(__('The inscripcione could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('inscripcione'));
+
+        $this->loadModel("Colectivos");
+
+        $connection = ConnectionManager::get('default');
+
+        $connection->execute("UPDATE colectivos SET ocupado=0 WHERE id_evento=".$id_evento);
+
+        $sql = "SELECT count(*) as total,
+                a.id_colectivo as id 
+                FROM cargar_colectivos a 
+                WHERE 
+                a.estado=1 AND 
+                a.id_evento=".$id_evento." AND
+                a.vaciar IS NULL 
+                GROUP BY a.id_colectivo";
+
+        $resultado = $connection->execute($sql);
+
+        foreach ($resultado as $valor){
+            $sql_update = "UPDATE colectivos SET ocupado=".$valor['total']." WHERE id=".$valor['id'];
+            $connection->execute($sql_update);
+        }
+
+        $bondis = $this->Colectivos->find("all")
+            ->where(['estado'=>1,'id_evento'=>$id_evento]);
+
+        $this->set(compact('inscripcione','bondis'));
         $this->set('_serialize', ['inscripcione']);
     }
 
@@ -231,15 +302,14 @@ class InscripcionesController extends AppController
      */
     public function addEntity()
     {
-
-        //$usuario = $this->Usuarios->newEntity();
-
+        $id_evento = $this->request->session()->read('id_evento');
         if ($this->request->is('post')) {
 
             try{
                 $this->request->data['pago'] = str_replace('.','',$this->request->data['pago']);
                 $this->request->data['deuda'] = str_replace('.','',$this->request->data['deuda']);
                 $inscripcion = $this->Inscripciones->newEntity($this->request->data);
+                $inscripcion->id_evento=$id_evento;
                 if ($this->Inscripciones->save($inscripcion)) {
                     $mensaje = "ok";
 
@@ -275,6 +345,7 @@ class InscripcionesController extends AppController
     public function editEntity($id = null)
     {
 
+        $id_evento = $this->request->session()->read('id_evento');
         $inscripcion =$this->Inscripciones->get($id);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
@@ -283,8 +354,60 @@ class InscripcionesController extends AppController
                 $this->request->data['pago'] = str_replace('.','',$this->request->data['pago']);
                 $this->request->data['deuda'] = str_replace('.','',$this->request->data['deuda']);
                 $inscripcion = $this->Inscripciones->patchEntity($inscripcion, $this->request->data);
+                $inscripcion->id_evento=$id_evento;
                 if ($this->Inscripciones->save($inscripcion)) {
                     $mensaje = "ok.";
+                } else {
+                    $mensaje = "error";
+                }
+
+            }catch (\PDOException $e)
+            {
+
+                $mensaje = "error.";
+                $this->Flash->error(__('Error al editar. vuelva a intentar.'));
+            }
+
+
+        }
+
+        $this->set([
+            'mensaje' => $mensaje,
+            'inscripcion' => $inscripcion,
+            '_serialize' => ['mensaje', 'inscripcion']
+        ]);
+        $this->viewClass = 'Json';
+        $this->render();
+    }
+
+    /**
+     * Edit method
+     *
+     * @param string|null $id Usuario id.
+     * @return \Cake\Network\Response|void Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function editEntityLastInscripcion($id = null)
+    {
+
+        $connection = ConnectionManager::get('default');
+        $id_evento = $this->request->session()->read('id_evento');
+        $inscripcion =$this->Inscripciones->get($id);
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+
+            try{
+                $this->request->data['pago'] = str_replace('.','',$this->request->data['pago']);
+                $this->request->data['deuda'] = str_replace('.','',$this->request->data['deuda']);
+                $connection->execute("DELETE FROM cargar_colectivos WHERE id_inscripcion=".$id);
+
+                $inscripcion = $this->Inscripciones->patchEntity($inscripcion, $this->request->data);
+                $inscripcion->id_evento=$id_evento;
+                if ($this->Inscripciones->save($inscripcion)) {
+                    $mensaje = "ok.";
+                    $sql_actualizar_colectivo = "INSERT INTO `cargar_colectivos` (`id`, `id_colectivo`, `id_inscripcion`, `id_evento`, `vaciar`,`estado`) 
+                    VALUES (NULL, ".$inscripcion->id_colectivo.", ".$inscripcion->id.", ".$inscripcion->id_evento.", NULL,1);";
+                    $connection->execute($sql_actualizar_colectivo);
                 } else {
                     $mensaje = "error";
                 }
@@ -318,7 +441,7 @@ class InscripcionesController extends AppController
 
         $inscripcion = $this->Inscripciones->find('all',
             array('conditions'=>array('Inscripciones.id'=>$id),
-                  'contain'=>array('Personas.Lugares')));
+                  'contain'=>array('Personas.Lugares','Colectivos','Personas.Countries')));
 
         $row = $inscripcion->first();
         $fecha_naci = date('Y-m-d',strtotime($row->persona->fecha_nacimiento));
@@ -345,6 +468,7 @@ class InscripcionesController extends AppController
     public function deleteEntity($id = null)
     {
         $message = "";
+        $connection = ConnectionManager::get('default');
         try{
 
             $inscrip = TableRegistry::get('Inscripciones');
@@ -353,6 +477,9 @@ class InscripcionesController extends AppController
                 ->set(['estado' => 0])
                 ->where(['id' => $id])
                 ->execute();
+
+            $connection->execute("UPDATE cargar_colectivos SET estado=0 WHERE id_inscripcion=".$id);
+
             if($query){
                 $message = "dato borrado correctamente.";
             }else{

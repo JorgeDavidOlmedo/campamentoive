@@ -1,26 +1,81 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Lugare'), ['action' => 'edit', $lugare->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Lugare'), ['action' => 'delete', $lugare->id], ['confirm' => __('Are you sure you want to delete # {0}?', $lugare->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Lugares'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Lugare'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="lugares view large-9 medium-8 columns content">
-    <h3><?= h($lugare->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Descripcion') ?></th>
-            <td><?= h($lugare->descripcion) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($lugare->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Estado') ?></th>
-            <td><?= $this->Number->format($lugare->estado) ?></td>
-        </tr>
-    </table>
+<?php echo $this->element('head');?>
+<?= $this->Html->script('controladores/lugares/controller');?>
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="../../img/sidebar-5.jpg">
+        <?php echo $this->element('portrait');?>
+        <div class="main-panel" >
+            <?php echo $this->element('nav');?>
+            <div class="content" ng-controller="lugarIndex">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h4 class="title">Ver Lugar</h4>
+                                </div>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="col col-xs-6">
+
+                                            </div>
+                                            <div class="col col-xs-6 text-right">
+                                                <div class="col col-xs-6 pull-right">
+
+                                                    <a class="glyphicon glyphicon-list standar" ng-click = "listar_entity()"></a>
+                                                    <a class="glyphicon glyphicon-plus standar" ng-click = "agregar_entity()"></a>
+                                                    <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $lugare->id;?>)"></a>
+                                                    <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $lugare->id;?>)"></a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#usuario" role="tab" data-toggle="tab">Colectivo</a></li>
+                                            <li role="presentation"><a href="#audit" role="tab" data-toggle="tab">Auditoría</a></li>
+
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="usuario">
+                                                <div class="col-md-6 table-view">
+                                                    <div class="panel">
+
+
+                                                        <dt><?= __('Id') ?></dt>
+                                                        <dd><?= $this->Number->format($lugare->id) ?></dd></br>
+
+                                                        <dt><?= __('Descripcion') ?></dt>
+                                                        <dd><?= h($lugare->descripcion) ?></dd></br>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php echo $this->element('footer');?>
+
+        </div>
+    </div>
 </div>
+
+</body>
+
+
+</html>

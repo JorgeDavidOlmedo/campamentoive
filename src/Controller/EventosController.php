@@ -24,10 +24,19 @@ class EventosController extends AppController
      */
     public function index()
     {
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT count(*) as total FROM eventos WHERE estado=1";
+        $results = $connection->execute($sql);
+        $limit = 1;
+        foreach ($results as $valor){
+            $limit = $valor['total'];
+        }
+
+
         $this->paginate = [
             'conditions'=>array('and'=>array('Eventos.estado'=>1)),
             'order'=>['Eventos.id DESC'],
-            'limit'=>25
+            'limit'=>$limit
         ];
         $eventos = $this->paginate($this->Eventos);
 

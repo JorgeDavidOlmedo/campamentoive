@@ -25,13 +25,42 @@ class ColectivosController extends AppController
      */
     public function index()
     {
-       
-         $this->paginate = [
-            'conditions'=>array('and'=>array('Colectivos.estado'=>1)),
+         $id_evento = $this->request->session()->read('id_evento');
+
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT count(*) as total FROM colectivos WHERE estado=1 AND id_evento=".$id_evento;
+        $results = $connection->execute($sql);
+        $limit = 1;
+        foreach ($results as $valor){
+            $limit = $valor['total'];
+        }
+
+
+        $this->paginate = [
+            'conditions'=>array('and'=>array('Colectivos.estado'=>1,'Colectivos.id_evento'=>$id_evento)),
             'order'=>['Colectivos.id DESC'],
-            'limit'=>25
+            'limit'=>$limit
         ];
         $colectivos = $this->paginate($this->Colectivos);
+
+
+        $connection = ConnectionManager::get('default');
+        $connection->execute("UPDATE colectivos SET ocupado=0 WHERE id_evento=".$id_evento);
+        $sql = "SELECT count(*) as total,
+                a.id_colectivo as id 
+                FROM cargar_colectivos a 
+                WHERE 
+                a.estado=1 AND 
+                a.id_evento=".$id_evento." AND
+                a.vaciar IS NULL 
+                GROUP BY a.id_colectivo";
+
+        $resultado = $connection->execute($sql);
+
+        foreach ($resultado as $valor){
+              $sql_update = "UPDATE colectivos SET ocupado=".$valor['total']." WHERE id=".$valor['id'];
+              $connection->execute($sql_update);
+        }
 
         $this->set(compact('colectivos'));
         $this->set('_serialize', ['colectivos']);
@@ -85,8 +114,10 @@ class ColectivosController extends AppController
      */
     public function edit($id = null)
     {
+        $id_evento = $this->request->session()->read('id_evento');
         $colectivo = $this->Colectivos->get($id, [
-            'contain' => []
+            'contain' => [],
+            'conditions' => ['id_evento'=>$id_evento]
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $colectivo = $this->Colectivos->patchEntity($colectivo, $this->request->data);
@@ -132,14 +163,12 @@ class ColectivosController extends AppController
     public function addEntity()
     {
 
-        //$usuario = $this->Usuarios->newEntity();
-
+        $id_evento = $this->request->session()->read('id_evento');
         if ($this->request->is('post')) {
 
             try{
-
                 $colectivo = $this->Colectivos->newEntity($this->request->data);
-
+                $colectivo->id_evento=$id_evento;
                 if ($this->Colectivos->save($colectivo)) {
                     $mensaje = "ok";
                 } else {
@@ -174,13 +203,14 @@ class ColectivosController extends AppController
     public function editEntity($id = null)
     {
 
+        $id_evento = $this->request->session()->read('id_evento');
         $colectivo =$this->Colectivos->get($id);
-
         if ($this->request->is(['patch', 'post', 'put'])) {
 
             try{
 
                 $colectivo = $this->Colectivos->patchEntity($colectivo, $this->request->data);
+                $colectivo->id_evento=$id_evento;
                 if ($this->Colectivos->save($colectivo)) {
                     $mensaje = "ok.";
                 } else {
@@ -258,6 +288,45 @@ class ColectivosController extends AppController
         $this->set([
             'message' => $message,
             '_serialize' => ['message']
+        ]);
+        $this->viewClass = 'Json';
+        $this->render();
+
+    }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     */
+    public function getEntityAllByTerm($term = null)
+    {
+
+        $results=null;
+        $connection = ConnectionManager::get('default');
+        $id_evento = $this->request->session()->read('id_evento');
+        $results = $connection->execute(
+            "SELECT a.id as id,
+             a.descripcion as descripcion
+             FROM colectivos a
+             WHERE 
+             a.estado=1 AND
+             a.id_evento=".$id_evento." AND 
+            (a.descripcion like '%".$term."%')");
+
+        $resultado = array();
+
+        foreach ($results as $value){
+
+            $resultado[] = array("id"=>$value['id'],
+                "descripcion"=> $value['descripcion']);
+
+        }
+
+        $colectivos = $resultado;
+        $this->set([
+            'colectivos' => $colectivos,
+            '_serialize' => ['colectivos']
         ]);
         $this->viewClass = 'Json';
         $this->render();

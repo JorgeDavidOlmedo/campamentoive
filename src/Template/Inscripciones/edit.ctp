@@ -141,7 +141,8 @@
                                                     'onkeyup'=>'format(this)','onchange'=>'format(this)',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear Pago'))?>
+                                                    'placeholder'=>'Tipear Pago',
+                                                    'ng-blur'=>'calcularDeuda()'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm4 col-md-4">
@@ -164,6 +165,25 @@
                                                     'label'=>'Observacion','ng-model'=>'inscripcion.observacion'
                                                 ,
                                                     'placeholder'=>'Tipear Observacion'))?>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="row">
+
+                                                <div class="col-xs-12 col-sm-6 col-md-6">
+                                                    <?=$this->Form->input('colectivo',array('class'=>'form-control',
+                                                        'label'=>'Colectivo','ng-model'=>'colectivo','uib-typeahead-editable'=>"false" ,
+                                                        'uib-typeahead'=>'p as p.descripcion for p in colectivos($viewValue)',
+                                                        'typeahead-on-select="onSelectColectivo($item,$model,$label)"',
+                                                        'placeholder'=>'Tipear Colectivo',
+                                                        'required'))?>
+                                                </div>
+
+                                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                                <label>Verificar</label><br>
+                                                <button class="btn btn-default" ng-click="openBondi()">Colectivo</button>
                                             </div>
 
 
@@ -322,6 +342,66 @@
             </div>
         </div>
 
+
+        <div class="modal fade mymodal" id="form-bondi" tabindex="-1" role="dialog" aria-labelledby="form-bondi" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <strong><h4><div id="one">Colectivos</div></h4></strong>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="content table-responsive table-full-width">
+                            <div class="detalleColectivos">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                <th>Descripcion</th>
+                                <th>Categoria</th>
+                                <th>Lugares</th>
+                                <th>Utilizados</th>
+                                <th>Disponible</th>
+                                </thead>
+                                <tbody class="buscar">
+                                <?php foreach ($bondis as $value):?>
+                                    <tr>
+                                        <?php if(($value->lugar-$value->ocupado)>0):?>
+
+                                            <td class="datacelltwo"><?= $value->descripcion?></td>
+                                            <td class="datacelltwo"><?= $value->categoria ?></td>
+                                            <td class="datacelltwo"><?= $value->lugar; ?></td>
+                                            <td class="datacelltwo"><?= $value->ocupado; ?></td>
+                                            <td class="datacelltwo"><?= ($value->lugar-$value->ocupado); ?></td>
+
+                                        <?php else:?>
+                                            <td class="datacellone"><?= $value->descripcion?></td><td class="datacellone"><?= $value->categoria ?></td>
+                                            <td class="datacellone"><?= $value->lugar; ?></td>
+                                            <td class="datacellone"><?= $value->ocupado; ?></td>
+                                            <td class="datacellone"><?= ($value->lugar-$value->ocupado); ?> - LLENO</td>
+
+                                        <?php endif;?>
+
+
+                                    </tr>
+                                <?php endforeach;?>
+
+                                </tbody>
+                            </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+                        <input type="hidden" name="myValue" id="myValue" value=""/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -366,4 +446,25 @@
         visibility: visible;
         opacity: inherit;
     }
+
+    td.datacellone {
+        background-color: #cc6d7eba; color: black;
+    }
+
+    td.datacelltwo {
+        background-color: #64ca9cba; color: black;
+    }
+
+    .detalleColectivos{
+        height:450px;
+        overflow-y : auto;
+        border-style: solid;
+        border-color: #43519638;
+        border-width: 1px;
+    }
 </style>
+
+<script>
+
+
+</script>

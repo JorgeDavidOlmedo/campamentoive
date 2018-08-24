@@ -21,33 +21,32 @@
 
                                 </div>
                                 <div class="content table-responsive table-full-width">
+                                    <input class="form-control" placeholder="Buscar..." id="filtrar" name="filtrar">
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>ID</th>
-                                        <th>Fecha</th>
+                                        <th>Fecha Inicio</th>
+                                        <th>Fecha Fin</th>
                                         <th>Descripcion</th>
-                                        <th>Cupo Participante</th>
+                                        <th>Cupos Participante</th>
                                         <th>Costo Participante</th>
-                                        <th>Cupo Voluntario</th>
+                                        <th>Cupos Voluntario</th>
                                         <th>Costo Voluntario</th>
-                                        <th>Cupo Colaborador</th>
-                                        <th>Costo Colaborador</th>
                                         <th>Config.</th>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="buscar">
                                         <?php foreach ($eventos as $value):?>
                                             <tr>
 
-
                                                 <td><?= $this->Number->format($value->id) ?></td>
-                                                <td><?= date('d/m/Y',strtotime($value->fecha)) ?></td>
+                                                <td><?= date('d/m/Y',strtotime($value->fecha_inicio)) ?></td>
+                                                <td><?= date('d/m/Y',strtotime($value->fecha_fin)) ?></td>
                                                 <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Lugares', 'action' => 'view', $value->id]) : '' ?></td>
                                                 <td><?= $value->cupo_participante ?></td>
                                                 <td><?= number_format($value->costo_participante) ?></td>
                                                 <td><?= $value->cupo_voluntario ?></td>
                                                 <td><?= number_format($value->costo_voluntario) ?></td>
-                                                <td><?= $value->cupo_colaborador ?></td>
-                                                <td><?= number_format($value->costo_colaborador) ?></td>
+
                                                 <td class="actions">
                                                     <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
                                                     <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $value->id;?>)"></a>

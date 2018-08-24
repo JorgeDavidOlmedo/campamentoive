@@ -43,9 +43,6 @@ class UsuariosTable extends Table
             'targetForeignKey' => 'empresa_id',
             'joinTable' => 'usuarios_empresas'
         ]);
-        $this->belongsTo('Perfil', [
-            'foreignKey' => 'id_perfil'
-        ]);
     }
 
     /**

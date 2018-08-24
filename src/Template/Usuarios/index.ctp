@@ -25,8 +25,6 @@
                             <thead>
                             <th>ID</th>
                             <th>Usuario</th>
-                            <th>Email</th>
-                            <th>Telefono</th>
                             <th>Perfil</th>
                             <th>Config.</th>
                             </thead>
@@ -35,10 +33,8 @@
                                 <tr>
 
                                     <td><?= $this->Number->format($value->id) ?></td>
-                                    <td><?= $value->has('nombre') ? $this->Html->link($value->nombre, ['controller' => 'Usuarios', 'action' => 'view', $value->id]) : '' ?></td>
                                     <td><?= $value->email; ?></td>
-                                    <td><?= $value->telefono; ?></td>
-                                    <td><strong><?= $value->perfil->descripcion;?></strong></td>
+                                    <td><strong><?= $value->rol;?></strong></td>
 
                                     <td class="actions">
                                         <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
@@ -70,7 +66,7 @@
        
     </div>
 </div>
-
+    </div>
 
         <?php echo $this->element('footer');?>
 

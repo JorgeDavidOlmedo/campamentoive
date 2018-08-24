@@ -20,9 +20,10 @@
 
                 <ul class="nav navbar-nav navbar-left">
                         <li>
-                            <!--a href="../pages/home" class="dropdown-toggle">
-								<p>Empresa: <strong></strong></p>
-                            </a-->
+
+                            <a href="" class="dropdown-toggle">
+								<p><strong><?php echo $this->request->session()->read('nombre_evento');?></strong></p>
+                            </a>
                           
                         </li>
                  </ul>       

@@ -72,7 +72,8 @@
 
 
                                         <div class="row">
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('lugar',array('class'=>'form-control',
                                                     'label'=>'Lugar Procedencia','ng-model'=>'lugar','uib-typeahead-editable'=>"false" ,
                                                     'uib-typeahead'=>'p as p.descripcion for p in lugares($viewValue)',
@@ -80,14 +81,22 @@
                                                     'placeholder'=>'Tipear lugar', 'required','readonly'))?>
                                             </div>
 
-                                            <div class="col-xs-12 col-sm4 col-md-4">
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                                <?=$this->Form->input('pais',array('class' => 'form-control',
+                                                    'label'=>'Pais','ng-model'=>'persona.pais',
+                                                    'placeholder'=>'Tipear Pais','readonly'))?>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('correo',array('class' => 'form-control',
                                                     'label'=>'Correo','ng-model'=>'persona.correo',
                                                     'placeholder'=>'Tipear correo','readonly'))?>
                                             </div>
 
 
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('categoria',["id"=>"categoria", 'type'=>'select',
                                                     'label'=>'Categoria',
                                                     'options'=>["participante" => "Participante","voluntario"=>"Voluntario","colaborador"=>"Colaborador"],
@@ -115,17 +124,17 @@
                                             </div>
 
 
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('ficha',["id"=>"ficha", 'type'=>'select',
                                                     'label'=>'Ficha Medica',
                                                     'options'=>["si" => "Si","no"=>"No","pendiente"=>"Pendiente"],
                                                     'class'=>'input'])?>
                                             </div>
 
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
-                                                <?=$this->Form->input('moneda',["id"=>"moneda", 'type'=>'select',
-                                                    'label'=>'Moneda',
-                                                    'options'=>["peso" => "Peso","real"=>"Real","dolar"=>"Dolar","Euro"=>"euro"],
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                                <?=$this->Form->input('aut',["id"=>"aut", 'type'=>'select',
+                                                    'label'=>'Autorizacion',
+                                                    'options'=>["si" => "Si","no"=>"No","pendiente"=>"Pendiente"],
                                                     'class'=>'input'])?>
                                             </div>
 
@@ -141,7 +150,8 @@
                                                     'onkeyup'=>'format(this)','onchange'=>'format(this)',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear Pago'))?>
+                                                    'placeholder'=>'Tipear Pago',
+                                                    'ng-blur'=>'calcularDeuda()'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm4 col-md-4">

@@ -42,6 +42,20 @@ app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$
     }
 
 
+    $scope.buscar = function(valor) {
+        var rex = new RegExp(valor, 'i');
+        $('.buscar tr').hide();
+        $('.buscar tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+    }
+
+    $('#filtrar').keyup(function () {
+        $scope.buscar($('#filtrar').val());
+
+    });
+
+
 
     $scope.borrar_entity = function (id) {
 
@@ -117,6 +131,8 @@ app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$
     },true);
     /**********************************************************/
 
+    $('#filtrar').focus();
+
 });
 
 app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTerm,$timeout){
@@ -156,6 +172,7 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
         if($scope.verificar_campos()){
            $scope.persona.estado=1;
            $scope.persona.sexo = $("#sexo").val();
+            $scope.persona.id_pais = $("#pais").val();
            var fecha = $("#fecha").val();
            fecha = fecha.split("/");
            fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
@@ -236,6 +253,18 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
             return false;
         };
 
+        if($scope.persona.telefono==null || $scope.persona.telefono==""){
+            toastr.error('Debes completar el telefono.','Notificación!');
+            $( "#telefono" ).focus();
+            return false;
+        };
+
+        if($scope.persona.obs==null || $scope.persona.obs==""){
+            toastr.error('Debes completar la Observacion.','Notificación!');
+            $( "#obs" ).focus();
+            return false;
+        };
+
 
         if($scope.lugar==null || $scope.lugar==""){
             toastr.error('Debes completar el lugar.','Notificación!');
@@ -265,6 +294,7 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
             .then(function(data){
                 $scope.persona=data.data.persona[0];
                 $("#sexo").val($scope.persona.sexo);
+                $("#pais").val($scope.persona.id_pais);
                 $scope.lugar = $scope.persona.lugare;
                 var fecha = data.data.persona[0].fecha_nacimiento;
                 fecha = fecha.substring(0,10);
@@ -279,6 +309,7 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
       $scope.modificar = function (id) {
          delete $scope.persona.lugare;
           $scope.persona.sexo = $("#sexo").val();
+          $scope.persona.id_pais = $("#pais").val();
           var fecha = $("#fecha").val();
           fecha = fecha.split("/");
           fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
@@ -352,8 +383,19 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
             return false;
         };
 
+        if($scope.persona.telefono==null || $scope.persona.telefono==""){
+            toastr.error('Debes completar el telefono.','Notificación!');
+            $( "#telefono" ).focus();
+            return false;
+        };
 
-        return true;
+        if($scope.persona.obs==null || $scope.persona.obs=="") {
+            toastr.error('Debes completar la Observacion.', 'Notificación!');
+            $("#obs").focus();
+            return false;
+        }
+
+            return true;
     }
 
     $("#descripcion").focus();

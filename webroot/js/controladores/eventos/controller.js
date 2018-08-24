@@ -43,6 +43,19 @@ app.controller('eventoIndex',function ($scope,kConstant,$http,$window,$filter,$t
 
 
 
+    $scope.buscar = function(valor) {
+        var rex = new RegExp(valor, 'i');
+        $('.buscar tr').hide();
+        $('.buscar tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+    }
+
+    $('#filtrar').keyup(function () {
+        $scope.buscar($('#filtrar').val());
+
+    });
+
     $scope.borrar_entity = function (id) {
 
         swal({
@@ -117,6 +130,8 @@ app.controller('eventoIndex',function ($scope,kConstant,$http,$window,$filter,$t
     },true);
     /**********************************************************/
 
+    $('#filtrar').focus();
+
 });
 
 app.controller('eventoAdd',function($scope,kConstant,$http,$window,lugaresByTerm,$timeout){
@@ -150,6 +165,7 @@ app.controller('eventoAdd',function($scope,kConstant,$http,$window,lugaresByTerm
     var ultimoDia = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
     $('#fecha').val($scope.formatDateDMY(date));
+    $('#fecha2').val($scope.formatDateDMY(date));
 
       $scope.guardar = function (){
 
@@ -158,7 +174,13 @@ app.controller('eventoAdd',function($scope,kConstant,$http,$window,lugaresByTerm
            var fecha = $("#fecha").val();
            fecha = fecha.split("/");
            fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
-           $scope.evento.fecha = fecha;
+           $scope.evento.fecha_inicio = fecha;
+
+            var fecha2 = $("#fecha2").val();
+            fecha2 = fecha2.split("/");
+            fecha2 = fecha2[2]+'-'+fecha2[1]+'-'+fecha2[0];
+            $scope.evento.fecha_fin = fecha2;
+
            console.log($scope.evento);
            $http.post(kConstant.url+"eventos/addEntity/",$scope.evento).
            then(function(response){
@@ -254,10 +276,16 @@ app.controller('eventoEdit',function ($scope,$http,kConstant,$window,lugaresByTe
         $http.get(kConstant.url+"/eventos/getEntity/"+id)
             .then(function(data){
                 $scope.evento=data.data.evento[0];
-                var fecha = data.data.evento[0].fecha;
+                var fecha = data.data.evento[0].fecha_inicio;
                 fecha = fecha.substring(0,10);
                 fecha = fecha.split('-');
                 $("#fecha").val(fecha[2]+"/"+fecha[1]+"/"+fecha[0]);
+
+                var fecha2 = data.data.evento[0].fecha_fin;
+                fecha2 = fecha2.substring(0,10);
+                fecha2 = fecha2.split('-');
+                $("#fecha2").val(fecha2[2]+"/"+fecha2[1]+"/"+fecha2[0]);
+
                 $scope.evento.costo_participante = numeral($scope.evento.costo_participante).format('0,0.[00]');
                 $scope.evento.costo_participante =$scope.evento.costo_participante.replaceAll(".","_");
                 $scope.evento.costo_participante = $scope.evento.costo_participante.replaceAll(",",".");
@@ -282,7 +310,13 @@ app.controller('eventoEdit',function ($scope,$http,kConstant,$window,lugaresByTe
           fecha = fecha.split("/");
           fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
           console.log(fecha);
-          $scope.evento.fecha = fecha;
+          $scope.evento.fecha_inicio = fecha;
+
+          var fecha2 = $("#fecha2").val();
+          fecha2 = fecha2.split("/");
+          fecha2 = fecha2[2]+'-'+fecha2[1]+'-'+fecha2[0];
+          $scope.evento.fecha_fin = fecha2;
+
           console.log($scope.evento);
           if($scope.verificar_campos()){
               $http.post(kConstant.url+"eventos/editEntity/"+id,$scope.evento).

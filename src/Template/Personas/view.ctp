@@ -1,46 +1,94 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Persona'), ['action' => 'edit', $persona->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Persona'), ['action' => 'delete', $persona->id], ['confirm' => __('Are you sure you want to delete # {0}?', $persona->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Personas'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Persona'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="personas view large-9 medium-8 columns content">
-    <h3><?= h($persona->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Descripcion') ?></th>
-            <td><?= h($persona->descripcion) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Dni') ?></th>
-            <td><?= h($persona->dni) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Correo') ?></th>
-            <td><?= h($persona->correo) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($persona->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id Lugar') ?></th>
-            <td><?= $this->Number->format($persona->id_lugar) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Estado') ?></th>
-            <td><?= $this->Number->format($persona->estado) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Fecha Nacimiento') ?></th>
-            <td><?= h($persona->fecha_nacimiento) ?></td>
-        </tr>
-    </table>
-    <div class="row">
-        <h4><?= __('Sexo') ?></h4>
-        <?= $this->Text->autoParagraph(h($persona->sexo)); ?>
+<?php echo $this->element('head');?>
+<?= $this->Html->script('controladores/personas/controller');?>
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="../../img/sidebar-5.jpg">
+        <?php echo $this->element('portrait');?>
+        <div class="main-panel" >
+            <?php echo $this->element('nav');?>
+            <div class="content" ng-controller="personaIndex">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h4 class="title">Ver Persona</h4>
+                                </div>
+                                <div class="content">
+                                    <div class="row">
+                                        <div class="row">
+                                            <div class="col col-xs-6">
+
+                                            </div>
+                                            <div class="col col-xs-6 text-right">
+                                                <div class="col col-xs-6 pull-right">
+
+                                                    <a class="glyphicon glyphicon-list standar" ng-click = "listar_entity()"></a>
+                                                    <a class="glyphicon glyphicon-plus standar" ng-click = "agregar_entity()"></a>
+                                                    <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $persona->id;?>)"></a>
+                                                    <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $persona->id;?>)"></a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#usuario" role="tab" data-toggle="tab">Colectivo</a></li>
+                                            <li role="presentation"><a href="#audit" role="tab" data-toggle="tab">Auditoría</a></li>
+
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="usuario">
+                                                <div class="col-md-6 table-view">
+                                                    <div class="panel">
+
+
+                                                        <dt><?= __('Id') ?></dt>
+                                                        <dd><?= $this->Number->format($persona->id) ?></dd></br>
+
+                                                        <dt><?= __('Descripcion') ?></dt>
+                                                        <dd><?= h($persona->descripcion) ?></dd></br>
+
+                                                        <dt><?= __('DNI') ?></dt>
+                                                        <dd><?= h($persona->dni) ?></dd></br>
+
+                                                        <dt><?= __('Fecha Nacimiento') ?></dt>
+                                                        <dd><?= date('d/m/Y',strtotime($persona->fecha_nacimiento)) ?></dd></br>
+
+                                                        <dt><?= __('Lugar de Origen') ?></dt>
+                                                        <dd><?= h($persona->lugare->descripcion) ?></dd></br>
+
+                                                        <dt><?= __('Sexo') ?></dt>
+                                                        <dd><?= h($persona->sexo) ?></dd></br>
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php echo $this->element('footer');?>
+
+        </div>
     </div>
 </div>
+
+</body>
+
+
+</html>

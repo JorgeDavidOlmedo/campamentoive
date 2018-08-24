@@ -25,11 +25,19 @@ class PersonasController extends AppController
     public function index()
     {
 
+        $connection = ConnectionManager::get('default');
+        $sql = "SELECT count(*) as total FROM colectivos WHERE estado=1";
+        $results = $connection->execute($sql);
+        $limit = 1;
+        foreach ($results as $valor){
+            $limit = $valor['total'];
+        }
+
         $this->paginate = [
-            'contain'=>['Lugares'],
+            'contain'=>['Lugares','Countries'],
             'conditions'=>array('and'=>array('Personas.estado'=>1)),
             'order'=>['Personas.id DESC'],
-            'limit'=>25
+            'limit'=>$limit
         ];
 
         $personas = $this->paginate($this->Personas);
@@ -48,7 +56,7 @@ class PersonasController extends AppController
     public function view($id = null)
     {
         $persona = $this->Personas->get($id, [
-            'contain' => []
+            'contain' => ['Lugares']
         ]);
 
         $this->set('persona', $persona);
@@ -73,7 +81,12 @@ class PersonasController extends AppController
                 $this->Flash->error(__('The persona could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('persona'));
+
+
+        $this->loadModel("Countries");
+        $countries = $this->Countries->find('list', ['keyField' => 'id','valueField' => 'name']);
+
+        $this->set(compact('persona',"countries"));
         $this->set('_serialize', ['persona']);
     }
 
@@ -99,7 +112,12 @@ class PersonasController extends AppController
                 $this->Flash->error(__('The persona could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('persona'));
+
+        $this->loadModel("Countries");
+        $countries = $this->Countries->find('list', ['keyField' => 'id','valueField' => 'name']);
+
+
+        $this->set(compact('persona','countries'));
         $this->set('_serialize', ['persona']);
     }
 
@@ -286,9 +304,11 @@ class PersonasController extends AppController
              ,a.sexo as sexo,
              a.correo as correo,
              b.descripcion as descrip_lugar,
-             b.id as id_lugar
-             FROM personas a, lugares b
+             b.id as id_lugar,
+             c.name as pais
+             FROM personas a, lugares b, countries c
              WHERE 
+             a.id_pais=c.id AND
              a.id_lugar = b.id AND
              a.estado=1 AND
             (a.descripcion like '%".$term."%' OR 
@@ -314,6 +334,7 @@ class PersonasController extends AppController
                 "sexo"=>$value['sexo'],
                 "correo"=>$value['correo'],
                 "categoria"=>$categoria,
+                "pais"=>$value['pais'],
                 "lugar"=>array(
                     "id"=>$value['id_lugar'],
                     "descripcion"=>$value['descrip_lugar']

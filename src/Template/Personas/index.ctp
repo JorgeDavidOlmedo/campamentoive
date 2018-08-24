@@ -21,6 +21,7 @@
 
                                 </div>
                                 <div class="content table-responsive table-full-width">
+                                    <input class="form-control" placeholder="Buscar..." id="filtrar" name="filtrar">
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>ID</th>
@@ -29,21 +30,22 @@
                                         <th>Fecha Nacimiento</th>
                                         <th>Sexo</th>
                                         <th>Lugar Procedencia</th>
-                                        <th>Correo</th>
+                                        <th>Pais</th>
                                         <th>Config.</th>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="buscar">
                                         <?php foreach ($personas as $value):?>
                                             <tr>
 
 
                                                 <td><?= $this->Number->format($value->id) ?></td>
-                                                <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Lugares', 'action' => 'view', $value->id]) : '' ?></td>
+                                                <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Personas', 'action' => 'view', $value->id]) : '' ?></td>
                                                 <td><?= $value->dni ?></td>
                                                 <td><?= date('d/m/Y',strtotime($value->fecha_nacimiento)) ?></td>
                                                 <td><?= $value->sexo ?></td>
+
                                                 <td><?= $value->lugare->descripcion ?></td>
-                                                <td><?= $value->correo ?></td>
+                                                <td><?= $value->country->name ?></td>
                                                 <td class="actions">
                                                     <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
                                                     <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $value->id;?>)"></a>

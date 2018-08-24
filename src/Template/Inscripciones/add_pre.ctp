@@ -34,10 +34,10 @@
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-6 col-md-6">
                                                 <?=$this->Form->input('persona',array('class'=>'form-control',
-                                                    'label'=>'Participante','ng-model'=>'persona','uib-typeahead-editable'=>"false" ,
+                                                    'label'=>'Nombre','ng-model'=>'persona','uib-typeahead-editable'=>"false" ,
                                                     'uib-typeahead'=>'p as p.descripcion for p in personas($viewValue)',
                                                     'typeahead-on-select="onSelect($item,$model,$label)"',
-                                                    'placeholder'=>'Tipear Participante', 'required'))?>
+                                                    'placeholder'=>'Tipear Nombre', 'required'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm2 col-md-2">
@@ -72,7 +72,8 @@
 
 
                                         <div class="row">
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('lugar',array('class'=>'form-control',
                                                     'label'=>'Lugar Procedencia','ng-model'=>'lugar','uib-typeahead-editable'=>"false" ,
                                                     'uib-typeahead'=>'p as p.descripcion for p in lugares($viewValue)',
@@ -80,14 +81,22 @@
                                                     'placeholder'=>'Tipear lugar', 'required','readonly'))?>
                                             </div>
 
-                                            <div class="col-xs-12 col-sm4 col-md-4">
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                                <?=$this->Form->input('pais',array('class' => 'form-control',
+                                                    'label'=>'Pais','ng-model'=>'persona.pais',
+                                                    'placeholder'=>'Tipear Pais','readonly'))?>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('correo',array('class' => 'form-control',
                                                     'label'=>'Correo','ng-model'=>'persona.correo',
                                                     'placeholder'=>'Tipear correo','readonly'))?>
                                             </div>
 
 
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('categoria',["id"=>"categoria", 'type'=>'select',
                                                     'label'=>'Categoria',
                                                     'options'=>["participante" => "Participante","voluntario"=>"Voluntario","colaborador"=>"Colaborador"],
@@ -115,19 +124,21 @@
                                             </div>
 
 
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('ficha',["id"=>"ficha", 'type'=>'select',
                                                     'label'=>'Ficha Medica',
                                                     'options'=>["si" => "Si","no"=>"No","pendiente"=>"Pendiente"],
                                                     'class'=>'input'])?>
                                             </div>
 
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
-                                                <?=$this->Form->input('moneda',["id"=>"moneda", 'type'=>'select',
-                                                    'label'=>'Moneda',
-                                                    'options'=>["peso" => "Peso","real"=>"Real","dolar"=>"Dolar","Euro"=>"euro"],
+
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                                <?=$this->Form->input('aut',["id"=>"aut", 'type'=>'select',
+                                                    'label'=>'Autorizacion',
+                                                    'options'=>["si" => "Si","no"=>"No","pendiente"=>"Pendiente"],
                                                     'class'=>'input'])?>
                                             </div>
+
 
 
                                         </div>

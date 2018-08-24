@@ -30,7 +30,7 @@
 
                                         <div class="col-xs-12 col-sm-6 col-md-6">
                                             <?= $this->Form->button(__('Guardar'),['class'=>'btn btn-info',"ng-click"=>"modificar($lugare->id)"]) ?>
-                                            <?= $this->Html->link(__('Cancelar'), ['action' => 'index'],['class'=>'btn btn-danger']) ?>
+                                            <?= $this->Html->link(__('Cancelar'), ['action' => 'index/'],['class'=>'btn btn-danger']) ?>
 
                                         </div>
                                     </div>

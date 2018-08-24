@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<div class="logo">
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="../../assets/img/favicon.ico">
@@ -85,7 +86,7 @@
                         <form>
                         <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
                             <div class="card card-hidden">
-                                <div class="header text-center">Login</div>
+                                <div class="header text-center"><strong>Login</strong></div>
                                 <div class="content">
                                     <div class="form-group">
                                         <label>Usuario</label>
@@ -94,7 +95,15 @@
                                     <div class="form-group">
                                         <label>Password</label>
                                         <?= $this->Form->input('password',['class'=>"form-control", 'placeholder'=>"Password",'label'=>false,'required']); ?>
-                                        </div>
+                                   </div>
+
+                                    <div class="form-group">
+                                        <?php
+                                             echo $this->Form->input('evento',array('options' => $eventos,
+                                            'class' => 'form-control','label'=>'Evento','data-live-search'=>true));
+
+                                        ?>
+                                    </div>
                                     
                                 </div>
                                 <div class="footer text-center">
@@ -115,6 +124,7 @@
     </div>
 
 </div>
+
 
 
 
@@ -212,7 +222,7 @@
 </div>
 
 </body>
-
+</div>
 </html>
 
 <style>
@@ -235,4 +245,37 @@
     color: #6293c5;
     border-color: #6293c5;
 }
+
+body {
+    top:50px;
+    left: 0px;
+    right: 0;
+
+}
+
+.logo {
+   
+    background-repeat: no-repeat;
+    background-size: 50% 80%;
+    background-position: 47% 0%;
+    top:0px;
+    left: 0px;
+    right: 0;
+    opacity: 0.70;
+}
+
+.card .category, .card label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #060606;
+    margin-bottom: 0px;
+}
+
+
+
 </style>
+
+<script>
+    $("#email").focus();
+</script>
+

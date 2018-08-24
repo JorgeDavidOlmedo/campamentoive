@@ -11,7 +11,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">Pre-Inscripciones</h4>
+                                    <h4 class="title"><strong>Pre-Inscripciones</strong></h4>
                                     <p class="category">Lista de Pre-Inscripciones</p><br>
                                     <?= $this->Html->link($this->Html->tag('p','Agregar Pre-Inscripcion',['class' => '']).'',
                                         ['controller' => 'Inscripciones', 'action' => 'add-pre'],
@@ -21,6 +21,7 @@
 
                                 </div>
                                 <div class="content table-responsive table-full-width">
+                                    <input class="form-control" placeholder="Buscar..." id="filtrar" name="filtrar">
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>ID</th>
@@ -35,7 +36,7 @@
                                         <th>Correo</th>
                                         <th>Config.</th>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="buscar">
                                         <?php foreach ($inscripciones as $value):?>
                                             <tr>
 

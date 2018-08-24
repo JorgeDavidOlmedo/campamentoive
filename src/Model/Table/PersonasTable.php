@@ -37,6 +37,10 @@ class PersonasTable extends Table
         $this->belongsTo('Lugares', [
             'foreignKey' => 'id_lugar'
         ]);
+
+        $this->belongsTo('Countries', [
+            'foreignKey' => 'id_pais'
+        ]);
     }
 
     /**

@@ -29,7 +29,19 @@
                                         </div>
 
                                         <div class="row">
-                                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <div class="col-xs-12 col-sm-2 col-md-2">
+                                                <?php
+                                                echo $this->Form->input('fecha2',array('type' => 'text',
+                                                    'class' => 'fechaOnly','label'=>'Fecha Fin','id'=>'fecha2',
+                                                    'required'));
+
+                                                ?>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-8 col-md-8">
                                                 <?=$this->Form->input('descripcion',array('class' => 'form-control',
                                                     'label'=>'Descripcion','ng-model'=>'evento.descripcion',
                                                     'placeholder'=>'Tipear descripcion'))?>
@@ -83,36 +95,13 @@
 
 
 
-
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm4 col-md-4">
-                                                <?=$this->Form->input('cupo_c',array('class' => 'form-control',
-                                                    'label'=>'Cupo Colaborador','ng-model'=>'evento.cupo_colaborador',
-                                                    'onkeyup'=>'format(this)','onchange'=>'format(this)',
-                                                    'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
-                                                     event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear cupo'))?>
-                                            </div>
-
-                                            <div class="col-xs-12 col-sm4 col-md-4">
-                                                <?=$this->Form->input('costo_c',array('class' => 'form-control',
-                                                    'label'=>'Costo Colaborador','ng-model'=>'evento.costo_colaborador',
-                                                    'onkeyup'=>'format(this)','onchange'=>'format(this)',
-                                                    'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
-                                                     event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear costo'))?>
-                                            </div>
-
-                                        </div>
-
-
                                         <br>
 
                                         <div class="row">
 
                                             <div class="col-xs-12 col-sm-6 col-md-6">
                                                 <?= $this->Form->button(__('Guardar'),['class'=>'btn btn-info',"ng-click"=>"modificar($evento->id)"])  ?>
-                                                <?= $this->Html->link(__('Cancelar'), ['action' => 'index'],['class'=>'btn btn-danger']) ?>
+                                                <?= $this->Html->link(__('Cancelar'), ['action' => 'index/'],['class'=>'btn btn-danger']) ?>
 
                                             </div>
                                         </div>

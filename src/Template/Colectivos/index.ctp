@@ -21,6 +21,7 @@
                                 
                     </div>
                     <div class="content table-responsive table-full-width">
+                        <input class="form-control" placeholder="Buscar..." id="filtrar" name="filtrar">
                         <table class="table table-hover table-striped">
                             <thead>
                             <th>ID</th>
@@ -31,7 +32,7 @@
                             <th>Disponible</th>
                             <th>Config.</th>
                             </thead>
-                            <tbody>
+                            <tbody class="buscar">
                             <?php foreach ($colectivos as $value):?>
                                 <tr>
                                     <?php if(($value->lugar-$value->ocupado)>0):?>
