@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Editar Colectivo</h4>
+                                <h4 class="title">Editar Vehículos</h4>
                                 <br>
                             </div>
                             <div class="content">
@@ -38,7 +38,7 @@
            
 
             <div class="row">
-                <div class="col-xs-12 col-sm-2 col-md-2">
+                <div class="col-xs-12 col-sm-4 col-md-4">
                     <?=$this->Form->input('lugar',array('class' => 'form-control',
                     'label'=>'Lugares','ng-model'=>'colectivo.lugar',
                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
@@ -46,6 +46,22 @@
                 </div>
              
            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <?=$this->Form->input('patente',array('class' => 'form-control',
+                        'label'=>'Patente','ng-model'=>'colectivo.patente'))?>
+                </div>
+
+            </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <?=$this->Form->input('destino',array('class' => 'form-control',
+                    'label'=>'Destino','ng-model'=>'colectivo.destino'))?>
+            </div>
+
+        </div>
 
             
             <div class="row">

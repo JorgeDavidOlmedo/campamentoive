@@ -29,7 +29,7 @@ class LugaresController extends AppController
         $this->paginate = [
             'conditions'=>array('and'=>array('Lugares.estado'=>1)),
             'order'=>['Lugares.id DESC'],
-            'limit'=>25
+            'limit'=>100
         ];
         $lugares = $this->paginate($this->Lugares);
 

@@ -19,6 +19,48 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
         $(".buscador").focus();
     }
 
+    $scope.openEquipo = function (id) {
+        window.open(
+            kConstant.url+"inscripciones/equipos",
+            '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+
+    $scope.openMoroso = function (id) {
+        window.open(
+            kConstant.url+"inscripciones/morosos",
+            '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+
+    $scope.openParticipante = function (id) {
+        window.open(
+            kConstant.url+"inscripciones/participantes",
+            '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+
+    $scope.openPasajero = function (id) {
+        window.open(
+            kConstant.url+"inscripciones/pasajeros",
+            '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+
+    $scope.openGetPasajeros = function (id) {
+        window.open(
+            kConstant.url+"inscripciones/getpasajeros",
+            '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+
+    $scope.openSeguro = function (id) {
+        window.open(
+            kConstant.url+"inscripciones/seguros",
+            '_blank' // <- This is what makes it open in a new window.
+        );
+    }
+
     $scope.obtener_entity = function (id) {
          $window.location.href = kConstant.url+"inscripciones/edit-pre/"+id;
     }
@@ -245,7 +287,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
            $scope.inscripcion.moneda = $("#moneda").val();
            $scope.inscripcion.ficha_medica = $("#ficha").val();
            $scope.inscripcion.color = $("#color").val();
-            $scope.inscripcion.autorizacion = $("#aut").val();
+           $scope.inscripcion.autorizacion = $("#aut").val();
            console.log($scope.inscripcion);
            $http.post(kConstant.url+"inscripciones/addEntity/",$scope.inscripcion).
            then(function(response){
@@ -258,8 +300,8 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
 
     $scope.calcularDeuda = function(){
           var pago = $scope.inscripcion.pago;
-          pago = pago.replaceAll(".","");
-          var deuda = $scope.deuda;
+          pago = Number(pago.replaceAll(".",""));
+          var deuda = Number($scope.deuda);
 
           if(pago>deuda){
               toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
@@ -292,20 +334,32 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
             setTimeout(function(){ $( "#descripcioni" ).focus(); }, 500);
             return;
         }
-        $("#categoria").val($model.categoria);
         $("#sexo").val($model.sexo);
         $scope.lugar = $model.lugar;
         setTimeout(function(){ $( "#pago" ).focus(); }, 500);
 
-        $http.get(kConstant.url + "eventos/getDeuda/"+$model.categoria).then(function (response) {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+
+    }
+
+    $( "#categoria" ).change(function() {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+    });
+
+    $scope.obtenerDeuda = function(categoria){
+        $http.get(kConstant.url + "eventos/getDeuda/"+categoria).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
-            $scope.deuda = response.data.deuda;
+            var deuda = response.data.deuda;
+            deuda = deuda.replaceAll(".","");
+            $scope.deuda = deuda;
+
 
         }, function (response) {
 
         });
-
     }
 
     $scope.lugar='';
@@ -497,6 +551,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
     $scope.verInscripciones();
 
+     $scope.mod_pago = 0;
      $scope.cargar_datos = function (id) {
         $scope.inscripcion = [];
         $http.get(kConstant.url+"/inscripciones/getEntity/"+id)
@@ -512,10 +567,12 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 $("#color").val($scope.inscripcion.color);
                 $("#moneda").val($scope.inscripcion.moneda);
                 $("#aut").val($scope.inscripcion.autorizacion);
+                $("#sexo").val($scope.persona.sexo);
                 var fecha = data.data.inscripcion[0].fecha;
                 fecha = fecha.substring(0,10);
                 fecha = fecha.split('-');
                 $("#fecha").val(fecha[2]+"/"+fecha[1]+"/"+fecha[0]);
+                $scope.mod_pago = $scope.inscripcion.pago;
                 $scope.inscripcion.pago = numeral($scope.inscripcion.pago).format('0,0.[00]');
                 $scope.inscripcion.pago = $scope.inscripcion.pago.replaceAll(".","_");
                 $scope.inscripcion.pago = $scope.inscripcion.pago.replaceAll(",",".");
@@ -556,20 +613,33 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
       }
 
     $scope.calcularDeuda = function(){
-        var pago = $scope.inscripcion.pago;
-        pago = pago.replaceAll(".","");
-        var deuda =  $scope.deuda;
-        if(pago>deuda){
-            toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
-            setTimeout(function(){ $( "#pago" ).focus(); }, 500);
-            return;
-        }
+         var mod_pago = Number($scope.mod_pago);
 
-        var resultado = deuda - pago;
-        $scope.inscripcion.deuda = numeral(resultado).format('0,0.[00]');
-        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
-        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
-        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
+        var pago = $scope.inscripcion.pago;
+        pago = Number(pago.replaceAll(".",""));
+
+        var deuda = Number($scope.deuda);
+
+         var pago_actual = Number(pago);
+
+         if(mod_pago == pago_actual){
+
+         }else{
+
+             if(pago>deuda){
+                 toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
+                 setTimeout(function(){ $( "#pago" ).focus(); }, 500);
+                 return;
+             }
+
+             var resultado = deuda - pago;
+             $scope.inscripcion.deuda = numeral(resultado).format('0,0.[00]');
+             $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
+             $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
+             $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
+         }
+
+
     }
 
 
@@ -595,15 +665,28 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $scope.lugar = $model.lugar;
         setTimeout(function(){ $( "#pago" ).focus(); }, 500);
 
-        $http.get(kConstant.url + "eventos/getDeuda/"+$model.categoria).then(function (response) {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+
+    }
+
+    $( "#categoria" ).change(function() {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+    });
+
+    $scope.obtenerDeuda = function(categoria){
+        $http.get(kConstant.url + "eventos/getDeuda/"+categoria).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
-            $scope.deuda = response.data.deuda;
+            var deuda = response.data.deuda;
+            deuda = deuda.replaceAll(".","");
+            //$scope.deuda = deuda;
+
 
         }, function (response) {
 
         });
-
     }
 
     $scope.lugar='';

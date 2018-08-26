@@ -26,7 +26,7 @@ class PersonasController extends AppController
     {
 
         $connection = ConnectionManager::get('default');
-        $sql = "SELECT count(*) as total FROM colectivos WHERE estado=1";
+        $sql = "SELECT count(*) as total FROM personas";
         $results = $connection->execute($sql);
         $limit = 1;
         foreach ($results as $valor){

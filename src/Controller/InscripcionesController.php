@@ -26,7 +26,7 @@ class InscripcionesController extends AppController
 
         $id_evento = $id_empresa = $this->request->session()->read('id_evento');
         $connection = ConnectionManager::get('default');
-        $sql = "SELECT count(*) as total FROM inscripciones WHERE estado=1 AND id_evento=".$id_evento;
+        $sql = "SELECT count(*) as total FROM inscripciones WHERE id_evento=".$id_evento;
         $results = $connection->execute($sql);
         $limit = 1;
         foreach ($results as $valor){
@@ -120,16 +120,72 @@ class InscripcionesController extends AppController
         $this->set('_serialize', ['inscripciones']);
     }
 
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function nodata(){
+
+        $this->paginate = [
+            'contain'=>array('Personas','Colectivos','Personas.Lugares'),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'order'=>['Inscripciones.id DESC'],
+            'limit'=>25
+        ];
+
+        $inscripciones = $this->paginate($this->Inscripciones);
+
+        $this->set(compact('inscripciones'));
+        $this->set('_serialize', ['inscripciones']);
+    }
+
 
     /**
      * Index method
      *
      * @return \Cake\Network\Response|null
      */
-    public function printInscripcion(){
+    public function equipos(){
 
-       echo "NECESITO EL FORMATO DE IMPRESION EN EXCEL...";
-       die();
+        $this->paginate = [
+            'contain'=>array('Personas','Colectivos','Personas.Lugares'),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'order'=>['Inscripciones.id DESC'],
+            'limit'=>25
+        ];
+
+        $inscripciones = $this->paginate($this->Inscripciones);
+
+
+
+        $this->set(compact('inscripciones'));
+        $this->set('_serialize', ['inscripciones']);
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function getpasajeros(){
+
+        $id_evento = $this->request->session()->read('id_evento');
+        $this->paginate = [
+            'contain'=>array('Personas','Colectivos','Personas.Lugares'),
+            'conditions'=>array('and'=>array('Inscripciones.estado'=>1)),
+            'order'=>['Inscripciones.id DESC'],
+            'limit'=>25
+        ];
+
+        $inscripciones = $this->paginate($this->Inscripciones);
+
+        $this->loadModel("Colectivos");
+        $colectivos = $this->Colectivos->find('list',['keyField' => 'id','valueField' => 'descripcion'])
+            ->where(['id_evento'=>$id_evento,'estado'=>1]);
+
+        $this->set(compact('inscripciones','colectivos'));
+        $this->set('_serialize', ['inscripciones']);
     }
 
     /**
@@ -365,7 +421,7 @@ class InscripcionesController extends AppController
             {
 
                 $mensaje = "error.";
-                $this->Flash->error(__('Error al editar. vuelva a intentar.'));
+                //$this->Flash->error(__('Error al editar. vuelva a intentar.'));
             }
 
 
@@ -405,9 +461,13 @@ class InscripcionesController extends AppController
                 $inscripcion->id_evento=$id_evento;
                 if ($this->Inscripciones->save($inscripcion)) {
                     $mensaje = "ok.";
-                    $sql_actualizar_colectivo = "INSERT INTO `cargar_colectivos` (`id`, `id_colectivo`, `id_inscripcion`, `id_evento`, `vaciar`,`estado`) 
+
+                    if($inscripcion->id_colectivo!=null){
+                        $sql_actualizar_colectivo = "INSERT INTO `cargar_colectivos` (`id`, `id_colectivo`, `id_inscripcion`, `id_evento`, `vaciar`,`estado`) 
                     VALUES (NULL, ".$inscripcion->id_colectivo.", ".$inscripcion->id.", ".$inscripcion->id_evento.", NULL,1);";
-                    $connection->execute($sql_actualizar_colectivo);
+                        $connection->execute($sql_actualizar_colectivo);
+                    }
+
                 } else {
                     $mensaje = "error";
                 }
@@ -502,6 +562,8 @@ class InscripcionesController extends AppController
 
     }
 
+
+
     /**
      * Add method
      *
@@ -553,6 +615,7 @@ class InscripcionesController extends AppController
 
         $results=null;
         $connection = ConnectionManager::get('default');
+        $id_evento = $this->request->session()->read('id_evento');
         $anho = date("Y");
         $sql = "SELECT count(*) as contador,
                 a.color,
@@ -561,7 +624,7 @@ class InscripcionesController extends AppController
                 FROM inscripciones a, personas b 
                 WHERE 
                 a.id_persona=b.id AND 
-                year(a.fecha)=".$anho."
+                a.id_evento=".$id_evento."
                 GROUP BY a.color,b.sexo,edad;";
 
         $results = $connection->execute($sql);
@@ -707,6 +770,626 @@ class InscripcionesController extends AppController
     }
 
 
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function printEquipo()
+    {
+
+        require_once(ROOT . DS . 'webroot' . DS . "class/tcpdf" . DS . "tcpdf.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "PHPJasperXML.inc.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "setting.php");
+
+        try{
+
+            $equipo = $this->request->data['equipo'];
+            $categoria = $this->request->data['categoria'];
+            $id_evento = $this->request->session()->read('id_evento');
+            $user_id = $this->request->session()->read('Auth.User.id');
+            $connection = ConnectionManager::get('default');
+
+            $PHPJasperXML = new \PHPJasperXML();
+
+
+            $hoy = date("Y-m-d");
+            $hoy = explode("-",$hoy);
+            $hoy = $hoy[2].'/'.$hoy[1].'/'.$hoy[0];
+
+            $hora = date("H:i:s");
+            $file = "informes/equipos/equipos.jrxml";
+            $anho = date("Y");
+            $sql = "SELECT count(*) as contador,
+                a.color as color,
+                b.sexo as sexo,
+                b.descripcion as nombre,
+                a.observacion as obs,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento."
+                GROUP BY a.color,b.sexo,edad;";
+
+            $results = $connection->execute($sql);
+            $connection->execute("DELETE FROM equipo_tmp WHERE id_evento=".$id_evento);
+
+            foreach ($results as $value){
+
+                //MENOR DE EDAD
+                if($value['edad']==14 || $value['edad']==15){
+
+                    //MASCULINO
+                    if($value['sexo']=="masculino"){
+
+                        $insert = "INSERT INTO `equipo_tmp` (`id`, `contador`, `color`, `sexo`, `edad`, 
+                        `nombre`, `obs`, `id_evento`) 
+                        VALUES (NULL, '1', '".$value['color']."', 'masculino_menor', ".$value['edad'].", '".$value['nombre']."', '".$value['obs']."',
+                         ".$id_evento.")";
+
+                        $connection->execute($insert);
+
+                    }else{
+                        //FEMENINO
+                        $insert = "INSERT INTO `equipo_tmp` (`id`, `contador`, `color`, `sexo`, `edad`, 
+                        `nombre`, `obs`, `id_evento`) 
+                        VALUES (NULL, '1', '".$value['color']."', 'femenino_menor', ".$value['edad'].", '".$value['nombre']."', '".$value['obs']."',
+                         ".$id_evento.")";
+                        $connection->execute($insert);
+
+                    }
+
+
+
+                }
+
+                //MAYOR DE EDAD
+                if($value['edad']>=16){
+
+                    //MASCULINO
+                    if($value['sexo']=="masculino"){
+
+                        $insert = "INSERT INTO `equipo_tmp` (`id`, `contador`, `color`, `sexo`, `edad`, 
+                        `nombre`, `obs`, `id_evento`) 
+                        VALUES (NULL, '1', '".$value['color']."', 'masculino_mayor', ".$value['edad'].", '".$value['nombre']."', '".$value['obs']."',
+                         ".$id_evento.")";
+                        $connection->execute($insert);
+
+
+                    }else{
+                        //FEMENINO
+                        $insert = "INSERT INTO `equipo_tmp` (`id`, `contador`, `color`, `sexo`, `edad`, 
+                        `nombre`, `obs`, `id_evento`) 
+                        VALUES (NULL, '1', '".$value['color']."', 'femenino_mayor', ".$value['edad'].", '".$value['nombre']."', '".$value['obs']."',
+                         ".$id_evento.")";
+                        $connection->execute($insert);
+
+                    }
+
+
+                }
+
+
+            }
+
+            $results=null;
+            $validacion="";
+
+            if($equipo=='todos'){
+                $validacion.=" AND id > 0 ";
+            }else{
+                $validacion.=" AND color='".$equipo."' ";
+            }
+
+            if($categoria=='todos'){
+                $validacion.=" AND id > 0 ";
+            }else{
+                $validacion.=" AND sexo='".$categoria."' ";
+            }
+
+            $query = "SELECT
+                      id as id,
+                      sexo as id_categoria,
+                      if(sexo='femenino_mayor',CONCAT('CATEGORIA: FEMENINO - MAYOR'),
+                      if(sexo='masculino_mayor',CONCAT('CATEGORIA: MASCULINO - MAYOR'),
+                      if(sexo='femenino_menor',CONCAT('CATEGORIA: FEMENINO - MENOR'),
+                      if(sexo='masculino_menor',CONCAT('CATEGORIA: MASCULINO - MENOR'),sexo)))) as categoria,
+                      color as id_equipo,
+                      if(color='rojo',CONCAT('EQUIPO: ROJO'),
+                      if(color='azul',CONCAT('EQUIPO: AZUL'),
+                      if(color='verde',CONCAT('EQUIPO: VERDE'),
+                      if(color='naranja',CONCAT('EQUIPO: NARANJA'),
+                      if(color='sin_definir',CONCAT('EQUIPO: SIN DEFINIR'),0))))) as equipo,
+                      nombre
+                      FROM equipo_tmp 
+                      WHERE 
+                      id_evento=".$id_evento."
+                       ".$validacion."
+                      ORDER BY color, sexo";
+
+            $results=null;
+            $connection = ConnectionManager::get('default');
+            $results = $connection->execute($query);
+
+            if(count($results)<=0){
+                return $this->redirect(['controller' => 'inscripciones','action' => 'nodata']);
+            };
+
+            $PHPJasperXML->arrayParameter=array("parameter1"=>1,
+                "parametro_empresa"=>$this->request->session()->read('nombre_evento'),
+                "factura"=>"Nro.",
+                "direccion"=>"me",
+                "ruc"=>"me",
+                "contacto"=>"me",
+                "fecha"=>$hoy,
+                "usuario"=>$this->Auth->user('nombre'),
+                "saldoal"=>"param1",
+                "moneda"=>"param1",
+                "local"=>"param1",
+                "query"=>$query,
+                "total_factura"=>"Total",
+                "total_cliente"=>"param1",
+                "total_general"=>"Total General",
+                "empresa_software"=>"IVE",
+                "empresa_descripcion"=>	"IVE",
+                "pagina"=>"Pag. Nro.",
+                "fecha_impresion"=>"Fecha Impresion:".$hoy,
+                "hora_impresion"=>"Hora Impresion:".$hora,
+                "desde"=>"me",
+                "hasta"=>"me",
+                "descrip_fecha"=>"Fecha:");
+
+
+            $PHPJasperXML->load_xml_file($file);
+            $server=$server;
+            $db=$db;
+            $user=$user;
+            $pass=$pass;
+            $version="0.9d";
+            $pgport=5432;
+            $pchartfolder="./class/pchart2";
+            $PHPJasperXML->transferDBtoArray($server,$user,$pass,$db);
+
+            if (ob_get_length() > 0 ) {
+                ob_end_clean();
+            }
+
+            $PHPJasperXML->outpage("I");
+
+        }catch (\PDOException $e) {
+            $error = 'No se puede borrar los datos. Esta asociado con otra clase.';
+
+        }
+
+    }
+
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function morosos()
+    {
+
+        require_once(ROOT . DS . 'webroot' . DS . "class/tcpdf" . DS . "tcpdf.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "PHPJasperXML.inc.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "setting.php");
+
+        try{
+
+            $id_evento = $this->request->session()->read('id_evento');
+            $user_id = $this->request->session()->read('Auth.User.id');
+            $connection = ConnectionManager::get('default');
+
+            $PHPJasperXML = new \PHPJasperXML();
+
+
+            $hoy = date("Y-m-d");
+            $hoy = explode("-",$hoy);
+            $hoy = $hoy[2].'/'.$hoy[1].'/'.$hoy[0];
+
+            $hora = date("H:i:s");
+            $file = "informes/equipos/morosos.jrxml";
+            $anho = date("Y");
+            $query = "SELECT b.descripcion as nombre,
+                      a.deuda as deuda,
+                      c.descripcion as lugar,
+                      b.telefono as telefono
+                     FROM inscripciones a, personas b, lugares c
+                     WHERE 
+                     b.id_lugar=c.id AND
+                     a.id_persona=b.id AND 
+                     a.deuda>0 AND
+                      a.id_evento=".$id_evento." AND
+                     a.estado=1";
+
+            $results=null;
+            $connection = ConnectionManager::get('default');
+            $results = $connection->execute($query);
+
+            if(count($results)<=0){
+                return $this->redirect(['controller' => 'inscripciones','action' => 'nodata']);
+            };
+
+            $PHPJasperXML->arrayParameter=array("parameter1"=>1,
+                "parametro_empresa"=>$this->request->session()->read('nombre_evento'),
+                "factura"=>"Nro.",
+                "direccion"=>"me",
+                "ruc"=>"me",
+                "contacto"=>"me",
+                "fecha"=>$hoy,
+                "usuario"=>$this->Auth->user('nombre'),
+                "saldoal"=>"param1",
+                "moneda"=>"param1",
+                "local"=>"param1",
+                "query"=>$query,
+                "total_factura"=>"Total",
+                "total_cliente"=>"param1",
+                "total_general"=>"Total General",
+                "empresa_software"=>"IVE",
+                "empresa_descripcion"=>	"IVE",
+                "pagina"=>"Pag. Nro.",
+                "fecha_impresion"=>"Fecha Impresion:".$hoy,
+                "hora_impresion"=>"Hora Impresion:".$hora,
+                "desde"=>"me",
+                "hasta"=>"me",
+                "descrip_fecha"=>"Fecha:");
+
+
+            $PHPJasperXML->load_xml_file($file);
+            $server=$server;
+            $db=$db;
+            $user=$user;
+            $pass=$pass;
+            $version="0.9d";
+            $pgport=5432;
+            $pchartfolder="./class/pchart2";
+            $PHPJasperXML->transferDBtoArray($server,$user,$pass,$db);
+
+            if (ob_get_length() > 0 ) {
+                ob_end_clean();
+            }
+
+            $PHPJasperXML->outpage("I");
+
+        }catch (\PDOException $e) {
+            $error = 'No se puede borrar los datos. Esta asociado con otra clase.';
+
+        }
+
+    }
+
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function participantes()
+    {
+
+        require_once(ROOT . DS . 'webroot' . DS . "class/tcpdf" . DS . "tcpdf.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "PHPJasperXML.inc.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "setting.php");
+
+        try{
+
+            $id_evento = $this->request->session()->read('id_evento');
+            $user_id = $this->request->session()->read('Auth.User.id');
+            $connection = ConnectionManager::get('default');
+
+            $PHPJasperXML = new \PHPJasperXML();
+
+
+            $hoy = date("Y-m-d");
+            $hoy = explode("-",$hoy);
+            $hoy = $hoy[2].'/'.$hoy[1].'/'.$hoy[0];
+
+            $hora = date("H:i:s");
+            $file = "informes/equipos/participantes.jrxml";
+            $anho = date("Y");
+            $query = "SELECT 
+                      COUNT(c.id) as telefono,
+                      b.descripcion as nombre,
+                      a.deuda as deuda,
+                      c.descripcion as lugar
+                     FROM inscripciones a, personas b, lugares c
+                     WHERE 
+                     b.id_lugar=c.id AND
+                     a.id_persona=b.id AND 
+                      a.id_evento=".$id_evento." AND
+                     a.estado=1 GROUP BY c.id";
+
+            $results=null;
+            $connection = ConnectionManager::get('default');
+            $results = $connection->execute($query);
+
+            if(count($results)<=0){
+                return $this->redirect(['controller' => 'inscripciones','action' => 'nodata']);
+            };
+
+            $PHPJasperXML->arrayParameter=array("parameter1"=>1,
+                "parametro_empresa"=>$this->request->session()->read('nombre_evento'),
+                "factura"=>"Nro.",
+                "direccion"=>"me",
+                "ruc"=>"me",
+                "contacto"=>"me",
+                "fecha"=>$hoy,
+                "usuario"=>$this->Auth->user('nombre'),
+                "saldoal"=>"param1",
+                "moneda"=>"param1",
+                "local"=>"param1",
+                "query"=>$query,
+                "total_factura"=>"Total",
+                "total_cliente"=>"param1",
+                "total_general"=>"Total General",
+                "empresa_software"=>"IVE",
+                "empresa_descripcion"=>	"IVE",
+                "pagina"=>"Pag. Nro.",
+                "fecha_impresion"=>"Fecha Impresion:".$hoy,
+                "hora_impresion"=>"Hora Impresion:".$hora,
+                "desde"=>"me",
+                "hasta"=>"me",
+                "descrip_fecha"=>"Fecha:");
+
+
+            $PHPJasperXML->load_xml_file($file);
+            $server=$server;
+            $db=$db;
+            $user=$user;
+            $pass=$pass;
+            $version="0.9d";
+            $pgport=5432;
+            $pchartfolder="./class/pchart2";
+            $PHPJasperXML->transferDBtoArray($server,$user,$pass,$db);
+
+            if (ob_get_length() > 0 ) {
+                ob_end_clean();
+            }
+
+            $PHPJasperXML->outpage("I");
+
+        }catch (\PDOException $e) {
+            $error = 'No se puede borrar los datos. Esta asociado con otra clase.';
+
+        }
+
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function printPasajeros()
+    {
+
+        require_once(ROOT . DS . 'webroot' . DS . "class/tcpdf" . DS . "tcpdf.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "PHPJasperXML.inc.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "setting.php");
+
+        try{
+
+            $colectivo = $this->request->data['colectivo'];
+
+            $id_evento = $this->request->session()->read('id_evento');
+            $user_id = $this->request->session()->read('Auth.User.id');
+            $connection = ConnectionManager::get('default');
+
+            $PHPJasperXML = new \PHPJasperXML();
+
+
+            $hoy = date("Y-m-d");
+            $hoy = explode("-",$hoy);
+            $hoy = $hoy[2].'/'.$hoy[1].'/'.$hoy[0];
+
+            $hora = date("H:i:s");
+            $file = "informes/equipos/pasajeros.jrxml";
+            $anho = date("Y");
+
+            if(empty($colectivo)){
+                $query = "SELECT 
+                      d.id as id_colectivo,
+                      CONCAT('VEHÍCULO: ',d.descripcion) as colectivo,
+                      CONCAT('PATENTE: ',d.patente) as patente,
+                      CONCAT('DESTINO: ',d.destino) as destino,
+                      b.descripcion as nombre,
+                      a.deuda as deuda,
+                      c.descripcion as lugar,
+                      b.dni as telefono,
+                      b.fecha_nacimiento as naci
+                     FROM inscripciones a, personas b, lugares c, colectivos d
+                     WHERE 
+                     a.id_colectivo=d.id AND 
+                     b.id_lugar=c.id AND
+                     a.id_persona=b.id AND 
+                     a.estado=1";
+            }else{
+                $query = "SELECT 
+                      d.id as id_colectivo,
+                      CONCAT('VEHÍCULO: ',d.descripcion) as colectivo,
+                      CONCAT('PATENTE: ',d.patente) as patente,
+                      CONCAT('DESTINO: ',d.destino) as destino,
+                      b.descripcion as nombre,
+                      a.deuda as deuda,
+                      c.descripcion as lugar,
+                      b.dni as telefono,
+                      b.fecha_nacimiento as naci
+                     FROM inscripciones a, personas b, lugares c, colectivos d
+                     WHERE 
+                     a.id_colectivo=d.id AND 
+                     b.id_lugar=c.id AND
+                     a.id_persona=b.id AND 
+                     a.id_colectivo=".$colectivo." AND
+                      a.id_evento=".$id_evento." AND
+                     a.estado=1";
+            }
+
+
+            $results=null;
+            $connection = ConnectionManager::get('default');
+            $results = $connection->execute($query);
+
+            if(count($results)<=0){
+                return $this->redirect(['controller' => 'inscripciones','action' => 'nodata']);
+            };
+
+            $PHPJasperXML->arrayParameter=array("parameter1"=>1,
+                "parametro_empresa"=>$this->request->session()->read('nombre_evento'),
+                "factura"=>"Nro.",
+                "direccion"=>"me",
+                "ruc"=>"me",
+                "contacto"=>"me",
+                "fecha"=>$hoy,
+                "usuario"=>$this->Auth->user('nombre'),
+                "saldoal"=>"param1",
+                "moneda"=>"param1",
+                "local"=>"param1",
+                "query"=>$query,
+                "total_factura"=>"Total",
+                "total_cliente"=>"param1",
+                "total_general"=>"Total General",
+                "empresa_software"=>"IVE",
+                "empresa_descripcion"=>	"IVE",
+                "pagina"=>"Pag. Nro.",
+                "fecha_impresion"=>"Fecha Impresion:".$hoy,
+                "hora_impresion"=>"Hora Impresion:".$hora,
+                "desde"=>"me",
+                "hasta"=>"me",
+                "descrip_fecha"=>"Fecha:");
+
+
+            $PHPJasperXML->load_xml_file($file);
+            $server=$server;
+            $db=$db;
+            $user=$user;
+            $pass=$pass;
+            $version="0.9d";
+            $pgport=5432;
+            $pchartfolder="./class/pchart2";
+            $PHPJasperXML->transferDBtoArray($server,$user,$pass,$db);
+
+            if (ob_get_length() > 0 ) {
+                ob_end_clean();
+            }
+
+            $PHPJasperXML->outpage("I");
+
+        }catch (\PDOException $e) {
+            $error = 'No se puede borrar los datos. Esta asociado con otra clase.';
+
+        }
+
+    }
+
+    /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function seguros()
+    {
+
+        require_once(ROOT . DS . 'webroot' . DS . "class/tcpdf" . DS . "tcpdf.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "PHPJasperXML.inc.php");
+        require_once(ROOT . DS . 'webroot' . DS . "class" . DS . "setting.php");
+
+        try{
+
+            $id_evento = $this->request->session()->read('id_evento');
+            $user_id = $this->request->session()->read('Auth.User.id');
+            $connection = ConnectionManager::get('default');
+
+            $PHPJasperXML = new \PHPJasperXML();
+
+
+            $hoy = date("Y-m-d");
+            $hoy = explode("-",$hoy);
+            $hoy = $hoy[2].'/'.$hoy[1].'/'.$hoy[0];
+
+            $hora = date("H:i:s");
+            $file = "informes/equipos/seguros.jrxml";
+            $anho = date("Y");
+
+
+                $query = "SELECT 
+                      d.id as id_colectivo,
+                      CONCAT('VEHÍCULO: ',d.descripcion) as colectivo,
+                      CONCAT('PATENTE: ',d.patente) as patente,
+                      CONCAT('DESTINO: ',d.destino) as destino,
+                      b.descripcion as nombre,
+                      a.deuda as deuda,
+                      c.descripcion as lugar,
+                      b.dni as telefono,
+                      b.fecha_nacimiento as naci
+                     FROM inscripciones a, personas b, lugares c, colectivos d
+                     WHERE 
+                     a.id_colectivo=d.id AND 
+                     b.id_lugar=c.id AND
+                     a.id_persona=b.id AND 
+                     a.id_evento=".$id_evento." AND
+                     a.estado=1
+                     GROUP BY a.id_persona";
+
+
+
+            $results=null;
+            $connection = ConnectionManager::get('default');
+            $results = $connection->execute($query);
+
+            if(count($results)<=0){
+                return $this->redirect(['controller' => 'inscripciones','action' => 'nodata']);
+            };
+
+            $PHPJasperXML->arrayParameter=array("parameter1"=>1,
+                "parametro_empresa"=>$this->request->session()->read('nombre_evento'),
+                "factura"=>"Nro.",
+                "direccion"=>"me",
+                "ruc"=>"me",
+                "contacto"=>"me",
+                "fecha"=>$hoy,
+                "usuario"=>$this->Auth->user('nombre'),
+                "saldoal"=>"param1",
+                "moneda"=>"param1",
+                "local"=>"param1",
+                "query"=>$query,
+                "total_factura"=>"Total",
+                "total_cliente"=>"param1",
+                "total_general"=>"Total General",
+                "empresa_software"=>"IVE",
+                "empresa_descripcion"=>	"IVE",
+                "pagina"=>"Pag. Nro.",
+                "fecha_impresion"=>"Fecha Impresion:".$hoy,
+                "hora_impresion"=>"Hora Impresion:".$hora,
+                "desde"=>"me",
+                "hasta"=>"me",
+                "descrip_fecha"=>"Fecha:");
+
+
+            $PHPJasperXML->load_xml_file($file);
+            $server=$server;
+            $db=$db;
+            $user=$user;
+            $pass=$pass;
+            $version="0.9d";
+            $pgport=5432;
+            $pchartfolder="./class/pchart2";
+            $PHPJasperXML->transferDBtoArray($server,$user,$pass,$db);
+
+            if (ob_get_length() > 0 ) {
+                ob_end_clean();
+            }
+
+            $PHPJasperXML->outpage("I");
+
+        }catch (\PDOException $e) {
+            $error = 'No se puede borrar los datos. Esta asociado con otra clase.';
+
+        }
+
+    }
 
 }
 

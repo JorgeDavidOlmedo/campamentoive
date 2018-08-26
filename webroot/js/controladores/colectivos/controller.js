@@ -82,6 +82,32 @@ app.controller('colectivoIndex',function ($scope,kConstant,$http,$window,$filter
 
     }
 
+    $scope.vaciar_colectivo = function (id) {
+
+        swal({
+            title: "Deseas vaciar el colectivo # "+id+"?",
+            text: "Atencion. al vaciar ya no podras volver atras!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, vaciar!",
+            closeOnConfirm: false
+        }, function () {
+            $http.post(kConstant.url+"colectivos/vaciar/"+id).
+            then(function(response){
+                swal("Vacio!", "El proceso se llevo a cabo correctamente.", "success");
+                $timeout(function () {
+                    $scope.listar_entity();
+                }, 1000);
+
+            },function (response) {
+                console.log(response);
+            });
+
+        });
+
+    }
+
 
     $scope.usuario='';
     $scope.usuarios = function(usuarioValue){
@@ -148,7 +174,7 @@ app.controller('colectivoAdd',function($scope,kConstant,$http,$window){
            then(function(response){
        
               console.log(response);
-             // $window.location.href = kConstant.url+"colectivos/index";
+              $window.location.href = kConstant.url+"colectivos/index";
            },function (response) {
 
            });

@@ -63,7 +63,7 @@
                                                 <?=$this->Form->input('sexo',["id"=>"sexo", 'type'=>'select',
                                                     'label'=>'Sexo',
                                                     'options'=>["masculino" => "Masculino","femenino"=>"Femenino"],
-                                                    'class'=>'input'])?>
+                                                    'class'=>'input','readonly'])?>
                                             </div>
 
 

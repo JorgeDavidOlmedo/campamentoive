@@ -11,14 +11,13 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">Reporte Inscripciones</h4>
+                                    <h4 class="title"><strong>Reportes</strong></h4>
                                     <br>
                                 </div>
                                 <div class="content">
-                                    <?= $this->Form->create(null,array('url' => array('action' => 'printInscripcion'),'target'=>'_blank','id' => 'RecipesAdd','name' => 'frmRegister','onsubmit' => 'validatefrm(); return false;')) ?>
 
 
-                                    <div class="row">
+                                    <!--div class="row">
                                         <div class="col-xs-12 col-sm-4 col-md-4">
                                             <?=$this->Form->input('tipo',["id"=>"tipo", 'type'=>'select',
                                                 'label'=>'Periodo',
@@ -35,20 +34,57 @@
                                                     "11"=>"Noviembre",
                                                     "12"=>"Diciembre"],'class'=>'input'])?>
                                         </div>
-                                    </div>
+                                    </div-->
 
                                     <div class="row">
-                                        <hr>
-                                        <div class="col-xs-12 col-sm-6 col-md-6">
-                                            <?= $this->Form->button(__('Consultar'),['class'=>'btn btn-info','ng-click'=>'guardar()']) ?>
-                                            <?= $this->Html->link(__('Cancelar'),['controller'=>'Pages','action' => 'home/'],['class'=>'btn btn-danger']) ?>
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <?= $this->Form->button(__('Equipos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'),
+                                                ['class'=>'btn btn-info','ng-click'=>'openEquipo()']) ?>
+                                         </div>
+
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <?= $this->Form->button(__('Morosos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'),
+                                                ['class'=>'btn btn-info','ng-click'=>'openMoroso()']) ?>
+                                        </div>
+
+                                    </div>
+
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <?= $this->Form->button(__('Participantes&nbsp;&nbsp;'),
+                                                ['class'=>'btn btn-info','ng-click'=>'openParticipante()']) ?>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <?= $this->Form->button(__('Pasajeros&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'),
+                                                ['class'=>'btn btn-info','ng-click'=>'openGetPasajeros()']) ?>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-10 col-md-10">
+                                            <?= $this->Form->button(__('Seguro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'),
+                                                ['class'=>'btn btn-info','ng-click'=>'openSeguro()']) ?>
 
                                         </div>
+
                                     </div>
+
+
+
                                 </div>
                             </div>
 
-                            <?= $this->Form->end() ?>
+
                         </div>
                     </div>
                 </div>

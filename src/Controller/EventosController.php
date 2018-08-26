@@ -25,7 +25,7 @@ class EventosController extends AppController
     public function index()
     {
         $connection = ConnectionManager::get('default');
-        $sql = "SELECT count(*) as total FROM eventos WHERE estado=1";
+        $sql = "SELECT count(*) as total FROM eventos";
         $results = $connection->execute($sql);
         $limit = 1;
         foreach ($results as $valor){
@@ -359,13 +359,14 @@ class EventosController extends AppController
 
         $results=null;
         $connection = ConnectionManager::get('default');
+        $id_evento = $this->request->session()->read('id_evento');
 
          $fecha = date("Y");
 
-         $sql = "SELECT costo_participante,costo_voluntario,costo_colaborador 
+         $sql = "SELECT costo_participante,costo_voluntario 
                  FROM eventos 
                  WHERE 
-                 year(fecha)=".$fecha." ORDER BY id desc LIMIT 1 ";
+                 id=".$id_evento." ORDER BY id desc LIMIT 1 ";
 
 
         $results = $connection->execute($sql);
@@ -382,7 +383,7 @@ class EventosController extends AppController
             }
 
             if($categoria=="colaborador"){
-                $deuda = $value['costo_colaborador'];
+                $deuda = 0;
             }
 
         }

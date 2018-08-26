@@ -103,7 +103,7 @@
 
                                             <div class="col-xs-12 col-sm-2 col-md-2">
                                                 <?=$this->Form->input('color',["id"=>"color", 'type'=>'select',
-                                                    'label'=>'Color',
+                                                    'label'=>'Equipo',
                                                     'options'=>["sin_definir"=>"Sin Definir", "amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","verde"=>"Verde"],
                                                     'class'=>'input'])?>
                                             </div>
@@ -111,7 +111,7 @@
 
                                             <div class="col-xs-12 col-sm-2 col-md-2">
                                                 <label>Verificar</label><br>
-                                                <button class="btn btn-default" ng-click="openColor()">Color</button>
+                                                <button class="btn btn-default" ng-click="openColor()">Equipo</button>
                                             </div>
 
 

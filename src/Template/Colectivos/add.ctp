@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Agregar Colectivo</h4>
+                                <h4 class="title">Agregar Vehículos</h4>
                                 <br>
                             </div>
                             <div class="content">
@@ -46,6 +46,23 @@
                 </div>
              
            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <?=$this->Form->input('patente',array('class' => 'form-control',
+                        'label'=>'Patente','ng-model'=>'colectivo.patente'))?>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <?=$this->Form->input('destino',array('class' => 'form-control',
+                        'label'=>'Destino','ng-model'=>'colectivo.destino'))?>
+                </div>
+
+            </div>
 
             
             <div class="row">

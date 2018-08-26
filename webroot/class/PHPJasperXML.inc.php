@@ -4778,7 +4778,6 @@ foreach($this->arrayVariable as $name=>$value){
 
                         echo $fm."<br/><br/>";
                     }*/
-
       eval("\$result= ".$fm.";");
 
     /*if(strpos($fm, "458.21")){

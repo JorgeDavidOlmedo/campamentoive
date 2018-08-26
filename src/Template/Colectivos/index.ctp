@@ -11,9 +11,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Colectivos</h4>
-                        <p class="category">Lista de Colectivos</p><br>
-                        <?= $this->Html->link($this->Html->tag('p','Agregar Nuevo Colectivo',['class' => '']).'', 
+                        <h4 class="title">Vehículos</h4>
+                        <p class="category">Lista de Vehículos</p><br>
+                        <?= $this->Html->link($this->Html->tag('p','Agregar Nuevo Vehículo',['class' => '']).'',
                         ['controller' => 'Colectivos', 'action' => 'add'],
                         ['escape' => false])?>  
                     </div>
@@ -26,6 +26,7 @@
                             <thead>
                             <th>ID</th>
                             <th>Descripcion</th>
+                            <th>Patente</th>
                             <th>Categoria</th>
                             <th>Lugares</th>
                             <th>Utilizados</th>
@@ -40,6 +41,7 @@
                                     <td><?= $this->Number->format($value->id) ?></td>
 
                                     <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Colectivos', 'action' => 'view', $value->id]) : '' ?></td>
+                                    <td><?= $value->patente ?></td>
                                     <td><?= $value->categoria ?></td>
                                     <td><?= $value->lugar; ?></td>
                                     <td><?= $value->ocupado; ?></td>
@@ -47,6 +49,7 @@
                                     <td class="actions">
                                         <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
                                         <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $value->id;?>)"></a>
+                                        <button ng-click = "vaciar_colectivo(<?php echo $value->id;?>)">Vaciar</button>
                                     </td>
 
                                     <?php else:?>
@@ -60,6 +63,7 @@
                                     <td class="actions datacellone">
                                         <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
                                         <a class="glyphicon glyphicon-remove standar" ng-click = "borrar_entity(<?php echo $value->id;?>)"></a>
+                                        <button ng-click = "vaciar_colectivo(<?php echo $value->id;?>)">Vaciar</button>
                                     </td>
 
                                     <?php endif;?>

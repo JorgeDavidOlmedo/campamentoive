@@ -28,7 +28,7 @@ class ColectivosController extends AppController
          $id_evento = $this->request->session()->read('id_evento');
 
         $connection = ConnectionManager::get('default');
-        $sql = "SELECT count(*) as total FROM colectivos WHERE estado=1 AND id_evento=".$id_evento;
+        $sql = "SELECT count(*) as total FROM colectivos WHERE id_evento=".$id_evento;
         $results = $connection->execute($sql);
         $limit = 1;
         foreach ($results as $valor){
@@ -332,6 +332,43 @@ class ColectivosController extends AppController
         $this->render();
 
     }
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     */
+    public function vaciar($id = null)
+    {
+        $message = "";
+        $connection = ConnectionManager::get('default');
+        try{
+            $hoy = date("Y-m-d");
+            $sql = "UPDATE cargar_colectivos SET vaciar='".$hoy."' WHERE id_colectivo=".$id;
+            $query = $connection->execute($sql);
+
+            if($query){
+                $message = "dato borrado correctamente.";
+            }else{
+                $message = "no se pudo borrar el registro.";
+            }
+
+        }catch (\PDOException $e)
+        {
+
+            $mensaje = "error al eliminar.";
+            $this->Flash->error(__('Error al eliminar. vuelva a intentar.'));
+        }
+
+        $this->set([
+            'message' => $message,
+            '_serialize' => ['message']
+        ]);
+        $this->viewClass = 'Json';
+        $this->render();
+
+    }
+
 
 
 }

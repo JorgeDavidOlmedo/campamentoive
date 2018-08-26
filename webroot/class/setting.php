@@ -2,7 +2,7 @@
 $server="localhost";
 //$server="http://174.138.53.240/";
 //$server="http://contalapp.prodatasys.com/";
-$db="restorapp";
+$db="campamento";
 //$user="prodatas_admin";
 $user= "root";
 $pass="20.prd.100";

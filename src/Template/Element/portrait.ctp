@@ -16,7 +16,7 @@
 				</li>
 
 				<li>
-					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-car']).$this->Html->tag('p','Colectivos',['class' => '']).'',
+					<?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-car']).$this->Html->tag('p','Vehículos',['class' => '']).'',
 					['controller' => 'Colectivos', 'action' => 'index/'],
 					['escape' => false])?>
 				</li>
@@ -58,7 +58,7 @@
                 </li>
 
                 <li>
-                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-print']).$this->Html->tag('p','Reporte Incripciones',['class' => '']).'',
+                    <?= $this->Html->link($this->Html->tag('i','',['class' => 'pe-7s-print']).$this->Html->tag('p','Reportes',['class' => '']).'',
                         ['controller' => 'inscripciones', 'action' => 'reporte'],
                         ['escape' => false])?>
                 </li>
