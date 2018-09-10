@@ -193,6 +193,7 @@ class EventosController extends AppController
                 $this->request->data['costo_participante'] = str_replace('.','',$this->request->data['costo_participante']);
                 $this->request->data['costo_voluntario'] = str_replace('.','',$this->request->data['costo_voluntario']);
                 $this->request->data['costo_colaborador'] = str_replace('.','',$this->request->data['costo_colaborador']);
+                $this->request->data['costo_acompanhante'] = str_replace('.','',$this->request->data['costo_acompanhante']);
 
                 $evento = $this->Eventos->patchEntity($evento, $this->request->data);
                 if ($this->Eventos->save($evento)) {
@@ -354,7 +355,7 @@ class EventosController extends AppController
      *
      * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
      */
-    public function getDeuda($categoria = null)
+    public function getDeuda($categoria = null, $viaja = null)
     {
 
         $results=null;
@@ -363,7 +364,7 @@ class EventosController extends AppController
 
          $fecha = date("Y");
 
-         $sql = "SELECT costo_participante,costo_voluntario 
+         $sql = "SELECT costo_participante,costo_voluntario,costo_acompanhante
                  FROM eventos 
                  WHERE 
                  id=".$id_evento." ORDER BY id desc LIMIT 1 ";
@@ -384,6 +385,10 @@ class EventosController extends AppController
 
             if($categoria=="colaborador"){
                 $deuda = 0;
+            }
+
+            if($viaja=="si"){
+                $deuda = $value['costo_acompanhante'];
             }
 
         }

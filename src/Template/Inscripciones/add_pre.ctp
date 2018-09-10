@@ -35,7 +35,7 @@
                                             <div class="col-xs-12 col-sm-6 col-md-6">
                                                 <?=$this->Form->input('persona',array('class'=>'form-control',
                                                     'label'=>'Nombre','ng-model'=>'persona','uib-typeahead-editable'=>"false" ,
-                                                    'uib-typeahead'=>'p as p.descripcion for p in personas($viewValue)',
+                                                    'uib-typeahead'=>'p as p.descripcion +" - Edad: "+p.edad for p in personas($viewValue)',
                                                     'typeahead-on-select="onSelect($item,$model,$label)"',
                                                     'placeholder'=>'Tipear Nombre', 'required'))?>
                                             </div>
@@ -145,6 +145,14 @@
 
                                         <div class="row">
 
+                                        <div class="col-xs-12 col-sm-3 col-md-3">
+                                            <?=$this->Form->input('viaja',["id"=>"viaja", 'type'=>'select',
+                                                'label'=>'Acompañante',
+                                                'options'=>["no"=>"No","si" => "Si"],
+                                                'class'=>'input'])?>
+                                        </div>
+
+
                                          <div class="col-xs-12 col-sm4 col-md-4">
                                                 <?=$this->Form->input('pago',array('class' => 'form-control',
                                                     'label'=>'Pago','ng-model'=>'inscripcion.pago',
@@ -175,6 +183,26 @@
                                                     'label'=>'Observacion','ng-model'=>'inscripcion.observacion'
                                                      ,
                                                     'placeholder'=>'Tipear Observacion'))?>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-xs-12 col-sm6 col-md-6">
+                                                <?=$this->Form->input('responsable',array('class' => 'form-control',
+                                                    'label'=>'Responsable','ng-model'=>'inscripcion.responsable'
+                                                ,
+                                                    'placeholder'=>'Tipear Responsable'))?>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm6 col-md-6">
+                                                <?=$this->Form->input('responsable_tel',array(
+                                                    'id'=>'responsable_tel', 'class' => 'form-control',
+                                                    'label'=>'Nro. Contacto Responsable','ng-model'=>'inscripcion.responsable_tel'
+                                                ,
+                                                    'placeholder'=>'Tipear Nro. Contacto Responsable'))?>
                                             </div>
 
 

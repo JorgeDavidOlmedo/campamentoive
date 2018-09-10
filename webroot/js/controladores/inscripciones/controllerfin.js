@@ -536,6 +536,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 $("#color").val($scope.inscripcion.color);
                 $("#moneda").val($scope.inscripcion.moneda);
                 $("#confirmacion").val($scope.inscripcion.estado_inscripcion);
+                $("#viaja").val($scope.inscripcion.viaja);
                 $scope.mod_pago = $scope.inscripcion.pago;
                 $scope.deuda = $scope.inscripcion.deuda;
                 var fecha = data.data.inscripcion[0].fecha;
@@ -655,8 +656,15 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $scope.obtenerDeuda(categoria);
     });
 
+    $( "#viaja" ).change(function() {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+    });
+
+
     $scope.obtenerDeuda = function(categoria){
-        $http.get(kConstant.url + "eventos/getDeuda/"+categoria).then(function (response) {
+        var viaja = $("#viaja").val();
+        $http.get(kConstant.url + "eventos/getDeuda/"+categoria+"/"+viaja).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
             var deuda = response.data.deuda;

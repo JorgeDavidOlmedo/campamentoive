@@ -28,6 +28,7 @@
                                         <th>Fecha Inicio</th>
                                         <th>Fecha Fin</th>
                                         <th>Descripcion</th>
+                                        <th>Costo Acompañante</th>
                                         <th>Cupos Participante</th>
                                         <th>Costo Participante</th>
                                         <th>Cupos Voluntario</th>
@@ -42,6 +43,7 @@
                                                 <td><?= date('d/m/Y',strtotime($value->fecha_inicio)) ?></td>
                                                 <td><?= date('d/m/Y',strtotime($value->fecha_fin)) ?></td>
                                                 <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Lugares', 'action' => 'view', $value->id]) : '' ?></td>
+                                                <td><?= number_format($value->costo_acompanhante) ?></td>
                                                 <td><?= $value->cupo_participante ?></td>
                                                 <td><?= number_format($value->costo_participante) ?></td>
                                                 <td><?= $value->cupo_voluntario ?></td>

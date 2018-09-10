@@ -288,6 +288,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
            $scope.inscripcion.ficha_medica = $("#ficha").val();
            $scope.inscripcion.color = $("#color").val();
            $scope.inscripcion.autorizacion = $("#aut").val();
+            $scope.inscripcion.viaja = $("#viaja").val();
            //console.log($scope.inscripcion);
            $http.post(kConstant.url+"inscripciones/addEntity/",$scope.inscripcion).
            then(function(response){
@@ -358,8 +359,15 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         $scope.obtenerDeuda(categoria);
     });
 
+    $( "#viaja" ).change(function() {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+    });
+
+
     $scope.obtenerDeuda = function(categoria){
-        $http.get(kConstant.url + "eventos/getDeuda/"+categoria).then(function (response) {
+        var viaja = $("#viaja").val();
+        $http.get(kConstant.url + "eventos/getDeuda/"+categoria+"/"+viaja).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
             var deuda = response.data.deuda;
@@ -723,8 +731,14 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $scope.obtenerDeuda(categoria);
     });
 
+    $( "#viaja" ).change(function() {
+        var categoria = $( "#categoria" ).val();
+        $scope.obtenerDeuda(categoria);
+    });
+
     $scope.obtenerDeuda = function(categoria){
-        $http.get(kConstant.url + "eventos/getDeuda/"+categoria).then(function (response) {
+        var viaja = $("#viaja").val();
+        $http.get(kConstant.url + "eventos/getDeuda/"+categoria+"/"+viaja).then(function (response) {
             console.log(response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
             var deuda = response.data.deuda;

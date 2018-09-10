@@ -50,6 +50,18 @@
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm4 col-md-4">
+                                                <?=$this->Form->input('costo_a',array('class' => 'form-control',
+                                                    'id'=>'costo_a','label'=>'Costo Acompañante','ng-model'=>'evento.costo_acompanhante',
+                                                    'onkeyup'=>'format(this)','onchange'=>'format(this)',
+                                                    'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
+                                                     event.charCode == 44 || event.charCode == 0 ",
+                                                    'placeholder'=>'Tipear costo'))?>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm4 col-md-4">
                                                 <?=$this->Form->input('cupo_p',array('class' => 'form-control',
                                                     'label'=>'Cupo Participante','ng-model'=>'evento.cupo_participante',
                                                     'onkeyup'=>'format(this)','onchange'=>'format(this)',

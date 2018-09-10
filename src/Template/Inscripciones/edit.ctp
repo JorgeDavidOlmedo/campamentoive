@@ -137,6 +137,13 @@
 
                                         <div class="row">
 
+                                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                                <?=$this->Form->input('viaja',["id"=>"viaja", 'type'=>'select',
+                                                    'label'=>'Acompañante',
+                                                    'options'=>["no"=>"No","si" => "Si"],
+                                                    'class'=>'input'])?>
+                                            </div>
+
                                             <div class="col-xs-12 col-sm4 col-md-4">
                                                 <?=$this->Form->input('pago',array('class' => 'form-control',
                                                     'label'=>'Pago','ng-model'=>'inscripcion.pago',

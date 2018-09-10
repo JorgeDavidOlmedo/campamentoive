@@ -300,6 +300,11 @@ app.controller('eventoEdit',function ($scope,$http,kConstant,$window,lugaresByTe
                 $scope.evento.costo_voluntario = $scope.evento.costo_voluntario.replaceAll(".","_");
                 $scope.evento.costo_voluntario = $scope.evento.costo_voluntario.replaceAll(",",".");
                 $scope.evento.costo_voluntario = $scope.evento.costo_voluntario.replaceAll("_",",");
+
+                $scope.evento.costo_acompanhante = numeral($scope.evento.costo_acompanhante).format('0,0.[00]');
+                $scope.evento.costo_acompanhante = $scope.evento.costo_acompanhante.replaceAll(".","_");
+                $scope.evento.costo_acompanhante = $scope.evento.costo_acompanhante.replaceAll(",",".");
+                $scope.evento.costo_acompanhante = $scope.evento.costo_acompanhante.replaceAll("_",",");
         
             });
 
@@ -311,12 +316,10 @@ app.controller('eventoEdit',function ($scope,$http,kConstant,$window,lugaresByTe
           fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
           console.log(fecha);
           $scope.evento.fecha_inicio = fecha;
-
           var fecha2 = $("#fecha2").val();
           fecha2 = fecha2.split("/");
           fecha2 = fecha2[2]+'-'+fecha2[1]+'-'+fecha2[0];
           $scope.evento.fecha_fin = fecha2;
-
           console.log($scope.evento);
           if($scope.verificar_campos()){
               $http.post(kConstant.url+"eventos/editEntity/"+id,$scope.evento).
