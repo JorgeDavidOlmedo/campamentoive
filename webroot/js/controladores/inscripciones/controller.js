@@ -288,14 +288,24 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
            $scope.inscripcion.ficha_medica = $("#ficha").val();
            $scope.inscripcion.color = $("#color").val();
            $scope.inscripcion.autorizacion = $("#aut").val();
-           console.log($scope.inscripcion);
+           //console.log($scope.inscripcion);
            $http.post(kConstant.url+"inscripciones/addEntity/",$scope.inscripcion).
            then(function(response){
-              $window.location.href = kConstant.url+"inscripciones/index-pre";
+               console.log(response.data.mensaje);
+               if(response.data.mensaje=="existe"){
+                   swal("Aviso!", "Esta Persona ya esta inscripta.", "warning");
+               }else{
+                   $window.location.href = kConstant.url+"inscripciones/index";
+               }
+              //
            },function (response) {
 
            });
        }
+    }
+
+    $scope.openBondi = function(){
+        $("#form-bondi").modal();
     }
 
     $scope.calcularDeuda = function(){
@@ -387,17 +397,23 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
             $scope.participante.estado = 1;
             $scope.participante.id_lugar = $scope.lugari.id;
             $scope.participante.sexo = $("#sexoi").val();
+            $scope.participante.id_pais = $("#paisi").val();
             var fecha = $("#fechai").val();
             fecha = fecha.split("/");
             fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
             $scope.participante.fecha_nacimiento = fecha;
             console.log($scope.participante);
             $http.post(kConstant.url + "personas/addEntity/", $scope.participante).then(function (response) {
-                console.log(response.data);
-                toastr.success('El participante se guardo correctamente.', 'Notificación!');
-                $("#form-part").modal('hide');
-                $scope.persona = "";
-                setTimeout(function(){ $( "#persona" ).focus(); }, 500);
+                console.log(response.data.mensaje);
+                if(response.data.mensaje=="ok"){
+                    toastr.success('El participante se guardo correctamente.', 'Notificación!');
+                    $("#form-part").modal('hide');
+                    $scope.persona = "";
+                    setTimeout(function(){ $( "#persona" ).focus(); }, 500);
+                }else{
+                    toastr.error('No se pudo guardar el participante.', 'Notificación!');
+                }
+
 
             }, function (response) {
 
@@ -413,6 +429,38 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
             $( "#descripcioni" ).focus();
             return false;
         };
+
+        if($scope.participante.descripcion==null || $scope.participante.descripcion==""){
+            toastr.error('Debes completar la descripcion.','Notificación!');
+            $( "#descripcioni" ).focus();
+            return false;
+        };
+
+        if($scope.participante.dni==null || $scope.participante.dni==""){
+            toastr.error('Debes completar el dni.','Notificación!');
+            $( "#dni" ).focus();
+            return false;
+        };
+
+        if($scope.lugari==null || $scope.lugari==""){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
+        if($("#fechai").val()==null || $("#fechai").val()==""){
+            toastr.error('Debes completar la fecha.','Notificación!');
+            $( "#fechai" ).focus();
+            return false;
+        };
+
+
+        if($scope.participante.telefono==null || $scope.participante.telefono==""){
+            toastr.error('Debes completar el telefono.','Notificación!');
+            $( "#telefonoi" ).focus();
+            return false;
+        };
+
 
         return true;
     }
@@ -714,6 +762,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
             $scope.participante.estado = 1;
             $scope.participante.id_lugar = $scope.lugari.id;
             $scope.participante.sexo = $("#sexoi").val();
+            $scope.participante.id_pais = $("#pais").val();
             var fecha = $("#fechai").val();
             fecha = fecha.split("/");
             fecha = fecha[2]+'-'+fecha[1]+'-'+fecha[0];
@@ -740,6 +789,38 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
             $( "#descripcioni" ).focus();
             return false;
         };
+
+        if($scope.participante.descripcion==null || $scope.participante.descripcion==""){
+            toastr.error('Debes completar la descripcion.','Notificación!');
+            $( "#descripcioni" ).focus();
+            return false;
+        };
+
+        if($scope.participante.dni==null || $scope.participante.dni==""){
+            toastr.error('Debes completar el dni.','Notificación!');
+            $( "#dni" ).focus();
+            return false;
+        };
+
+        if($scope.lugari==null || $scope.lugari==""){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
+        if($("#fechai").val()==null || $("#fechai").val()==""){
+            toastr.error('Debes completar la fecha.','Notificación!');
+            $( "#fechai" ).focus();
+            return false;
+        };
+
+
+        if($scope.participante.telefono==null || $scope.participante.telefono==""){
+            toastr.error('Debes completar el telefono.','Notificación!');
+            $( "#telefonoi" ).focus();
+            return false;
+        };
+
 
         return true;
     }

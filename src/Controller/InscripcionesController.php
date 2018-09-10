@@ -223,7 +223,9 @@ class InscripcionesController extends AppController
                 $this->Flash->error(__('The inscripcione could not be saved. Please, try again.'));
             }
         }
-        $this->set(compact('inscripcione'));
+        $this->loadModel("Countries");
+        $countries = $this->Countries->find('list', ['keyField' => 'id','valueField' => 'name']);
+        $this->set(compact('inscripcione','countries'));
         $this->set('_serialize', ['inscripcione']);
     }
 
@@ -351,6 +353,23 @@ class InscripcionesController extends AppController
     }
     /********************************* SERVICES**********************************************/
 
+    public function verificarIncripcion($idCliente = null){
+        $results=null;
+        $connection = ConnectionManager::get('default');
+        $id_evento = $this->request->session()->read('id_evento');
+
+        //VERIFICAR
+        $sql = "SELECT id FROM inscripciones WHERE estado=1 AND id_evento=".$id_evento." AND id_persona=".$idCliente;
+        $results = $connection->execute($sql);
+
+        $existe = 0;
+        foreach ($results as $value){
+            $existe = 1;
+        }
+
+        return $existe;
+    }
+
     /**
      * Add method
      *
@@ -364,14 +383,22 @@ class InscripcionesController extends AppController
             try{
                 $this->request->data['pago'] = str_replace('.','',$this->request->data['pago']);
                 $this->request->data['deuda'] = str_replace('.','',$this->request->data['deuda']);
+                $existe = $this->verificarIncripcion($this->request->data['id_persona']);
                 $inscripcion = $this->Inscripciones->newEntity($this->request->data);
                 $inscripcion->id_evento=$id_evento;
-                if ($this->Inscripciones->save($inscripcion)) {
-                    $mensaje = "ok";
 
-                } else {
-                    $mensaje = "error";
+                if($existe==0){
+
+                    if ($this->Inscripciones->save($inscripcion)) {
+                        $mensaje = "ok";
+
+                    } else {
+                        $mensaje = "error";
+                    }
+                }else{
+                    $mensaje = "existe";
                 }
+
 
             }catch (\PDOException $e)
             {

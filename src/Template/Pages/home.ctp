@@ -17,8 +17,6 @@
 
 <div class="sidebar" data-color="purple" data-image="<?php echo $imagen;?>">
     <?php echo $this->element('portrait');?>
-   
-   
     <div class="main-panel" >
      
     <?php echo $this->element('nav');?>
@@ -28,7 +26,6 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-
                             <div class="header">
                                 <h4 class="title">Inscripciones</h4>
                                 
@@ -158,27 +155,28 @@
 
 
 <style>
-.rojo{
-    background-color: #ff000096;
-}
+    .rojo{
+        background-color: #ff000096;
+    }
 
-.azul{
+    .azul{
 
-    background-color: #2e2ef5cf;
-}
+        background-color: #2e2ef5cf;
+    }
 
-.verde{
+    .verde{
 
-background-color: #11b9119c;
-}
+        background-color: rgba(234, 255, 15, 0.68);
+    }
 
-.naranja{
+    .naranja{
 
-background-color: #ffa500ad;
-}
+        background-color: #f76d1e
+
+    }
 
 h5{
-    color:white;
+    color:#080505;
 }
 </style>
 

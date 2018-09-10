@@ -30,7 +30,7 @@
                                             <div class="col-xs-12 col-sm4 col-md-4">
                                                 <?=$this->Form->input('dni',array('class' => 'form-control',
                                                     'label'=>'Dni','ng-model'=>'persona.dni',
-                                                    'placeholder'=>'Tipear dni'))?>
+                                                    'placeholder'=>'Tipear dni','type'=>'number'))?>
                                             </div>
                                         </div>
 
@@ -78,7 +78,13 @@
 
 
 
-
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm4 col-md-4">
+                                                <?=$this->Form->input('telefono',array('class' => 'form-control',
+                                                    'label'=>'Telefono','ng-model'=>'persona.telefono',
+                                                    'placeholder'=>'Tipear Telefono'))?>
+                                            </div>
+                                        </div>
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm4 col-md-4">
@@ -88,13 +94,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm4 col-md-4">
-                                                <?=$this->Form->input('telefono',array('class' => 'form-control',
-                                                    'label'=>'Telefono','ng-model'=>'persona.telefono',
-                                                    'placeholder'=>'Tipear Telefono'))?>
-                                            </div>
-                                        </div>
 
                                         <div class="row">
                                             <div class="col-xs-12 col-sm8 col-md-8">

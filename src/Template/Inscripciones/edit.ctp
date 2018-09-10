@@ -12,7 +12,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="header">
-                                        <h4 class="title">Editar Pre-Inscripcion</h4>
+                                        <h4 class="title">Editar Inscripcion</h4>
                                         <br>
                                     </div>
                                     <div class="content">
@@ -104,7 +104,7 @@
                                             <div class="col-xs-12 col-sm-2 col-md-2">
                                                 <?=$this->Form->input('color',["id"=>"color", 'type'=>'select',
                                                     'label'=>'Equipo',
-                                                    'options'=>["sin_definir"=>"Sin Definir", "amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","verde"=>"Verde"],
+                                                    'options'=>["sin_definir"=>"Sin Definir", "amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","naranja"=>"Naranja"],
                                                     'class'=>'input'])?>
                                             </div>
 
@@ -122,12 +122,14 @@
                                                     'class'=>'input'])?>
                                             </div>
 
+
                                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                                <?=$this->Form->input('moneda',["id"=>"moneda", 'type'=>'select',
-                                                    'label'=>'Moneda',
-                                                    'options'=>["peso" => "Peso","real"=>"Real","dolar"=>"Dolar","Euro"=>"euro"],
+                                                <?=$this->Form->input('aut',["id"=>"aut", 'type'=>'select',
+                                                    'label'=>'Autorizacion',
+                                                    'options'=>["pendiente"=>"Pendiente","si" => "Si","no"=>"No"],
                                                     'class'=>'input'])?>
                                             </div>
+
 
 
                                         </div>
@@ -154,6 +156,13 @@
                                                     'placeholder'=>'0'))?>
                                             </div>
 
+                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                                <?=$this->Form->input('moneda',["id"=>"moneda", 'type'=>'select',
+                                                    'label'=>'Moneda',
+                                                    'options'=>["peso" => "Peso","real"=>"Real","dolar"=>"Dolar","Euro"=>"euro"],
+                                                    'class'=>'input'])?>
+                                            </div>
+
 
                                         </div>
 
@@ -172,6 +181,27 @@
 
                                         <div class="row">
 
+                                            <div class="col-xs-12 col-sm6 col-md-6">
+                                                <?=$this->Form->input('responsable',array('class' => 'form-control',
+                                                    'label'=>'Responsable','ng-model'=>'inscripcion.responsable'
+                                                ,
+                                                    'placeholder'=>'Tipear Responsable'))?>
+                                            </div>
+
+                                            <div class="col-xs-12 col-sm6 col-md-6">
+                                                <?=$this->Form->input('responsable_tel',array(
+                                                        'id'=>'responsable_tel', 'class' => 'form-control',
+                                                    'label'=>'Nro. Contacto Responsable','ng-model'=>'inscripcion.responsable_tel'
+                                                ,
+                                                    'placeholder'=>'Tipear Nro. Contacto Responsable'))?>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="row">
+
                                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                                     <?=$this->Form->input('colectivo',array('class'=>'form-control',
                                                         'label'=>'Colectivo','ng-model'=>'colectivo','uib-typeahead-editable'=>"false" ,
@@ -186,7 +216,7 @@
                                                 <button class="btn btn-default" ng-click="openBondi()">Colectivo</button>
                                             </div>
 
-
+                                        <label class="vehi" id="vehi">{{estadoVehiculo}}</label>
                                         </div>
 
                                         <div class="row">
@@ -425,16 +455,18 @@
 
     .verde{
 
-        background-color: #11b9119c;
+        background-color: rgba(234, 255, 15, 0.68);
     }
 
     .naranja{
 
-        background-color: #ffa500ad;
+        background-color: #f76d1e
+
     }
 
+
     h5{
-        color:white;
+        color:#080505;
     }
 
 </style>
@@ -461,6 +493,11 @@
         border-style: solid;
         border-color: #43519638;
         border-width: 1px;
+    }
+
+    #vehi{
+        color: red;
+        margin-top: 30px;
     }
 </style>
 

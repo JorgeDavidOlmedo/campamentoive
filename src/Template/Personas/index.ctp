@@ -40,6 +40,7 @@
 
                                                 <td><?= $this->Number->format($value->id) ?></td>
                                                 <td><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Personas', 'action' => 'view', $value->id]) : '' ?></td>
+                                                <td class="hidden"><?= elimina_acentos($value->descripcion);?></td>
                                                 <td><?= $value->dni ?></td>
                                                 <td><?= date('d/m/Y',strtotime($value->fecha_nacimiento)) ?></td>
                                                 <td><?= $value->sexo ?></td>
@@ -95,6 +96,67 @@
     td.datacellone {
         background-color: #e80a33ba; color: black;
     }
+<?php
+
+    function elimina_acentos($text)
+    {
+        $text = htmlentities($text, ENT_QUOTES, 'UTF-8');
+        $text = strtolower($text);
+        $patron = array (
+        // Espacios, puntos y comas por guion
+        //'/[\., ]+/' => ' ',
+
+        // Vocales
+        '/\+/' => '',
+        '/&agrave;/' => 'a',
+        '/&egrave;/' => 'e',
+        '/&igrave;/' => 'i',
+        '/&ograve;/' => 'o',
+        '/&ugrave;/' => 'u',
+
+        '/&aacute;/' => 'a',
+        '/&eacute;/' => 'e',
+        '/&iacute;/' => 'i',
+        '/&oacute;/' => 'o',
+        '/&uacute;/' => 'u',
+
+        '/&acirc;/' => 'a',
+        '/&ecirc;/' => 'e',
+        '/&icirc;/' => 'i',
+        '/&ocirc;/' => 'o',
+        '/&ucirc;/' => 'u',
+
+        '/&atilde;/' => 'a',
+        '/&etilde;/' => 'e',
+        '/&itilde;/' => 'i',
+        '/&otilde;/' => 'o',
+        '/&utilde;/' => 'u',
+
+        '/&auml;/' => 'a',
+        '/&euml;/' => 'e',
+        '/&iuml;/' => 'i',
+        '/&ouml;/' => 'o',
+        '/&uuml;/' => 'u',
+
+        '/&auml;/' => 'a',
+        '/&euml;/' => 'e',
+        '/&iuml;/' => 'i',
+        '/&ouml;/' => 'o',
+        '/&uuml;/' => 'u',
+
+        // Otras letras y caracteres especiales
+        '/&aring;/' => 'a',
+        '/&ntilde;/' => 'n',
+
+        // Agregar aqui mas caracteres si es necesario
+
+    );
+
+        $text = preg_replace(array_keys($patron),array_values($patron),$text);
+        return $text;
+    }
+
+    ?>
 
 
 

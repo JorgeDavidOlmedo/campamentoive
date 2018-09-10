@@ -14,8 +14,13 @@
                                 <div class="header">
                                     <h4 class="title"><strong>Inscripciones</strong></h4><br>
                                     <button class="btn btn-secondary" ng-click="openColectivo()">Verificar Colectivos</button>
+                                   <br><br>
+                                    <?= $this->Html->link($this->Html->tag('p','Agregar Inscripcion',['class' => '']).'',
+                                        ['controller' => 'Inscripciones', 'action' => 'add-pre'],
+                                        ['escape' => false])?>
 
                                 </div>
+
                                 <div class="row">
 
                                 </div>
@@ -33,6 +38,7 @@
                                         <th>Deuda</th>
                                         <th>Correo</th>
                                         <th>Colectivo</th>
+                                        <th>Nro. Responsable</th>
                                         <th>Estado</th>
                                         <th>Config.</th>
                                         </thead>
@@ -42,7 +48,8 @@
                                                 <?php if($value->estado_inscripcion=="pendiente"):?>
                                                 <td class="datacellone"><?= $this->Number->format($value->id) ?></td>
                                                 <td class="datacellone"><?= date('d/m/Y',strtotime($value->fecha)) ?></td>
-                                                <td class="datacellone"><?= $value->persona->has('descripcion') ? $this->Html->link($value->persona->descripcion, ['controller' => 'Personas', 'action' => 'view', $value->persona->id]) : '' ?></td>
+                                                <td class="datacellone"><?=$value->persona->descripcion ?></td>
+                                                <td class="hidden"><?= elimina_acentos($value->persona->descripcion);?></td>
                                                 <td class="datacellone"><?= $value->persona->dni ?></td>
                                                 <td class="datacellone"><?= $value->persona->lugare->descripcion ?></td>
                                                 <td class="datacellone"><?= $value->ficha_medica ?></td>
@@ -54,7 +61,7 @@
                                                 <?php else:?>
                                                     <td class="datacellone"><?= $value->colectivo->descripcion ?></td>
                                                 <?php endif;?>
-
+                                                    <td class="datacellone"><?= $value->responsable_tel ?></td>
                                                 <td class="datacellone"><?= $value->estado_inscripcion ?></td>
                                                 <td class="actions datacellone">
                                                     <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
@@ -65,7 +72,8 @@
 
                                                     <td class="datacelltwo"><?= $this->Number->format($value->id) ?></td>
                                                     <td class="datacelltwo"><?= date('d/m/Y',strtotime($value->fecha)) ?></td>
-                                                    <td class="datacelltwo"><?= $value->persona->has('descripcion') ? $this->Html->link($value->persona->descripcion, ['controller' => 'Personas', 'action' => 'view', $value->persona->id]) : '' ?></td>
+                                                    <td class="datacelltwo"><?=$value->persona->descripcion ?></td>
+                                                    <td class="hidden"><?= elimina_acentos($value->persona->descripcion);?></td>
                                                     <td class="datacelltwo"><?= $value->persona->dni ?></td>
                                                     <td class="datacelltwo"><?= $value->persona->lugare->descripcion ?></td>
                                                     <td class="datacelltwo"><?= $value->ficha_medica ?></td>
@@ -78,6 +86,7 @@
                                                         <td class="datacelltwo"><?= $value->colectivo->descripcion ?></td>
                                                     <?php endif;?>
 
+                                                    <td class="datacelltwo"><?= $value->responsable_tel ?></td>
                                                     <td class="datacelltwo"><?= $value->estado_inscripcion ?></td>
                                                     <td class="actions datacelltwo">
                                                         <a class="glyphicon glyphicon-pencil standar" ng-click = "obtener_entity(<?php echo $value->id;?>)"></a>
@@ -217,6 +226,71 @@
 
 
 </style>
+
+<?php
+
+function elimina_acentos($text)
+{
+    $text = htmlentities($text, ENT_QUOTES, 'UTF-8');
+    $text = strtolower($text);
+    $patron = array (
+        // Espacios, puntos y comas por guion
+        //'/[\., ]+/' => ' ',
+
+        // Vocales
+        '/\+/' => '',
+        '/&agrave;/' => 'a',
+        '/&egrave;/' => 'e',
+        '/&igrave;/' => 'i',
+        '/&ograve;/' => 'o',
+        '/&ugrave;/' => 'u',
+
+        '/&aacute;/' => 'a',
+        '/&eacute;/' => 'e',
+        '/&iacute;/' => 'i',
+        '/&oacute;/' => 'o',
+        '/&uacute;/' => 'u',
+
+        '/&acirc;/' => 'a',
+        '/&ecirc;/' => 'e',
+        '/&icirc;/' => 'i',
+        '/&ocirc;/' => 'o',
+        '/&ucirc;/' => 'u',
+
+        '/&atilde;/' => 'a',
+        '/&etilde;/' => 'e',
+        '/&itilde;/' => 'i',
+        '/&otilde;/' => 'o',
+        '/&utilde;/' => 'u',
+
+        '/&auml;/' => 'a',
+        '/&euml;/' => 'e',
+        '/&iuml;/' => 'i',
+        '/&ouml;/' => 'o',
+        '/&uuml;/' => 'u',
+
+        '/&auml;/' => 'a',
+        '/&euml;/' => 'e',
+        '/&iuml;/' => 'i',
+        '/&ouml;/' => 'o',
+        '/&uuml;/' => 'u',
+
+        // Otras letras y caracteres especiales
+        '/&aring;/' => 'a',
+        '/&ntilde;/' => 'n',
+
+        // Agregar aqui mas caracteres si es necesario
+
+    );
+
+    $text = preg_replace(array_keys($patron),array_values($patron),$text);
+    return $text;
+}
+
+?>
+
+
+
 
 
 

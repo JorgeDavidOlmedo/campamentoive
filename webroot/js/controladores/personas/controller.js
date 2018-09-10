@@ -181,8 +181,14 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
            console.log($scope.persona);
            $http.post(kConstant.url+"personas/addEntity/",$scope.persona).
            then(function(response){
-              console.log(response);
-              $window.location.href = kConstant.url+"personas/index";
+              console.log(response.data.mensaje);
+              if(response.data.mensaje=="error"){
+                  toastr.error('Este DNI ya existe en la Base de datos.','Notificación!');
+                  return;
+              }else{
+                  $window.location.href = kConstant.url+"personas/index";
+              }
+              //$window.location.href = kConstant.url+"personas/index";
            },function (response) {
 
            });
@@ -253,19 +259,6 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
             return false;
         };
 
-        if($scope.persona.telefono==null || $scope.persona.telefono==""){
-            toastr.error('Debes completar el telefono.','Notificación!');
-            $( "#telefono" ).focus();
-            return false;
-        };
-
-        if($scope.persona.obs==null || $scope.persona.obs==""){
-            toastr.error('Debes completar la Observacion.','Notificación!');
-            $( "#obs" ).focus();
-            return false;
-        };
-
-
         if($scope.lugar==null || $scope.lugar==""){
             toastr.error('Debes completar el lugar.','Notificación!');
             $( "#lugar" ).focus();
@@ -275,6 +268,13 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
         if($("#fecha").val()==null || $("#fecha").val()==""){
             toastr.error('Debes completar la fecha.','Notificación!');
             $( "#fecha" ).focus();
+            return false;
+        };
+
+
+        if($scope.persona.telefono==null || $scope.persona.telefono==""){
+            toastr.error('Debes completar el telefono.','Notificación!');
+            $( "#telefono" ).focus();
             return false;
         };
 
@@ -371,17 +371,36 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
 
     $scope.verificar_campos = function () {
 
-        if($scope.lugar==null || $scope.lugar==""){
+        if($scope.persona==null || $scope.persona==""){
             toastr.error('Debes completar correctamente los datos.','Notificación!');
             $( "#descripcion" ).focus();
             return false;
         };
 
-        if($scope.lugar.descripcion==null || $scope.lugar.descripcion==""){
+        if($scope.persona.descripcion==null || $scope.persona.descripcion==""){
             toastr.error('Debes completar la descripcion.','Notificación!');
             $( "#descripcion" ).focus();
             return false;
         };
+
+        if($scope.persona.dni==null || $scope.persona.dni==""){
+            toastr.error('Debes completar el dni.','Notificación!');
+            $( "#dni" ).focus();
+            return false;
+        };
+
+        if($scope.lugar==null || $scope.lugar==""){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
+        if($("#fecha").val()==null || $("#fecha").val()==""){
+            toastr.error('Debes completar la fecha.','Notificación!');
+            $( "#fecha" ).focus();
+            return false;
+        };
+
 
         if($scope.persona.telefono==null || $scope.persona.telefono==""){
             toastr.error('Debes completar el telefono.','Notificación!');
@@ -389,13 +408,12 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
             return false;
         };
 
-        if($scope.persona.obs==null || $scope.persona.obs=="") {
-            toastr.error('Debes completar la Observacion.', 'Notificación!');
-            $("#obs").focus();
-            return false;
-        }
 
-            return true;
+
+
+
+
+        return true;
     }
 
     $("#descripcion").focus();

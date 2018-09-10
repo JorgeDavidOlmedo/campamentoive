@@ -12,7 +12,7 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="header">
-                                        <h4 class="title">Agregar Pre-Inscripcion</h4>
+                                        <h4 class="title">Agregar Inscripcion</h4>
                                         <br>
                                     </div>
                                     <div class="content">
@@ -113,7 +113,7 @@
                                             <div class="col-xs-12 col-sm-2 col-md-2">
                                                 <?=$this->Form->input('color',["id"=>"color", 'type'=>'select',
                                                     'label'=>'Equipo',
-                                                    'options'=>["sin_definir"=>"Sin Definir", "amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","verde"=>"Verde"],
+                                                    'options'=>["sin_definir"=>"Sin Definir", "amarillo" => "Amarillo","azul"=>"Azul","rojo"=>"Rojo","naranja"=>"Naranja"],
                                                     'class'=>'input'])?>
                                             </div>
 
@@ -127,15 +127,14 @@
                                             <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('ficha',["id"=>"ficha", 'type'=>'select',
                                                     'label'=>'Ficha Medica',
-                                                    'options'=>["si" => "Si","no"=>"No","pendiente"=>"Pendiente"],
+                                                    'options'=>["pendiente"=>"Pendiente","si" => "Si","no"=>"No"],
                                                     'class'=>'input'])?>
                                             </div>
-
 
                                             <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('aut',["id"=>"aut", 'type'=>'select',
                                                     'label'=>'Autorizacion',
-                                                    'options'=>["si" => "Si","no"=>"No","pendiente"=>"Pendiente"],
+                                                    'options'=>["pendiente"=>"Pendiente","si" => "Si","no"=>"No"],
                                                     'class'=>'input'])?>
                                             </div>
 
@@ -189,7 +188,7 @@
 
                                             <div class="col-xs-12 col-sm-6 col-md-6">
                                                 <?= $this->Form->button(__('Guardar'),['class'=>'btn btn-info','ng-click'=>'guardar()']) ?>
-                                                <?= $this->Html->link(__('Cancelar'), ['action' => 'index-pre'],['class'=>'btn btn-danger']) ?>
+                                                <?= $this->Html->link(__('Cancelar'), ['action' => 'index'],['class'=>'btn btn-danger']) ?>
 
                                             </div>
                                         </div>
@@ -253,7 +252,7 @@
                                 </div>
 
                                 <div class="col-xs-12 col-sm-8 col-md-8">
-                                    <?=$this->Form->input('lugar',array('class'=>'form-control',
+                                    <?=$this->Form->input('lugari',array('class'=>'form-control',
                                         'label'=>'Lugar Procedencia','ng-model'=>'lugari','uib-typeahead-editable'=>"false" ,
                                         'uib-typeahead'=>'p as p.descripcion for p in lugares($viewValue)',
                                         'typeahead-on-select="onSelect($item,$model,$label)"',
@@ -282,6 +281,42 @@
                                             'label'=>'Correo','ng-model'=>'participante.correo'))?>
                                     </div>
 
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <div class="row">
+
+
+                                    <div class="col-xs-12 col-sm-4 col-md-4">
+                                        <?=$this->Form->input('telefonoi',array('class' => 'form-control',
+                                            'id'=>'telefonoi',
+                                            'label'=>'Nro. Telefono','ng-model'=>'participante.telefono'))?>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <?= $this->Form->input('paisi', ['id'=>'paisi' , 'class'=>'input', 'type'=>'select',
+                                            'options' => $countries,'label'=>'País','value'=>10]);?>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <div class="row">
+
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <?=$this->Form->input('obsi',array('class' => 'form-control',
+                                            'id'=>'obsi',
+                                            'label'=>'Observacion','ng-model'=>'participante.obs'))?>
+                                    </div>
 
 
                                 </div>
@@ -420,6 +455,66 @@
             </div>
         </div>
 
+        <div class="modal fade mymodal" id="form-bondi" tabindex="-1" role="dialog" aria-labelledby="form-bondi" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <strong><h4><div id="one">Colectivos</div></h4></strong>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="content table-responsive table-full-width">
+                            <div class="detalleColectivos">
+                                <table class="table table-hover table-striped">
+                                    <thead>
+                                    <th>Descripcion</th>
+                                    <th>Categoria</th>
+                                    <th>Lugares</th>
+                                    <th>Utilizados</th>
+                                    <th>Disponible</th>
+                                    </thead>
+                                    <tbody class="buscar">
+                                    <?php foreach ($bondis as $value):?>
+                                        <tr>
+                                            <?php if(($value->lugar-$value->ocupado)>0):?>
+
+                                                <td class="datacelltwo"><?= $value->descripcion?></td>
+                                                <td class="datacelltwo"><?= $value->categoria ?></td>
+                                                <td class="datacelltwo"><?= $value->lugar; ?></td>
+                                                <td class="datacelltwo"><?= $value->ocupado; ?></td>
+                                                <td class="datacelltwo"><?= ($value->lugar-$value->ocupado); ?></td>
+
+                                            <?php else:?>
+                                                <td class="datacellone"><?= $value->descripcion?></td><td class="datacellone"><?= $value->categoria ?></td>
+                                                <td class="datacellone"><?= $value->lugar; ?></td>
+                                                <td class="datacellone"><?= $value->ocupado; ?></td>
+                                                <td class="datacellone"><?= ($value->lugar-$value->ocupado); ?> - LLENO</td>
+
+                                            <?php endif;?>
+
+
+                                        </tr>
+                                    <?php endforeach;?>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+                        <input type="hidden" name="myValue" id="myValue" value=""/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
 
@@ -441,16 +536,17 @@
 
         .verde{
 
-            background-color: #11b9119c;
+            background-color: rgba(234, 255, 15, 0.68);
         }
 
         .naranja{
 
-            background-color: #ffa500ad;
+            background-color: #f76d1e
+
         }
 
         h5{
-            color:white;
+            color:#080505;
         }
 
     </style>

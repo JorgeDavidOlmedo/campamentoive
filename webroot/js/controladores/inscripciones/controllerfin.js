@@ -532,6 +532,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 $scope.lugar = data.data.inscripcion[0].persona.lugare;
                 $("#categoria").val($scope.inscripcion.categoria);
                 $("#ficha").val($scope.inscripcion.ficha_medica);
+                $("#aut").val($scope.inscripcion.autorizacion);
                 $("#color").val($scope.inscripcion.color);
                 $("#moneda").val($scope.inscripcion.moneda);
                 $("#confirmacion").val($scope.inscripcion.estado_inscripcion);
@@ -567,6 +568,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $scope.inscripcion.categoria = $("#categoria").val();
         $scope.inscripcion.moneda = $("#moneda").val();
         $scope.inscripcion.ficha_medica = $("#ficha").val();
+        $scope.inscripcion.autorizacion = $("#aut").val();
         $scope.inscripcion.color = $("#color").val();
         $scope.inscripcion.estado_inscripcion = $("#confirmacion").val();
 
@@ -586,6 +588,8 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
             });
         }
     }
+
+    $scope.estadoVehiculo = "";
 
     $scope.calcularDeuda = function(){
         var mod_pago = Number($scope.mod_pago);
@@ -693,7 +697,24 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
     };
 
     $scope.onSelectColectivo = function ($item,$model,$label) {
+        $scope.estadoVehiculo = "";
+        if($("#sexo").val()=="masculino"){
+            if($model.sexo=="femenino"){
+                $scope.estadoVehiculo = "Este vehiculo pertenece a la categoria Femenino";
+            }
+        }
 
+        if($("#sexo").val()=="femenino"){
+            if($model.sexo=="masculino"){
+                $scope.estadoVehiculo = "Este vehiculo pertenece a la categoria Masculino";
+            }
+        }
+
+        var total_lugar = new Number($model.lugar) - (new Number($model.ocupado) + 1 );
+        if(total_lugar<0){
+            swal("Aviso!", "El colectivo no esta disponible. Esta lleno.\nLugares Disponibles: "+$model.lugar+"\nLugares Ocupados: "+(new Number($model.ocupado)), "warning");
+        }
+           console.log($model);
     }
 
     $scope.openColor = function(){
@@ -764,6 +785,31 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         if($("#fecha").val()==null || $("#fecha").val()==""){
             toastr.error('Debes completar la fecha.','Notificación!');
             $( "#fecha" ).focus();
+            return false;
+        };
+
+        if($("#color").val()=="sin_definir" || $("#color").val()=="sin_definir"){
+            toastr.error('Debes elegir un equipo.','Notificación!');
+            $( "#color" ).focus();
+            return false;
+        };
+
+        if($scope.inscripcion.responsable_tel==null || $scope.inscripcion.responsable_tel==""){
+            toastr.error('Debes completar el Nro. de contacto del responsable.','Notificación!');
+            $( "#responsable_tel" ).focus();
+            return false;
+        };
+
+
+        if($scope.colectivo==null || $scope.colectivo==""){
+            toastr.error('Debes ingresar el colectivo.','Notificación!');
+            $( "#colectivo" ).focus();
+            return false;
+        };
+
+        if($scope.colectivo.descripcion==null || $scope.colectivo.descripcion==""){
+            toastr.error('Debes ingresar el colectivo.','Notificación!');
+            $( "#colectivo" ).focus();
             return false;
         };
 

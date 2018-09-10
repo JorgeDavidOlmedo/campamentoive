@@ -56,7 +56,8 @@
 
                                     <td class="datacellone"><?= $this->Number->format($value->id) ?></td>
                                     <td class="datacellone"><?= $value->has('descripcion') ? $this->Html->link($value->descripcion, ['controller' => 'Colectivos', 'action' => 'view', $value->id]) : '' ?></td>
-                                    <td class="datacellone"><?= $value->categoria ?></td>
+                                        <td class="datacellone"><?= $value->patente ?></td>
+                                        <td class="datacellone"><?= $value->categoria ?></td>
                                     <td class="datacellone"><?= $value->lugar; ?></td>
                                     <td class="datacellone"><?= $value->ocupado; ?></td>
                                     <td class="datacellone"><?= ($value->lugar-$value->ocupado); ?> - LLENO</td>

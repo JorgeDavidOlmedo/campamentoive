@@ -307,7 +307,11 @@ class ColectivosController extends AppController
         $id_evento = $this->request->session()->read('id_evento');
         $results = $connection->execute(
             "SELECT a.id as id,
-             a.descripcion as descripcion
+             a.descripcion as descripcion,
+             a.categoria as sexo,
+             a.lugar - a.ocupado as dif,
+             a.lugar as lugar,
+             a.ocupado as ocupado
              FROM colectivos a
              WHERE 
              a.estado=1 AND
@@ -319,7 +323,11 @@ class ColectivosController extends AppController
         foreach ($results as $value){
 
             $resultado[] = array("id"=>$value['id'],
-                "descripcion"=> $value['descripcion']);
+                "descripcion"=> $value['descripcion'],
+                "sexo"=> $value['sexo'],
+                "dif"=> $value['dif'],
+                "lugar"=> $value['lugar'],
+                "ocupado"=> $value['ocupado']);
 
         }
 
