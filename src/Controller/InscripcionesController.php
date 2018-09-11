@@ -651,7 +651,7 @@ class InscripcionesController extends AppController
                 FROM inscripciones a, personas b 
                 WHERE 
                 a.id_persona=b.id AND 
-                a.id_evento=".$id_evento."
+                a.id_evento=".$id_evento." AND a.estado=1
                 GROUP BY a.color,b.sexo,edad;";
 
         $results = $connection->execute($sql);
@@ -786,6 +786,228 @@ class InscripcionesController extends AppController
                              "rojo"=>
                                         array("masculino"=>array("mayor"=>$rojo_mayor,"menor"=>$rojo_menor),
                                             "femenino"=>array("mayor"=>$rojo_mayor_fem, "menor"=>$rojo_menor_fem)));
+
+        $this->set([
+            'resultado' => $resultado,
+            '_serialize' => ['resultado']
+        ]);
+        $this->viewClass = 'Json';
+        $this->render();
+
+    }
+
+
+    /**
+     * Add method
+     *
+     * @return \Cake\Network\Response|void Redirects on successful add, renders view otherwise.
+     */
+    public function getInformacion()
+    {
+
+        $results=null;
+        $connection = ConnectionManager::get('default');
+        $id_evento = $this->request->session()->read('id_evento');
+        $anho = date("Y");
+
+        ########################PENDIENTES Y CONFIRMADOS#################################################
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                a.categoria,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento." AND a.categoria='participante'
+                AND a.viaja='no' AND a.estado=1
+                GROUP BY a.categoria,b.sexo;";
+
+        $results = $connection->execute($sql);
+
+        $resultado= array();
+        $p_y_c_participante_masculino = 0;
+        $p_y_c_participante_femenino = 0;
+
+        foreach ($results as $value){
+            if($value['sexo']=="femenino"){
+                $p_y_c_participante_femenino = $value['contador'];
+            }
+            if($value['sexo']=="masculino"){
+                $p_y_c_participante_masculino = $value['contador'];
+            }
+        }
+
+
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                a.categoria,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento." AND a.categoria='voluntario'
+                AND a.viaja='no' AND a.estado=1
+                GROUP BY a.categoria,b.sexo;";
+
+        $results = $connection->execute($sql);
+
+        $p_y_c_voluntario_masculino = 0;
+        $p_y_c_voluntario_femenino = 0;
+
+        foreach ($results as $value){
+            if($value['sexo']=="femenino"){
+                $p_y_c_voluntario_femenino = $value['contador'];
+            }
+            if($value['sexo']=="masculino"){
+                $p_y_c_voluntario_masculino = $value['contador'];
+            }
+        }
+
+        $resultado[] = array("p_y_c"=> array("participante"=>
+                                             array("masculino"=>$p_y_c_participante_masculino,
+                                                   "femenino"=>$p_y_c_participante_femenino),
+
+                                            "voluntario"=>
+                                            array("masculino"=>$p_y_c_voluntario_masculino,
+                                                  "femenino"=>$p_y_c_voluntario_femenino)));
+        ################################################################################################################
+
+
+        ########################CONFIRMADOS#################################################
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                a.categoria,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento." AND a.categoria='participante'
+                AND a.viaja='no' AND 
+                a.estado_inscripcion = 'confirmado' AND a.estado=1
+                GROUP BY a.categoria,b.sexo;";
+
+        $results = $connection->execute($sql);
+
+
+        $p_y_c_participante_masculino = 0;
+        $p_y_c_participante_femenino = 0;
+
+        foreach ($results as $value){
+            if($value['sexo']=="femenino"){
+                $p_y_c_participante_femenino = $value['contador'];
+            }
+            if($value['sexo']=="masculino"){
+                $p_y_c_participante_masculino = $value['contador'];
+            }
+        }
+
+
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                a.categoria,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento." AND a.categoria='voluntario'
+                AND a.viaja='no' AND 
+                a.estado_inscripcion = 'confirmado' AND a.estado=1
+                GROUP BY a.categoria,b.sexo;";
+
+        $results = $connection->execute($sql);
+
+        $p_y_c_voluntario_masculino = 0;
+        $p_y_c_voluntario_femenino = 0;
+
+        foreach ($results as $value){
+            if($value['sexo']=="femenino"){
+                $p_y_c_voluntario_femenino = $value['contador'];
+            }
+            if($value['sexo']=="masculino"){
+                $p_y_c_voluntario_masculino = $value['contador'];
+            }
+        }
+
+        $resultado[] = array("c"=> array("participante"=>
+            array("masculino"=>$p_y_c_participante_masculino,
+                "femenino"=>$p_y_c_participante_femenino),
+
+            "voluntario"=>
+                array("masculino"=>$p_y_c_voluntario_masculino,
+                    "femenino"=>$p_y_c_voluntario_femenino)));
+        ################################################################################################################
+
+
+
+        ########################ACOMPAÑANTE PENDIENTES Y CONFIRMADOS#################################################
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                a.categoria,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento."
+                AND a.viaja='si' AND a.estado=1
+                GROUP BY a.categoria,b.sexo;";
+
+        $results = $connection->execute($sql);
+
+
+        $p_y_c_participante_masculino = 0;
+        $p_y_c_participante_femenino = 0;
+
+        foreach ($results as $value){
+            if($value['sexo']=="femenino"){
+                $p_y_c_participante_femenino = $value['contador'];
+            }
+            if($value['sexo']=="masculino"){
+                $p_y_c_participante_masculino = $value['contador'];
+            }
+        }
+
+
+        $sql = "SELECT count(*) as contador,
+                a.color,
+                b.sexo as sexo,
+                a.categoria,
+                YEAR(CURDATE())-YEAR(b.fecha_nacimiento) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(b.fecha_nacimiento,'%m-%d'), 0 , -1 ) AS edad 
+                FROM inscripciones a, personas b 
+                WHERE 
+                a.id_persona=b.id AND 
+                a.id_evento=".$id_evento."
+                AND a.viaja='si' AND 
+                a.estado_inscripcion = 'confirmado' AND a.estado=1
+                GROUP BY a.categoria,b.sexo;";
+
+        $results = $connection->execute($sql);
+
+        $p_y_c_voluntario_masculino = 0;
+        $p_y_c_voluntario_femenino = 0;
+
+        foreach ($results as $value){
+            if($value['sexo']=="femenino"){
+                $p_y_c_voluntario_femenino = $value['contador'];
+            }
+            if($value['sexo']=="masculino"){
+                $p_y_c_voluntario_masculino = $value['contador'];
+            }
+        }
+
+        $resultado[] = array("a"=> array("p_y_c"=>
+            array("masculino"=>$p_y_c_participante_masculino,
+                "femenino"=>$p_y_c_participante_femenino),
+
+            "c"=>
+                array("masculino"=>$p_y_c_voluntario_masculino,
+                    "femenino"=>$p_y_c_voluntario_femenino)));
+        ################################################################################################################
+
 
         $this->set([
             'resultado' => $resultado,

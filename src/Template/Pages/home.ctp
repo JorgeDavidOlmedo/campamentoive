@@ -28,15 +28,77 @@
                         <div class="card">
                             <div class="header">
                                 <h4 class="title">Inscripciones</h4>
-                                
-                                <?= $this->Html->link($this->Html->tag('p','Lista de Inscripciones',['class' => '']).'', 
-                                ['controller' => 'pages', 'action' => 'home'],
-                                ['escape' => false])?>  
+
                             </div>
                             <div class="content">
                             <div class="content all-icons">
-                           
-                           <div class="row">
+
+                            <div class="row" id="inscrip">
+                                <div class="row">
+                                    <div class="col-6 col-sm-4">
+                                        <label><p>Cantidad de Inscriptos (Pendientes y Confirmados)</p></label>
+                                        <label><strong>Cantidad de Participantes</strong></label>
+                                        <br>
+                                        <ul>
+                                            <li>Cantidad de Mujeres: {{p_y_c_participante_femenino}}</li>
+                                            <li>Cantidad de Varones: {{p_y_c_participante_masculino}}</li>
+                                        </ul>
+                                        <br>
+                                        <label><strong>Cantidad de Voluntarios</strong></label>
+                                        <br>
+                                        <ul>
+                                            <li>Cantidad de Mujeres : {{p_y_c_voluntario_femenino}}</li>
+                                            <li>Cantidad de Varones: {{p_y_c_voluntario_masculino}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-4">
+
+                                        <label><p>Cantidad de Inscriptos (Confirmados)</p></label>
+                                        <br><br>
+                                        <label><strong>Cantidad de Participantes</strong></label>
+                                        <br>
+                                        <ul>
+                                            <li>Cantidad de Mujeres: {{c_participante_femenino}}</li>
+                                            <li>Cantidad de Varones: {{c_participante_masculino}}</li>
+                                        </ul>
+                                        <br>
+                                        <label><strong>Cantidad de Voluntarios</strong></label>
+                                        <br>
+                                        <ul>
+                                            <li>Cantidad de Mujeres: {{c_voluntario_femenino}}</li>
+                                            <li>Cantidad de Varones: {{c_voluntario_masculino}}</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <!-- Force next columns to break to new line -->
+                                    <div class="w-100"></div>
+
+                                    <div class="col-6 col-sm-4">
+
+                                        <label><p>Datos de Acompañantes (Participantes y Voluntarios)</p></label>
+                                        <br>
+                                        <label><strong>Cantidad de Inscriptos (Pendientes y Confirmados)</strong></label>
+                                        <br>
+                                        <ul>
+                                            <li>Cantidad de Mujeres: {{a_c_y_p_femenino}}</li>
+                                            <li>Cantidad de Varones: {{a_c_y_p_masculino}}</li>
+                                        </ul>
+                                        <br>
+                                        <label><strong>Cantidad de Inscriptos (Confirmados)</strong></label>
+                                        <br>
+                                        <ul>
+                                            <li>Cantidad de Mujeres: {{a_c_femenino}}</li>
+                                            <li>Cantidad de Varones: {{a_c_masculino}}</li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-6 col-sm-4"></div>
+                                </div>
+                             </div>
+
+
+                           <div class="row" id="colour">
 
                                  <div class="font-icon-list col-lg-3 col-md-3 col-sm-3 col-xs-3 col-xs-3 ">
                                         <a><div class="font-icon-detail rojo">
@@ -128,7 +190,7 @@
 
                                  
                                  
-        </div>
+                                  </div>
                               
                                
                             </div>
@@ -180,63 +242,6 @@ h5{
 }
 </style>
 
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-            function loadVentas(){
-    
-               var urlBase= "<?= $this->Url->build(["controller" => "Ventas", "action"=>"ventasForTime"]) ?>";
-               var idBuild2 = 0;
-
-               $.ajax({
-                   type: "POST",
-                   url: urlBase,
-                   data: { 'idBuild':idBuild2},
-                   dataType: 'json',
-                   beforeSend: function(){
-
-                   },
-                   success: function(data){
-
-                       console.log(data);
-                       var chart = new CanvasJS.Chart("ventasForTime",
-                           {
-                               title: {
-                                   text: ""
-                               },
-                               axisX: {
-                                   labelFormatter: function (e) {
-                                       return CanvasJS.formatDate( e.value, "DD MMM");
-                                   },
-                               },
-                               axisX: {
-                                   labelAngle: -30,
-
-                               },
-                               data: [
-                                   {
-                                       type: "line",
-
-                                       dataPoints: data
-                                   }
-                               ]
-                           });
-
-                       chart.render();
-
-                       $('.canvasjs-chart-credit').remove();
-
-                       $.each(data, function(i,items){
-
-
-                       });
-                   }
-               });
-           }
-           loadVentas();
-
-    	});
-	</script>
 
 </html>
 

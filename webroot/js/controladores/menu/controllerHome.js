@@ -66,6 +66,51 @@ app.controller('homeIndex',function ($scope,kConstant,$http,$window,$filter) {
 
     $scope.verInscripciones();
 
+
+    $scope.p_y_c_participante_femenino = 0;
+    $scope.p_y_c_participante_masculino =0;
+    $scope.p_y_c_voluntario_femenino = 0;
+    $scope.p_y_c_voluntario_masculino = 0;
+
+
+    $scope.c_participante_femenino = 0;
+    $scope.c_participante_masculino =0;
+    $scope.c_voluntario_femenino = 0;
+    $scope.c_voluntario_masculino = 0;
+
+    $scope.a_c_y_p_femenino = 0;
+    $scope.a_c_y_p_masculino =0;
+    $scope.a_c_femenino = 0;
+    $scope.a_c_masculino = 0;
+
+    $scope.verInformacion = function(){
+        $http.get(kConstant.url + "inscripciones/getInformacion/").then(function (response) {
+
+            console.log(response.data.resultado);
+            $scope.p_y_c_participante_femenino = response.data.resultado[0].p_y_c.participante.femenino;
+            $scope.p_y_c_participante_masculino = response.data.resultado[0].p_y_c.participante.masculino;
+            $scope.p_y_c_voluntario_femenino = response.data.resultado[0].p_y_c.voluntario.femenino;
+            $scope.p_y_c_voluntario_masculino = response.data.resultado[0].p_y_c.voluntario.masculino;
+
+            $scope.c_participante_femenino = response.data.resultado[1].c.participante.femenino;
+            $scope.c_participante_masculino = response.data.resultado[1].c.participante.masculino;
+            $scope.c_voluntario_femenino = response.data.resultado[1].c.voluntario.femenino;
+            $scope.c_voluntario_masculino = response.data.resultado[1].c.voluntario.masculino;
+
+            $scope.a_c_y_p_femenino = response.data.resultado[2].a.p_y_c.femenino;
+            $scope.a_c_y_p_masculino = response.data.resultado[2].a.p_y_c.masculino;
+            $scope.a_c_femenino = response.data.resultado[2].a.c.femenino;
+            $scope.a_c_masculino = response.data.resultado[2].a.c.masculino;
+
+        }, function (response) {
+
+        });
+    }
+
+    $scope.verInformacion();
+
+
+
     $scope.formatDate = function(date) {
 
         var d = new Date(date || Date.now()),
