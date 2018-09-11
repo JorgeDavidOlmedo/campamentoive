@@ -229,7 +229,8 @@ class UsuariosController extends AppController
         }
 
         $this->loadModel("Eventos");
-        $eventos = $this->Eventos->find('list',['keyField' => 'id','valueField' => 'descripcion'])->where(['estado'=>1]);
+        $eventos = $this->Eventos->find('list',['keyField' => 'id',
+            'valueField' => 'descripcion'])->where(['estado'=>1])->order(['id desc']);
 
         $this->set(compact('eventos'));
         $this->set('_serialize', ['eventos']);

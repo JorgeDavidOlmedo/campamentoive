@@ -262,7 +262,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         }
     }
 
-    $scope.calcularDeuda = function(){
+    /*$scope.calcularDeuda = function(){
         var pago = $scope.inscripcion.pago;
         pago = pago.replaceAll(".","");
         var deuda = $scope.inscripcion.deuda;
@@ -279,7 +279,28 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
         $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
         $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
+    }*/
+
+    $scope.calcularDeuda = function(){
+        var pago = $scope.inscripcion.pago;
+        pago = Number(pago.replaceAll(".",""));
+        var deuda = Number($scope.deuda);
+
+        if(pago>deuda){
+            toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
+            setTimeout(function(){
+                $scope.inscripcion.pago = 0;
+                $( "#pago" ).focus(); }, 500);
+            return;
+        }
+
+        var resultado = deuda - pago;
+        $scope.inscripcion.deuda = numeral(resultado).format('0,0.[00]');
+        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
+        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
+        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
     }
+
 
 
 
@@ -527,6 +548,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 console.log(data.data);
                 $scope.inscripcion=data.data.inscripcion[0];
                 $scope.persona = data.data.inscripcion[0].persona;
+                $("#sexo").val($scope.persona.sexo);
                 $scope.colectivo = data.data.inscripcion[0].colectivo;
                 $scope.persona.edad = data.data.anhos;
                 $scope.lugar = data.data.inscripcion[0].persona.lugare;
@@ -552,6 +574,8 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
                 $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
                 $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
+                $scope.buscar($("#sexo").val());
+                //$scope.obtenerDeuda();
             });
 
     }
@@ -571,6 +595,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         $scope.inscripcion.ficha_medica = $("#ficha").val();
         $scope.inscripcion.autorizacion = $("#aut").val();
         $scope.inscripcion.color = $("#color").val();
+        $scope.inscripcion.viaja = $("#viaja").val();
         $scope.inscripcion.estado_inscripcion = $("#confirmacion").val();
 
         if($scope.colectivo!=null){
@@ -592,7 +617,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
     $scope.estadoVehiculo = "";
 
-    $scope.calcularDeuda = function(){
+    /*$scope.calcularDeuda = function(){
         var mod_pago = Number($scope.mod_pago);
 
         var pago = $scope.inscripcion.pago;
@@ -620,7 +645,28 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
         }
 
 
+    }*/
+
+    $scope.calcularDeuda = function(){
+        var pago = $scope.inscripcion.pago;
+        pago = Number(pago.replaceAll(".",""));
+        var deuda = Number($scope.deuda);
+
+        if(pago>deuda){
+            toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
+            setTimeout(function(){
+                $scope.inscripcion.pago = 0;
+                $( "#pago" ).focus(); }, 500);
+            return;
+        }
+
+        var resultado = deuda - pago;
+        $scope.inscripcion.deuda = numeral(resultado).format('0,0.[00]');
+        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(".","_");
+        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll(",",".");
+        $scope.inscripcion.deuda = $scope.inscripcion.deuda.replaceAll("_",",");
     }
+
 
 
     $scope.persona='';
@@ -665,11 +711,12 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
     $scope.obtenerDeuda = function(categoria){
         var viaja = $("#viaja").val();
         $http.get(kConstant.url + "eventos/getDeuda/"+categoria+"/"+viaja).then(function (response) {
-            console.log(response.data.deuda);
+            console.log("DEUDA: "+response.data.deuda);
             $scope.inscripcion.deuda = response.data.deuda;
             var deuda = response.data.deuda;
             deuda = deuda.replaceAll(".","");
-            //$scope.deuda = deuda;
+            $scope.deuda = deuda;
+            $scope.calcularDeuda();
 
 
         }, function (response) {
@@ -771,56 +818,71 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
     $scope.verificar_campos = function () {
 
-        if($scope.inscripcion==null || $scope.inscripcion==""){
-            toastr.error('Debes completar correctamente los datos.','Notificación!');
-            $( "#descripcion" ).focus();
-            return false;
-        };
+        var estado_ins =  $("#confirmacion").val();
 
-        if($scope.persona.descripcion==null || $scope.persona.descripcion==""){
-            toastr.error('Debes completar la descripcion.','Notificación!');
-            $( "#descripcion" ).focus();
-            return false;
-        };
-
-        if($scope.persona.dni==null || $scope.persona.dni==""){
-            toastr.error('Debes completar el dni.','Notificación!');
-            $( "#dni" ).focus();
-            return false;
-        };
+        if(estado_ins=='confirmado'){
 
 
-        if($("#fecha").val()==null || $("#fecha").val()==""){
-            toastr.error('Debes completar la fecha.','Notificación!');
-            $( "#fecha" ).focus();
-            return false;
-        };
+            var cate =  $("#categoria").val();
+            var viaja =  $("#viaja").val();
 
-        if($("#color").val()=="sin_definir" || $("#color").val()=="sin_definir"){
-            toastr.error('Debes elegir un equipo.','Notificación!');
-            $( "#color" ).focus();
-            return false;
-        };
+            if($scope.inscripcion==null || $scope.inscripcion==""){
+                toastr.error('Debes completar correctamente los datos.','Notificación!');
+                $( "#descripcion" ).focus();
+                return false;
+            };
 
-        if($scope.inscripcion.responsable_tel==null || $scope.inscripcion.responsable_tel==""){
-            toastr.error('Debes completar el Nro. de contacto del responsable.','Notificación!');
-            $( "#responsable_tel" ).focus();
-            return false;
-        };
+            if($scope.persona.descripcion==null || $scope.persona.descripcion==""){
+                toastr.error('Debes completar la descripcion.','Notificación!');
+                $( "#descripcion" ).focus();
+                return false;
+            };
+
+            if($scope.persona.dni==null || $scope.persona.dni==""){
+                toastr.error('Debes completar el dni.','Notificación!');
+                $( "#dni" ).focus();
+                return false;
+            };
 
 
-        if($scope.colectivo==null || $scope.colectivo==""){
-            toastr.error('Debes ingresar el colectivo.','Notificación!');
-            $( "#colectivo" ).focus();
-            return false;
-        };
+            if($("#fecha").val()==null || $("#fecha").val()==""){
+                toastr.error('Debes completar la fecha.','Notificación!');
+                $( "#fecha" ).focus();
+                return false;
+            };
 
-        if($scope.colectivo.descripcion==null || $scope.colectivo.descripcion==""){
-            toastr.error('Debes ingresar el colectivo.','Notificación!');
-            $( "#colectivo" ).focus();
-            return false;
-        };
+            if(cate=='participante'){
+                if($("#color").val()=="sin_definir" || $("#color").val()=="sin_definir"){
+                    toastr.error('Debes elegir un equipo.','Notificación!');
+                    $( "#color" ).focus();
+                    return false;
+                };
+            }
 
+
+            if($scope.inscripcion.responsable_tel==null || $scope.inscripcion.responsable_tel==""){
+                toastr.error('Debes completar el Nro. de contacto del responsable.','Notificación!');
+                $( "#responsable_tel" ).focus();
+                return false;
+            };
+
+            if(viaja=='si'){
+                if($scope.colectivo==null || $scope.colectivo==""){
+                    toastr.error('Debes ingresar el colectivo.','Notificación!');
+                    $( "#colectivo" ).focus();
+                    return false;
+                };
+
+                if($scope.colectivo.descripcion==null || $scope.colectivo.descripcion==""){
+                    toastr.error('Debes ingresar el colectivo.','Notificación!');
+                    $( "#colectivo" ).focus();
+                    return false;
+                };
+            }
+
+
+
+        }
 
         return true;
     }

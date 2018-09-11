@@ -316,7 +316,9 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
 
           if(pago>deuda){
               toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
-              setTimeout(function(){ $( "#pago" ).focus(); }, 500);
+              setTimeout(function(){
+                  $scope.inscripcion.pago = 0;
+                  $( "#pago" ).focus(); }, 500);
               return;
           }
 
@@ -373,6 +375,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
             var deuda = response.data.deuda;
             deuda = deuda.replaceAll(".","");
             $scope.deuda = deuda;
+            $scope.calcularDeuda();
 
 
         }, function (response) {
@@ -684,7 +687,9 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
              if(pago>deuda){
                  toastr.error('El pago no puede ser mayor a la deuda.','Notificación!');
-                 setTimeout(function(){ $( "#pago" ).focus(); }, 500);
+                 setTimeout(function(){
+                     $scope.inscripcion.pago = 0;
+                     $( "#pago" ).focus(); }, 500);
                  return;
              }
 
@@ -743,6 +748,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
             $scope.inscripcion.deuda = response.data.deuda;
             var deuda = response.data.deuda;
             deuda = deuda.replaceAll(".","");
+            $scope.calcularDeuda();
             //$scope.deuda = deuda;
 
 

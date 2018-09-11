@@ -219,6 +219,8 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
             console.log($scope.lugarl);
             $http.post(kConstant.url + "lugares/addEntity/", $scope.lugarl).then(function (response) {
                 toastr.success('El lugar se guardo correctamente.', 'Notificación!');
+                console.log(response.data.lugar);
+                $scope.lugar = response.data.lugar;
                 $("#form-lugar").modal('hide');
             }, function (response) {
 
@@ -346,8 +348,9 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
     $scope.guardarLugar = function(){
         if($scope.verificar_campos_lugar()) {
             $scope.lugarl.estado = 1;
-            console.log($scope.lugarl);
             $http.post(kConstant.url + "lugares/addEntity/", $scope.lugarl).then(function (response) {
+                console.log(response.data.lugar);
+                $scope.lugar = response.data.lugar;
                 toastr.success('El lugar se guardo correctamente.', 'Notificación!');
                 $("#form-lugar").modal('hide');
             }, function (response) {
