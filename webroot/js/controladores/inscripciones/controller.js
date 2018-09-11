@@ -341,7 +341,8 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
 
     $scope.deuda = 0;
     $scope.onSelect = function ($item,$model,$label) {
-        console.log($model);
+        console.log($label);
+
         if($model.id=="00"){
             $("#form-part").modal();
             setTimeout(function(){ $( "#descripcioni" ).focus(); }, 500);
@@ -391,8 +392,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
         });
     };
 
-    $scope.onSelectLugar = function ($item,$model,$label) {
-        console.log($model);
+    $scope.onSelecta = function ($item,$model,$label) {
         if($model.id=="00"){
             $("#form-lugar").modal();
             setTimeout(function(){ $( "#descripcionl" ).focus(); }, 500);
@@ -715,7 +715,6 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
     $scope.deuda = 0;
     $scope.onSelect = function ($item,$model,$label) {
-        console.log($model);
         if($model.id=="00"){
             $("#form-part").modal();
             setTimeout(function(){ $( "#descripcioni" ).focus(); }, 500);
@@ -766,7 +765,6 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
     };
 
     $scope.onSelectLugar = function ($item,$model,$label) {
-        console.log($model);
         if($model.id=="00"){
             $("#form-lugar").modal();
             setTimeout(function(){ $( "#descripcionl" ).focus(); }, 500);

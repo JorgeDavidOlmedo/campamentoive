@@ -242,10 +242,10 @@
                                     </div>
 
                                     <div class="col-xs-12 col-sm-8 col-md-8">
-                                        <?=$this->Form->input('lugar',array('class'=>'form-control',
+                                        <?=$this->Form->input('lugari',array('class'=>'form-control',
                                             'label'=>'Lugar Procedencia','ng-model'=>'lugari','uib-typeahead-editable'=>"false" ,
                                             'uib-typeahead'=>'p as p.descripcion for p in lugares($viewValue)',
-                                            'typeahead-on-select="onSelect($item,$model,$label)"',
+                                            'typeahead-on-select="onSelecta($item,$model,$label)"',
                                             'placeholder'=>'Tipear lugar', 'required'))?>
                                     </div>
 
@@ -293,6 +293,49 @@
                 </div>
             </div>
         </div>
+
+
+
+
+        <div class="modal fade mymodal" id="form-lugar" tabindex="-1" role="dialog" aria-labelledby="form-lugar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <strong><h4><div id="one">Agregar Lugar</div></h4></strong>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-md-8">
+                                        <?=$this->Form->input('descripcionl',array('class' => 'form-control',
+                                            'label'=>'Descripcion','ng-model'=>'lugarl.descripcion'))?>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Salir</button>
+                        <input type="hidden" name="myValue" id="myValue" value=""/>
+                        <?= $this->Form->button(__('Guardar'),['class'=>'btn btn-info','ng-click'=>'guardarLugar()']) ?>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade mymodal" id="form-color" tabindex="-1" role="dialog" aria-labelledby="form-color" aria-hidden="true">
             <div class="modal-dialog">

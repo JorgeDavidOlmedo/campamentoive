@@ -735,6 +735,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
 
     $scope.onSelectLugar = function ($item,$model,$label) {
         console.log($model);
+
         if($model.id=="00"){
             $("#form-lugar").modal();
             setTimeout(function(){ $( "#descripcionl" ).focus(); }, 500);

@@ -388,7 +388,10 @@ class EventosController extends AppController
             }
 
             if($viaja=="si"){
-                $deuda = $value['costo_acompanhante'];
+                if($categoria=="participante"){
+                    $deuda = $value['costo_acompanhante'];
+                }
+
             }
 
         }
