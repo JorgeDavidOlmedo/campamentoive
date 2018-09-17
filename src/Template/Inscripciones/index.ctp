@@ -19,13 +19,19 @@
                                         ['controller' => 'Inscripciones', 'action' => 'add-pre'],
                                         ['escape' => false])?>
 
+                                    <?=$this->Form->input('buscar',array('class'=>'form-control',
+                                        'label'=>'','ng-model'=>'buscar','uib-typeahead-editable'=>"false" ,
+                                        'uib-typeahead'=>'p as p.descripcion for p in inscripciones($viewValue)',
+                                        'typeahead-on-select="onSelect($item,$model,$label)"',
+                                        'placeholder'=>'Buscar...', 'required'))?>
+
                                 </div>
 
                                 <div class="row">
 
                                 </div>
                                 <div class="content table-responsive table-full-width">
-                                    <input class="form-control" placeholder="Buscar..." id="filtrar" name="filtrar">
+
                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>ID</th>
@@ -138,6 +144,10 @@
 
                 <div class="content table-responsive table-full-width">
                     <div class="detalleColectivos">
+
+
+
+
                         <table class="table table-hover table-striped">
                             <thead>
                             <th>Descripcion</th>
@@ -171,6 +181,8 @@
 
                             </tbody>
                         </table>
+
+
 
                     </div>
                 </div>
@@ -220,10 +232,15 @@
         background-color: #64ca9cba; color: black;
     }
 
-    .detalleColectivos{
-        height:450px;
-        overflow-y : auto;
+    .detalleColectivos {
+        height: 450px;
+        overflow-y: auto;
+    }
 
+    .dropdown-menu {
+        visibility: visible;
+        opacity: inherit;
+    }
 
 </style>
 

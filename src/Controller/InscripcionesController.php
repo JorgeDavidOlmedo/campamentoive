@@ -55,18 +55,18 @@ class InscripcionesController extends AppController
 
         $id_evento = $id_empresa = $this->request->session()->read('id_evento');
         $connection = ConnectionManager::get('default');
-        $sql = "SELECT count(*) as total FROM inscripciones WHERE estado=1 AND id_evento=".$id_evento;
+        /*$sql = "SELECT count(*) as total FROM inscripciones WHERE estado=1 AND id_evento=".$id_evento;
         $results = $connection->execute($sql);
         $limit = 1;
         foreach ($results as $valor){
             $limit = $valor['total'];
-        }
+        }*/
 
         $this->paginate = [
             'contain'=>array('Personas','Colectivos','Personas.Lugares'),
             'conditions'=>array('and'=>array('Inscripciones.estado'=>1,'Inscripciones.id_evento'=>$id_evento)),
             'order'=>['Inscripciones.id DESC'],
-            'limit'=>$limit
+            'limit'=>10
         ];
 
         $inscripciones = $this->paginate($this->Inscripciones);
@@ -603,10 +603,15 @@ class InscripcionesController extends AppController
         $connection = ConnectionManager::get('default');
         $id_empresa = $this->request->session()->read('id_empresa');
 
-        //CLIENTES
+        //INSCRIPCIONES
         $results = $connection->execute(
-            "SELECT id,descripcion FROM lugares WHERE estado=1 and
-            (descripcion like '%".$term."%')");
+            "SELECT a.id as id,
+             b.descripcion as descripcion
+             FROM inscripciones a, personas b 
+             WHERE 
+             a.id_persona=b.id AND
+             a.estado=1 and
+            (b.descripcion like '%".$term."%')");
 
         $resultado_lugar = array();
         foreach ($results as $value){
@@ -615,16 +620,10 @@ class InscripcionesController extends AppController
 
         }
 
-        $des = "No existe";
-        if( count($results)<=0 ) {
-            $resultado_lugar[] = array("id"=>"00",
-                "descripcion"=> "Agregar lugar");
-        }
-
-        $lugares = $resultado_lugar;
+        $inscripciones = $resultado_lugar;
         $this->set([
-            'lugares' => $lugares,
-            '_serialize' => ['lugares']
+            'inscripciones' => $inscripciones,
+            '_serialize' => ['inscripciones']
         ]);
         $this->viewClass = 'Json';
         $this->render();

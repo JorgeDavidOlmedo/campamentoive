@@ -2,7 +2,7 @@
  * Created by jorge on 09/11/17.
  */
 var app = angular.module('contalapp');
-app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filter,$timeout,usuariosByTerm) {
+app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filter,$timeout,inscripcionesByTerm) {
    
     $scope.usuarios = [];
     $scope.getUsuarios = function () {
@@ -125,12 +125,12 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
     }
 
 
-    $scope.usuario='';
-    $scope.usuarios = function(usuarioValue){
+    $scope.inscripcion='';
+    $scope.inscripciones = function(usuarioValue){
        console.log(usuarioValue);
-        var futureEmpresas = usuariosByTerm.async(usuarioValue);
+        var futureEmpresas = inscripcionesByTerm.async(usuarioValue);
         return futureEmpresas.then(function (response){
-            return response.data.usuarios;
+            return response.data.inscripciones;
         });
     };
 

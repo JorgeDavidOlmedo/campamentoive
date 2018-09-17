@@ -2,7 +2,7 @@
  * Created by jorge on 09/11/17.
  */
 var app = angular.module('contalapp');
-app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filter,$timeout,usuariosByTerm) {
+app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filter,$timeout,usuariosByTerm,inscripcionesByTerm) {
 
     $scope.usuarios = [];
     $scope.getUsuarios = function () {
@@ -18,6 +18,22 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
     $scope.focus_buscar = function(){
         $(".buscador").focus();
     }
+
+
+    $scope.inscripcion='';
+    $scope.inscripciones = function(usuarioValue){
+        console.log(usuarioValue);
+        var futureEmpresas = inscripcionesByTerm.async(usuarioValue);
+        return futureEmpresas.then(function (response){
+            return response.data.inscripciones;
+        });
+    };
+
+    $scope.onSelect = function ($label,$model) {
+        var id =$model.id
+        $window.location.href = kConstant.url+"inscripciones/edit/"+id;
+    }
+
 
     $scope.obtener_entity = function (id) {
         $window.location.href = kConstant.url+"inscripciones/edit/"+id;
@@ -40,19 +56,6 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
     $scope.volver = function () {
         $window.location.href = kConstant.url+"pages/home";
     }
-
-    $scope.buscar = function(valor) {
-        var rex = new RegExp(valor, 'i');
-        $('.buscar tr').hide();
-        $('.buscar tr').filter(function () {
-            return rex.test($(this).text());
-        }).show();
-    }
-
-    $('#filtrar').keyup(function () {
-        $scope.buscar($('#filtrar').val());
-
-    });
 
 
     $scope.openBondi = function(){
@@ -100,12 +103,6 @@ app.controller('inscripcionIndex',function ($scope,kConstant,$http,$window,$filt
         });
     };
 
-    $scope.onSelect = function ($label) {
-        console.log($label);
-        var id = ($label || '').split('-');
-        console.log(id);
-        $window.location.href = kConstant.url+"usuarios/view/"+id[0];
-    }
 
 
     /******************PAGINACION**********************/
