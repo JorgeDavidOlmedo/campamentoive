@@ -2,7 +2,7 @@
  * Created by jorge on 09/11/17.
  */
 var app = angular.module('contalapp');
-app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$timeout,usuariosByTerm) {
+app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$timeout,usuariosByTerm,personasByTerm) {
    
     $scope.usuarios = [];
     $scope.getUsuarios = function () {
@@ -13,6 +13,19 @@ app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$
                 console.log(data.data.usuarios);
 
             });
+    }
+
+    $scope.persona='';
+    $scope.personas = function(usuarioValue){
+        var futureEmpresas = personasByTerm.async(usuarioValue);
+        return futureEmpresas.then(function (response){
+            return response.data.personas;
+        });
+    };
+
+    $scope.onSelect = function ($label,$model) {
+        var id =$model.id
+        $window.location.href = kConstant.url+"personas/edit/"+id;
     }
 
     $scope.focus_buscar = function(){
@@ -42,20 +55,6 @@ app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$
     }
 
 
-    $scope.buscar = function(valor) {
-        var rex = new RegExp(valor, 'i');
-        $('.buscar tr').hide();
-        $('.buscar tr').filter(function () {
-            return rex.test($(this).text());
-        }).show();
-    }
-
-    $('#filtrar').keyup(function () {
-        $scope.buscar($('#filtrar').val());
-
-    });
-
-
 
     $scope.borrar_entity = function (id) {
 
@@ -83,22 +82,6 @@ app.controller('personaIndex',function ($scope,kConstant,$http,$window,$filter,$
 
     }
 
-
-    $scope.usuario='';
-    $scope.usuarios = function(usuarioValue){
-       console.log(usuarioValue);
-        var futureEmpresas = usuariosByTerm.async(usuarioValue);
-        return futureEmpresas.then(function (response){
-            return response.data.usuarios;
-        });
-    };
-
-    $scope.onSelect = function ($label) {
-        console.log($label);
-        var id = ($label || '').split('-');
-        console.log(id);
-        $window.location.href = kConstant.url+"usuarios/view/"+id[0];
-    }
 
 
     /******************PAGINACION**********************/
@@ -294,6 +277,7 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
         $scope.persona = [];
         $http.get(kConstant.url+"/personas/getEntity/"+id)
             .then(function(data){
+                console.log(data.data.persona[0]);
                 $scope.persona=data.data.persona[0];
                 $("#sexo").val($scope.persona.sexo);
                 $("#pais").val($scope.persona.id_pais);

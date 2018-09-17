@@ -849,6 +849,18 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
                 return false;
             };
 
+            if($("#ficha").val()=="pendiente" || $("#ficha").val()=="pendiente"){
+                toastr.error('Debes completar la ficha medica.','Notificación!');
+                $( "#ficha" ).focus();
+                return false;
+            };
+
+            if($("#aut").val()=="pendiente" || $("#aut").val()=="pendiente"){
+                toastr.error('Debes completar la ficha medica.','Notificación!');
+                $( "#aut" ).focus();
+                return false;
+            };
+
             if(cate=='participante'){
                 if($("#color").val()=="sin_definir" || $("#color").val()=="sin_definir"){
                     toastr.error('Debes elegir un equipo.','Notificación!');

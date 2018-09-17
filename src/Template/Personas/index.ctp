@@ -16,13 +16,19 @@
                                     <?= $this->Html->link($this->Html->tag('p','Agregar Nuevo Participante',['class' => '']).'',
                                         ['controller' => 'Personas', 'action' => 'add'],
                                         ['escape' => false])?>
+
+                                    <?=$this->Form->input('buscar',array('class'=>'form-control',
+                                        'label'=>'','ng-model'=>'persona','uib-typeahead-editable'=>"false" ,
+                                        'uib-typeahead'=>'p as p.descripcion for p in personas($viewValue)',
+                                        'typeahead-on-select="onSelect($item,$model,$label)"',
+                                        'placeholder'=>'Buscar...', 'required'))?>
+
                                 </div>
                                 <div class="row">
 
                                 </div>
                                 <div class="content table-responsive table-full-width">
-                                    <input class="form-control" placeholder="Buscar..." id="filtrar" name="filtrar">
-                                    <table class="table table-hover table-striped">
+                                     <table class="table table-hover table-striped">
                                         <thead>
                                         <th>ID</th>
                                         <th>Descripcion</th>
@@ -96,6 +102,12 @@
     td.datacellone {
         background-color: #e80a33ba; color: black;
     }
+
+    .dropdown-menu {
+        visibility: visible;
+        opacity: inherit;
+    }
+
 <?php
 
     function elimina_acentos($text)

@@ -37,7 +37,7 @@ class PersonasController extends AppController
             'contain'=>['Lugares','Countries'],
             'conditions'=>array('and'=>array('Personas.estado'=>1)),
             'order'=>['Personas.id DESC'],
-            'limit'=>$limit
+            'limit'=>10
         ];
 
         $personas = $this->paginate($this->Personas);

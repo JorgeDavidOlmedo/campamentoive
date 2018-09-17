@@ -30,7 +30,9 @@
                                             <div class="col-xs-12 col-sm4 col-md-4">
                                                 <?=$this->Form->input('dni',array('class' => 'form-control',
                                                     'label'=>'Dni','ng-model'=>'persona.dni',
-                                                    'placeholder'=>'Tipear dni','type'=>'number'))?>
+                                                    'placeholder'=>'Tipear dni',
+                                                    'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
+                                                     event.charCode == 44 || event.charCode == 0 "))?>
                                             </div>
                                         </div>
 
@@ -38,7 +40,7 @@
                                             <div class="col-xs-12 col-sm-2 col-md-2">
                                                 <?php
                                                 echo $this->Form->input('fecha',array('type' => 'text',
-                                                    'class' => 'fechaOnly','label'=>'Fecha','id'=>'fecha',
+                                                    'class' => 'fechaOnly','label'=>'Fecha de Nacimiento','id'=>'fecha',
                                                     'required'));
 
                                                 ?>

@@ -1563,25 +1563,20 @@ class InscripcionesController extends AppController
 
 
                 $query = "SELECT 
-                      d.id as id_colectivo,
-                      CONCAT('VEHÍCULO: ',d.descripcion) as colectivo,
-                      CONCAT('PATENTE: ',d.patente) as patente,
-                      CONCAT('DESTINO: ',d.destino) as destino,
+                      a.id as id_colectivo,
                       b.descripcion as nombre,
                       a.deuda as deuda,
                       c.descripcion as lugar,
                       b.dni as telefono,
                       b.fecha_nacimiento as naci
-                     FROM inscripciones a, personas b, lugares c, colectivos d
+                     FROM inscripciones a, personas b, lugares c
                      WHERE 
-                     a.id_colectivo=d.id AND 
                      b.id_lugar=c.id AND
                      a.id_persona=b.id AND 
+                     a.estado_inscripcion='confirmado' AND
                      a.id_evento=".$id_evento." AND
                      a.estado=1
                      GROUP BY a.id_persona";
-
-
 
             $results=null;
             $connection = ConnectionManager::get('default');
