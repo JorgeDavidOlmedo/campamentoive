@@ -856,7 +856,7 @@ app.controller('inscripcionEdit',function ($scope,kConstant,$http,$window,person
             };
 
             if($("#aut").val()=="pendiente" || $("#aut").val()=="pendiente"){
-                toastr.error('Debes completar la ficha medica.','Notificación!');
+                toastr.error('Debes completar la autorizacion.','Notificación!');
                 $( "#aut" ).focus();
                 return false;
             };

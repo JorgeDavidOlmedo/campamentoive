@@ -98,7 +98,7 @@ class AppController extends Controller
     {
 
        if($this->Auth->user()!=null){
-
+          $_SESSION['version'] = "1.3";
           $this->set('current_user',$this->Auth->user());
           $this->response->header('Access-Control-Allow-Methods','X-DEBUGKIT-ID');
           // $this->set(compact(''));

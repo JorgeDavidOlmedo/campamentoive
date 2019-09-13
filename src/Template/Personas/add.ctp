@@ -1,5 +1,5 @@
 <?php echo $this->element('head');?>
-<?= $this->Html->script('controladores/personas/controller');?>
+<?= $this->Html->script('controladores/personas/controller.js?v='.@$_SESSION['version']);?>
 <div ng-controller="personaAdd">
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="../img/sidebar-5.jpg">

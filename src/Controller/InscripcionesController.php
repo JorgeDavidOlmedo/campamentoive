@@ -650,6 +650,7 @@ class InscripcionesController extends AppController
                 FROM inscripciones a, personas b 
                 WHERE 
                 a.id_persona=b.id AND 
+                a.estado_inscripcion='confirmado' AND
                 a.id_evento=".$id_evento." AND a.estado=1
                 GROUP BY a.color,b.sexo,edad;";
 

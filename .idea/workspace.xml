@@ -3,11 +3,105 @@
   <component name="ChangeListManager">
     <list default="true" id="28b29f15-21aa-4bd0-b1bb-9175d98c746c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/debug.log.1537200629" beforeDir="false" afterPath="$PROJECT_DIR$/logs/debug.log.1537200629" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/error.log.1535170763" beforeDir="false" afterPath="$PROJECT_DIR$/logs/error.log.1535170763" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CargarColectivosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CargarColectivosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ColectivosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ColectivosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConfiguracionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConfiguracionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CountriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CountriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EquipoTmpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EquipoTmpController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EventosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EventosController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/InscripcionesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InscripcionesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/LugaresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/LugaresController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PersonasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/CargarColectivo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/CargarColectivo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Colectivo.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Colectivo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Configuracion.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Configuracion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/EquipoTmp.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/EquipoTmp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Evento.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Evento.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Inscripcione.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Inscripcione.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Lugare.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Lugare.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Entity/Persona.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Entity/Persona.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/CargarColectivosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/CargarColectivosTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/ColectivosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/ColectivosTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/ConfiguracionTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/ConfiguracionTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/CountriesTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/CountriesTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/EquipoTmpTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/EquipoTmpTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/EventosTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/EventosTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/InscripcionesTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/InscripcionesTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/LugaresTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/LugaresTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Table/PersonasTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Table/PersonasTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/CargarColectivos/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/CargarColectivos/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/CargarColectivos/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/CargarColectivos/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/CargarColectivos/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/CargarColectivos/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/CargarColectivos/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/CargarColectivos/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Colectivos/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Colectivos/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Configuracion/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Configuracion/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Configuracion/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Configuracion/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Configuracion/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Configuracion/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Configuracion/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Configuracion/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Countries/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Countries/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Countries/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Countries/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Countries/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Countries/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Countries/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Countries/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/EquipoTmp/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/EquipoTmp/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/EquipoTmp/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/EquipoTmp/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/EquipoTmp/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/EquipoTmp/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/EquipoTmp/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/EquipoTmp/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Eventos/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Eventos/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/add_pre.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/add_pre.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/edit_pre.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/edit_pre.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/equipos.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/equipos.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/getpasajeros.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/getpasajeros.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/index_pre.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/index_pre.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/nodata.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/nodata.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/reporte.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/reporte.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Inscripciones/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Inscripciones/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/add.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/edit.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Lugares/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Lugares/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Personas/add.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/add.ctp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/Personas/edit.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/edit.ctp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Template/Personas/index.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/index.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Template/Personas/view.ctp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Template/Personas/view.ctp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/CargarColectivosFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/CargarColectivosFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/ColectivosFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/ColectivosFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/ConfiguracionFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/ConfiguracionFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/CountriesFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/CountriesFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/EquipoTmpFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/EquipoTmpFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/EventosFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/EventosFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/InscripcionesFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/InscripcionesFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Fixture/LugaresFixture.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Fixture/LugaresFixture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/CargarColectivosControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/CargarColectivosControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/ColectivosControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/ColectivosControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/ConfiguracionControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/ConfiguracionControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/CountriesControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/CountriesControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/EquipoTmpControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/EquipoTmpControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/EventosControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/EventosControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/InscripcionesControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/InscripcionesControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Controller/LugaresControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Controller/LugaresControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/CargarColectivosTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/CargarColectivosTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/ColectivosTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/ColectivosTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/ConfiguracionTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/ConfiguracionTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/CountriesTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/CountriesTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/EquipoTmpTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/EquipoTmpTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/EventosTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/EventosTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/InscripcionesTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/InscripcionesTableTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase/Model/Table/LugaresTableTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase/Model/Table/LugaresTableTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_panels" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_debug_kit_requests" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_colectivos" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/models/myapp_cake_model_default_colectivos" afterDir="false" />
@@ -19,11 +113,20 @@
       <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_debug_kit_en__u_s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/persistent/myapp_cake_core_translations_default_en__u_s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/debug_kit.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/debug_kit.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/images/ive.png" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/images/ive.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/equipos.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/equipos.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/morosos.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/morosos.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/morosos.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/morosos.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/participantes.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/participantes.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/participantes.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/participantes.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/pasajeros.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/pasajeros.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/pasajeros.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/pasajeros.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/seguros.jasper" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/seguros.jasper" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webroot/informes/equipos/seguros.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/informes/equipos/seguros.jrxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,12 +161,30 @@
     </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InscripcionesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/InscripcionesController.php">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webroot/js/controladores/personas/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="1579" lean-forward="true" selection-start-line="1579" selection-end-line="1579" />
+            <state relative-caret-position="198">
+              <caret line="262" column="10" selection-start-line="262" selection-start-column="10" selection-end-line="262" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Template/Personas/add.ctp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="85" selection-start-line="1" selection-start-column="85" selection-end-line="1" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -79,7 +200,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nr</find>
       <find>personas</find>
       <find>getINfo</find>
       <find>change</find>
@@ -94,9 +214,7 @@
       <find>calcularDeuda</find>
       <find>deuda</find>
       <find>obtenerDe</find>
-      <find>verificar_campos</find>
       <find>confirmacion</find>
-      <find>addEn</find>
       <find>cargar</find>
       <find>categoria</find>
       <find>obtenerDeuda</find>
@@ -109,6 +227,9 @@
       <find>cargar_</find>
       <find>getEntity</find>
       <find>modificar</find>
+      <find>getInscriptos</find>
+      <find>addEn</find>
+      <find>verificar_campos</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,7 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/Table/EventosTable.php" />
         <option value="$PROJECT_DIR$/src/Model/Table/InscripcionesTable.php" />
         <option value="$PROJECT_DIR$/src/Template/Inscripciones/index_pre.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Colectivos/view.ctp" />
@@ -157,35 +277,25 @@
         <option value="$PROJECT_DIR$/src/Template/Inscripciones/add_pre.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/UsuariosController.php" />
         <option value="$PROJECT_DIR$/src/Controller/EventosController.php" />
-        <option value="$PROJECT_DIR$/src/Template/Personas/add.ctp" />
         <option value="$PROJECT_DIR$/src/Template/Inscripciones/add.ctp" />
         <option value="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js" />
         <option value="$PROJECT_DIR$/src/Template/Inscripciones/index.ctp" />
-        <option value="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" />
         <option value="$PROJECT_DIR$/src/Controller/PersonasController.php" />
         <option value="$PROJECT_DIR$/webroot/js/angular.js" />
         <option value="$PROJECT_DIR$/src/Template/Personas/index.ctp" />
-        <option value="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" />
         <option value="$PROJECT_DIR$/src/Template/Personas/edit.ctp" />
         <option value="$PROJECT_DIR$/src/Controller/InscripcionesController.php" />
+        <option value="$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js" />
+        <option value="$PROJECT_DIR$/src/Template/Personas/add.ctp" />
+        <option value="$PROJECT_DIR$/webroot/js/controladores/personas/controller.js" />
+        <option value="$PROJECT_DIR$/src/Controller/AppController.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/webroot/js/chartjs/package.json" />
-    </packageJsonPaths>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="781" />
+    <option name="height" value="790" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -239,6 +349,13 @@
             <path>
               <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
               <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Template" type="462c0819:PsiDirectoryNode" />
+              <item name="Personas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
               <item name="webroot" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -252,6 +369,21 @@
               <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
               <item name="webroot" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
+              <item name="webroot" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controladores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="campamentoive" type="b2602c69:ProjectViewProjectNode" />
+              <item name="campamentoive" type="462c0819:PsiDirectoryNode" />
+              <item name="webroot" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controladores" type="462c0819:PsiDirectoryNode" />
+              <item name="personas" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -294,14 +426,16 @@
   <component name="RunManager">
     <configuration name="contalapp" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$" />
+      <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+    <configuration default="true" type="js.build_tools.gulp">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
       <arguments />
       <envs />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
@@ -491,12 +625,14 @@
       <workItem from="1536670989159" duration="6241000" />
       <workItem from="1536689080614" duration="1881000" />
       <workItem from="1536715408058" duration="455000" />
-      <workItem from="1537198676681" duration="4781000" />
+      <workItem from="1537198676681" duration="5552000" />
+      <workItem from="1537287548046" duration="443000" />
+      <workItem from="1568378457822" duration="264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="909188000" />
+    <option name="totallyTimeSpent" value="910666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -508,36 +644,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="777" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="790" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34477827" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35479257" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.2597968" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20418848" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.08202443" />
-      <window_info anchor="right" id="Database" order="3" weight="0.32930514" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32809773" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32984293" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.08202443" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32984293" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32809773" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3291592" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3291592" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.2597968" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32930514" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -567,17 +700,9 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/usuarios/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="174" column="11" selection-start-line="174" selection-start-column="11" selection-end-line="174" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Table/UsuariosTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -788,13 +913,6 @@
         <state relative-caret-position="-638" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/menu/controllerHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1665">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Pages/home.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -827,20 +945,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="391" column="58" selection-start-line="391" selection-start-column="58" selection-end-line="391" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Template/Personas/add.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="52" column="72" lean-forward="true" selection-start-line="52" selection-start-column="72" selection-end-line="52" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="134" column="6" selection-start-line="127" selection-start-column="3" selection-end-line="134" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -886,13 +990,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/personas/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="279" column="48" selection-start-line="279" selection-start-column="48" selection-end-line="279" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Template/Inscripciones/edit.ctp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3495">
@@ -900,17 +997,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/inscripciones/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="479" column="27" selection-start-line="479" selection-start-column="11" selection-end-line="479" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webroot/js/controladores/inscripciones/controllerfin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="579" column="20" selection-start-line="579" selection-start-column="11" selection-end-line="579" selection-end-column="20" />
+        <state relative-caret-position="-139">
+          <caret line="816" column="27" selection-start-line="816" selection-start-column="11" selection-end-line="816" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/menu/controllerHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/InscripcionesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="1579" lean-forward="true" selection-start-line="1579" selection-end-line="1579" />
+        <state relative-caret-position="311">
+          <caret line="655" lean-forward="true" selection-start-line="655" selection-end-line="655" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Template/Personas/add.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="85" selection-start-line="1" selection-start-column="85" selection-end-line="1" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webroot/js/controladores/personas/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="262" column="10" selection-start-line="262" selection-start-column="10" selection-end-line="262" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
         </state>
       </provider>
     </entry>

@@ -250,6 +250,18 @@ app.controller('personaAdd',function($scope,kConstant,$http,$window,lugaresByTer
             return false;
         };
 
+        if($scope.lugar.id===undefined){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
+        if($scope.lugar.id=="00"){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
         if($("#fecha").val()==null || $("#fecha").val()==""){
             toastr.error('Debes completar la fecha.','Notificación!');
             $( "#fecha" ).focus();
@@ -382,6 +394,18 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
             return false;
         };
 
+        if($scope.lugar.id===undefined){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
+        if($scope.lugar.id=="00"){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugar" ).focus();
+            return false;
+        };
+
         if($("#fecha").val()==null || $("#fecha").val()==""){
             toastr.error('Debes completar la fecha.','Notificación!');
             $( "#fecha" ).focus();
@@ -394,10 +418,6 @@ app.controller('personaEdit',function ($scope,$http,kConstant,$window,lugaresByT
             $( "#telefono" ).focus();
             return false;
         };
-
-
-
-
 
 
         return true;
