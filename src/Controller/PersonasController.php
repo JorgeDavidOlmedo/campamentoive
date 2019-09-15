@@ -312,7 +312,7 @@ class PersonasController extends AppController
              a.id_lugar = b.id AND
              a.estado=1 AND
             (a.descripcion like '%".$term."%' OR 
-             a.dni like '%".$term."%')");
+             a.dni like '%".$term."%') LIMIT 20");
 
         $resultado = array();
         $categoria = "colaborador";

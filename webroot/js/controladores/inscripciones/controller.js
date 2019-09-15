@@ -405,6 +405,7 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
 
     $scope.guardarParticipante = function(){
         if($scope.verificar_campos_lugar()) {
+            $scope.participante.id = 0;
             $scope.participante.estado = 1;
             $scope.participante.id_lugar = $scope.lugari.id;
             $scope.participante.sexo = $("#sexoi").val();
@@ -455,9 +456,22 @@ app.controller('inscripcionAdd',function($scope,kConstant,$http,$window,personas
 
         if($scope.lugari==null || $scope.lugari==""){
             toastr.error('Debes completar el lugar.','Notificación!');
-            $( "#lugar" ).focus();
+            $( "#lugari" ).focus();
             return false;
         };
+
+        if($scope.lugari.id===undefined){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugari" ).focus();
+            return false;
+        };
+
+        if($scope.lugari.id=="00"){
+            toastr.error('Debes completar el lugar.','Notificación!');
+            $( "#lugari" ).focus();
+            return false;
+        };
+
 
         if($("#fechai").val()==null || $("#fechai").val()==""){
             toastr.error('Debes completar la fecha.','Notificación!');

@@ -1,5 +1,5 @@
 <?php echo $this->element('head');?>
-<?= $this->Html->script('controladores/inscripciones/controller');?>
+<?= $this->Html->script('controladores/inscripciones/controller.js?v='.@$_SESSION['version']);?>
 <div ng-controller="inscripcionAdd">
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="../img/sidebar-5.jpg">
@@ -37,7 +37,8 @@
                                                     'label'=>'Nombre','ng-model'=>'persona','uib-typeahead-editable'=>"false" ,
                                                     'uib-typeahead'=>'p as p.descripcion +" - Edad: "+p.edad for p in personas($viewValue)',
                                                     'typeahead-on-select="onSelect($item,$model,$label)"',
-                                                    'placeholder'=>'Tipear Nombre', 'required'))?>
+                                                    'placeholder'=>'Tipear Nombre', 'required',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm2 col-md-2">
@@ -47,7 +48,8 @@
                                                     'typeahead-on-select="onSelect($item,$model,$label)"',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear Dni', 'required','readonly'))?>
+                                                    'placeholder'=>'Tipear Dni', 'required','readonly',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm2 col-md-2">
@@ -55,7 +57,8 @@
                                                     'label'=>'Edad','ng-model'=>'persona.edad',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'Tipear Edad','readonly'))?>
+                                                    'placeholder'=>'Tipear Edad','readonly',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
 
@@ -78,7 +81,8 @@
                                                     'label'=>'Lugar Procedencia','ng-model'=>'lugar','uib-typeahead-editable'=>"false" ,
                                                     'uib-typeahead'=>'p as p.descripcion for p in lugares($viewValue)',
                                                     'typeahead-on-select="onSelect($item,$model,$label)"',
-                                                    'placeholder'=>'Tipear lugar', 'required','readonly'))?>
+                                                    'placeholder'=>'Tipear lugar', 'required','readonly',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm-3 col-md-3">
@@ -90,7 +94,8 @@
                                             <div class="col-xs-12 col-sm-3 col-md-3">
                                                 <?=$this->Form->input('correo',array('class' => 'form-control',
                                                     'label'=>'Correo','ng-model'=>'persona.correo',
-                                                    'placeholder'=>'Tipear correo','readonly'))?>
+                                                    'placeholder'=>'Tipear correo','readonly',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
 
@@ -160,7 +165,8 @@
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
                                                     'placeholder'=>'Tipear Pago',
-                                                    'ng-blur'=>'calcularDeuda()'))?>
+                                                    'ng-blur'=>'calcularDeuda()',
+                                                    'autocomplete'=>'off'))?>
                                          </div>
 
                                           <div class="col-xs-12 col-sm4 col-md-4">
@@ -169,7 +175,8 @@
                                                     'onkeyup'=>'format(this)','onchange'=>'format(this)',
                                                     'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                                    'placeholder'=>'0','readonly'))?>
+                                                    'placeholder'=>'0','readonly',
+                                                    'autocomplete'=>'off'))?>
                                          </div>
 
 
@@ -182,7 +189,8 @@
                                                 <?=$this->Form->input('obs',array('class' => 'form-control',
                                                     'label'=>'Observacion','ng-model'=>'inscripcion.observacion'
                                                      ,
-                                                    'placeholder'=>'Tipear Observacion'))?>
+                                                    'placeholder'=>'Tipear Observacion',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
 
@@ -194,7 +202,8 @@
                                                 <?=$this->Form->input('responsable',array('class' => 'form-control',
                                                     'label'=>'Responsable','ng-model'=>'inscripcion.responsable'
                                                 ,
-                                                    'placeholder'=>'Tipear Responsable'))?>
+                                                    'placeholder'=>'Tipear Responsable',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
                                             <div class="col-xs-12 col-sm6 col-md-6">
@@ -202,7 +211,8 @@
                                                     'id'=>'responsable_tel', 'class' => 'form-control',
                                                     'label'=>'Nro. Contacto Responsable','ng-model'=>'inscripcion.responsable_tel'
                                                 ,
-                                                    'placeholder'=>'Tipear Nro. Contacto Responsable'))?>
+                                                    'placeholder'=>'Tipear Nro. Contacto Responsable',
+                                                    'autocomplete'=>'off'))?>
                                             </div>
 
 
@@ -252,7 +262,8 @@
                                     <div class="col-xs-12 col-sm-8 col-md-8">
                                         <?=$this->Form->input('descripcioni',array('class' => 'form-control',
                                             'id'=>'descripcioni',
-                                            'label'=>'Participante','ng-model'=>'participante.descripcion'))?>
+                                            'label'=>'Participante','ng-model'=>'participante.descripcion',
+                                            'autocomplete'=>'off'))?>
                                     </div>
 
                                     <div class="col-xs-12 col-sm4 col-md-4">
@@ -260,7 +271,8 @@
                                             'label'=>'Dni','ng-model'=>'participante.dni',
                                             'onkeypress'=>"return (event.charCode >= 48 && event.charCode <= 57) ||  
                                                      event.charCode == 44 || event.charCode == 0 ",
-                                            'placeholder'=>'Tipear dni'))?>
+                                            'placeholder'=>'Tipear dni',
+                                            'autocomplete'=>'off'))?>
                                     </div>
 
                                 </div>
@@ -283,8 +295,9 @@
                                     <?=$this->Form->input('lugari',array('class'=>'form-control',
                                         'label'=>'Lugar Procedencia','ng-model'=>'lugari','uib-typeahead-editable'=>"false" ,
                                         'uib-typeahead'=>'p as p.descripcion for p in lugares($viewValue)',
-                                        'typeahead-on-select="onSelect($item,$model,$label)"',
-                                        'placeholder'=>'Tipear lugar', 'required'))?>
+                                        'placeholder'=>'Tipear lugar', 'required',
+                                        'autocomplete'=>'off',
+                                        'autocomplete'=>'off'))?>
                                 </div>
 
                             </div>
@@ -306,7 +319,8 @@
                                     <div class="col-xs-12 col-sm-8 col-md-8">
                                         <?=$this->Form->input('correoi',array('class' => 'form-control',
                                             'id'=>'correoi',
-                                            'label'=>'Correo','ng-model'=>'participante.correo'))?>
+                                            'label'=>'Correo','ng-model'=>'participante.correo',
+                                            'autocomplete'=>'off'))?>
                                     </div>
 
 

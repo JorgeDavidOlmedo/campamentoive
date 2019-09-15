@@ -591,3 +591,1464 @@ Stack Trace:
 #19 {main}
 
 
+2019-09-15 14:41:44 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/usuarios/login
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:41:48 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:41:57 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:42:00 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/reporte
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:42:02 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/nodata
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:42:11 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:42:13 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 505]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 505
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:42:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:43:25 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 505]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 505
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:43:25 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:45:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 505]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 505
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:45:49 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:47:28 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/personas/index
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:47:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/personas/add
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:49:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:49:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:49:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:49:22 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:52:16 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 505]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 505
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:52:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:52:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:52:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:52:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:53:16 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 506]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 506
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:53:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:53:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:53:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:53:17 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:54:12 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 516]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 516
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:54:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:54:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:54:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:54:13 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:15 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 515]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 515
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:58:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:15 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:16 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:45 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 519]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 519
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 14:58:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 14:58:46 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 15:00:30 Warning: Warning (2): Invalid argument supplied for foreach() in [/Applications/XAMPP/xamppfiles/htdocs/campamentoive/src/Template/Inscripciones/add_pre.ctp, line 519]
+Request URL: /campamentoive/inscripciones/add-pre
+Referer URL: http://localhost/campamentoive/inscripciones/index
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 146
+include - APP/Template/Inscripciones/add_pre.ctp, line 519
+Cake\View\View::_evaluate() - CORE/src/View/View.php, line 1016
+Cake\View\View::_render() - CORE/src/View/View.php, line 975
+Cake\View\View::render() - CORE/src/View/View.php, line 599
+Cake\Controller\Controller::render() - CORE/src/Controller/Controller.php, line 617
+Cake\Http\ActionDispatcher::_invoke() - CORE/src/Http/ActionDispatcher.php, line 128
+Cake\Http\ActionDispatcher::dispatch() - CORE/src/Http/ActionDispatcher.php, line 96
+Cake\Http\BaseApplication::__invoke() - CORE/src/Http/BaseApplication.php, line 83
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\RoutingMiddleware::__invoke() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 62
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Routing\Middleware\AssetMiddleware::__invoke() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 88
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Error\Middleware\ErrorHandlerMiddleware::__invoke() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 81
+Cake\Http\Runner::__invoke() - CORE/src/Http/Runner.php, line 65
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 51
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 92
+[main] - ROOT/webroot/index.php, line 37
+
+
+
+2019-09-15 15:00:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/jquery.ui.css
+Referer URL: http://localhost/campamentoive/inscripciones/add-pre
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 15:00:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/angular.min.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 15:00:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Js could not be found.
+Exception Attributes: array (
+  'class' => 'Js',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /js/firebase.js.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
+2019-09-15 15:00:31 Error: [Cake\Routing\Exception\MissingControllerException] Controller class Css could not be found.
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => false,
+  'prefix' => false,
+  '_ext' => false,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ControllerFactory.php(72): Cake\Http\ControllerFactory->missingController(Object(Cake\Network\Request))
+#1 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(63): Cake\Http\ControllerFactory->create(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#2 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Filter/ControllerFactoryFilter.php(49): Cake\Routing\Filter\ControllerFactoryFilter->_getController(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#3 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/DispatcherFilter.php(144): Cake\Routing\Filter\ControllerFactoryFilter->beforeDispatch(Object(Cake\Event\Event))
+#4 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(426): Cake\Routing\DispatcherFilter->handle(Object(Cake\Event\Event), Object(Cake\Network\Request), Object(Cake\Network\Response))
+#5 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventManager.php(391): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Event/EventDispatcherTrait.php(78): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/ActionDispatcher.php(81): Cake\Http\ActionDispatcher->dispatchEvent('Dispatcher.befo...', Array)
+#8 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/BaseApplication.php(83): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#9 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#10 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php(62): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#11 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#12 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php(93): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#13 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#14 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php(81): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#15 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response), Object(Cake\Http\Runner))
+#16 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Runner.php(51): Cake\Http\Runner->__invoke(Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#17 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/vendor/cakephp/cakephp/src/Http/Server.php(92): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Zend\Diactoros\ServerRequest), Object(Zend\Diactoros\Response))
+#18 /Applications/XAMPP/xamppfiles/htdocs/campamentoive/webroot/index.php(37): Cake\Http\Server->run()
+#19 {main}
+
+
