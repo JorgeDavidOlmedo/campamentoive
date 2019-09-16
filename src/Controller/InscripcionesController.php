@@ -611,7 +611,8 @@ class InscripcionesController extends AppController
              WHERE 
              a.id_persona=b.id AND
              a.estado=1 and
-            (b.descripcion like '%".$term."%')");
+             YEAR(a.fecha)=2019 and
+            (b.descripcion like '%".$term."%') LIMIT 30");
 
         $resultado_lugar = array();
         foreach ($results as $value){

@@ -1,5 +1,5 @@
 <?php echo $this->element('head');?>
-<?= $this->Html->script('controladores/inscripciones/controllerfin');?>
+<?= $this->Html->script('controladores/inscripciones/controllerfin.js?v='.@$_SESSION['version']);?>
 <div ng-controller="inscripcionIndex">
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="../img/sidebar-5.jpg">

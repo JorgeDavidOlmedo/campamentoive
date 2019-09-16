@@ -1,5 +1,5 @@
 <?php echo $this->element('head');?>
-<?= $this->Html->script('controladores/inscripciones/controller');?>
+<?= $this->Html->script('controladores/inscripciones/controller.js?v='.@$_SESSION['version']);?>
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="../img/sidebar-5.jpg">
         <?php echo $this->element('portrait');?>

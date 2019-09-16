@@ -316,7 +316,7 @@ class ColectivosController extends AppController
              WHERE 
              a.estado=1 AND
              a.id_evento=".$id_evento." AND 
-            (a.descripcion like '%".$term."%')");
+            (a.descripcion like '%".$term."%') LIMIT 20");
 
         $resultado = array();
 
